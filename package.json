@@ -1,0 +1,17 @@
+{
+  "name": "angulaApp",
+  "author": "Stuart Owens",
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "description": "template app for Dialword",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --ignore node_modules server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuartowens/angulaApp.git"
+  },
+  "dependencies": {}
+}
