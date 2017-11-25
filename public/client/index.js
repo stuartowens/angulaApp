@@ -9,6 +9,12 @@ angular.module('main-app', ['ngRoute'])
             controllerAs: 'ctrl'
             // hideMenus: true
         })
+        .when('/faq', {
+            controller: 'MainCtrl',
+            templateUrl: 'public/client/templates/faq.html',
+            controllerAs: 'ctrl'
+            // hideMenus: true
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(true);
