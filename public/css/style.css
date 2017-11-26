@@ -1,3 +1,14 @@
 .campdates {
-  padding-left: 222;
+  background: url('../Img/bluridgeHeader.jpeg');
+  font-size: 45px;
+}
+.menubackground {
+  color: white;
+  background-image: url('../Img/whiteGrain.jpeg');
+
+}
+.navbarbackground {
+  background-image: url('../Img/footer_bg.jpg');
+  height: 79px;
+  width: auto;
 }
