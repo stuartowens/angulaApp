@@ -4,16 +4,22 @@ angular.module('main-app', ['ngRoute'])
 
     $routeProvider
         .when('/home', {
-            controller: 'MainCtrl',
-            templateUrl: 'public/client/templates/app.html',
-            controllerAs: 'ctrl'
-            // hideMenus: true
+          controller: 'MainCtrl',
+          templateUrl: 'public/client/templates/app.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
         })
         .when('/faq', {
-            controller: 'MainCtrl',
-            templateUrl: 'public/client/templates/faq.html',
-            controllerAs: 'ctrl'
-            // hideMenus: true
+          controller: 'MainCtrl',
+          templateUrl: 'public/client/templates/faq.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
+        })
+        .when('/signup', {
+          controller: 'MainCtrl',
+          templateUrl: 'public/client/templates/signup.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
         })
         .otherwise({ redirectTo: '/' });
 

@@ -1,0 +1,82 @@
+<h1>Register for Andy Owens Band Camp</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupmodal">
+  Sign/up
+</button>
+<h2>Already have an account?</h2>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinmodal">
+  Sign in
+</button>
+<!-- Modal for signup -->
+<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="signupmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Sign up for Andy Owens Band Camp using your Google account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal">Google</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-footer">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for signin -->
+
+<div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="signinmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Sign in for Andy Owens Band Camp using your Google account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-primary" href="/profile">Google</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-footer">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Registration modal -->
+
+<div class="modal fade" id="registrationmodal" tabindex="-1" role="dialog" aria-labelledby="registrationmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Sign in for Andy Owens Band Camp using your Google account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/>
+        <h3>Name: </h3>
+        <h3>Email: </h3>
+        <h3>Number of students: <input type="number" placeholder="1" value="studentNumber"/></h3>
+        <h3>Total: </h3>
+        <form>
+          <p>Is the information above correct?</p>
+          <input type="radio" name="info" id="correctInfo" value="correctInfo">Yes</input>
+          <input type="radio" name="info" id="incorrectInfo" value="incorrectInfo">No</input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

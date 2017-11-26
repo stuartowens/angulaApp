@@ -3,8 +3,16 @@
   font-size: 45px;
 }
 .menubackground {
-  color: white;
-  background-image: url('../Img/whiteGrain.jpeg');
+  background-image: url('../Img/footer_bg.jpg');
+
+}
+.camptext {
+  font-family: Oswald;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: caps;
+  font-weight: 400;
+  line-height: 20px;
 
 }
 .navbarbackground {
