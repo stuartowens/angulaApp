@@ -2,7 +2,7 @@ angular.module('main-app')
 .directive('modal', function() {
   return {
     scope: {
-      user: '<'
+      user: '<',
     },
     restrict: 'E',
     controller: function($scope) {
@@ -10,6 +10,7 @@ angular.module('main-app')
     },
     controllerAs: 'ctrl',
     bindToController: true,
+    replace: true,
     templateUrl: 'public/client/templates/modal.html'
   };
 });

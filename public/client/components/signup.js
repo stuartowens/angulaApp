@@ -12,17 +12,11 @@ angular.module('main-app')
 
 .directive('signup', function() {
   return {
-    // scope: {
-    //   user: '<',
-    // },
     restrict: 'E',
-    controller: function(){
+    controller: function($scope){
     },
     controllerAs: 'ctrl',
     bindToController: true,
-    // templateUrl: 'public/client/templates/signup.html'
-    templateUrl: `
-      <div><h1>Hey hey You asshole</h1></div>
-    `
+    templateUrl: 'public/client/templates/signup.html'
   };
 });
