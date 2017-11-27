@@ -1,4 +1,7 @@
 <h1>Register for Andy Owens Band Camp</h1>
+  <div>
+    <modal user="this.ctrl.user"><modal />
+  </div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupmodal">
   Sign/up
@@ -63,9 +66,13 @@
       </div>
       <div class="modal-body">
         <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/>
-        <h3>Name: </h3>
+        <h3>Name: {{ctrl.name}}</h3>
         <h3>Email: </h3>
-        <h3>Number of students: <input type="number" placeholder="1" value="studentNumber"/></h3>
+        <h3>Number of people in your group including non-participants: <input type="number" placeholder="1" id="groupTotal" value=0 style="width:80px"/></h3>
+        <h3>Number of students: <input type="number" placeholder="1" value=0 id="studentNumber" style="width:80px"/></h3>
+        <h3>Number of indiduals in your group including non-students that will be RV camping: <input type="number" value=0 id="rvNumber" style="width:80px"/></h3>
+        <h3>Number of indiduals in your group including non-students that will be Cabin camping: <input type="number" value=0 id="cabinNumber" style="width:80px"/></h3>
+        <h3>Number non-students that are not camping that would like to buy a lunch plan: <input type="number" value=0 id="cabinNumber" style="width:80px"/></h3>
         <h3>Total: </h3>
         <form>
           <p>Is the information above correct?</p>

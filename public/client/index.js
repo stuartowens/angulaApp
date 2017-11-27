@@ -1,3 +1,14 @@
+userData =
+          { name: 'no name',
+            email: 'no email',
+            signedIn: false,
+            groupTotal: 0,
+            studentTotal: 0,
+            rvCampers: 0,
+            cabinCampers: 0,
+            chaperoneLunches: 0,
+            total: 0
+          }
 angular.module('main-app', ['ngRoute'])
 
 .config(function ($locationProvider, $routeProvider) {
@@ -15,9 +26,11 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .when('/signup', {
-          controller: 'MainCtrl',
-          templateUrl: 'public/client/templates/signup.html',
+        .when('/registration', {
+          controller: function($scope) {
+            $scope.user = userData;
+          },
+          templateUrl: 'public/client/templates/registration.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })
