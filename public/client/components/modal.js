@@ -1,9 +1,9 @@
 angular.module('main-app')
 .directive('modal', function() {
   return {
-    scope: {
-      user: '<',
-    },
+    // scope: {
+    //   user: '<',
+    // },
     restrict: 'E',
     controller: function($scope) {
 
