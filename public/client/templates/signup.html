@@ -66,7 +66,7 @@
         <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/>
         <h3>Name: {{ctrl.name}}</h3>
         <h3>Email: </h3>
-        <h3>Number of people in your group including non-participants: <input type="number" placeholder="1" id="groupTotal" value=0 style="width:80px"/></h3>
+        <h3>Number of people in your group including non-participants: <input ng-model="ctrl.input" ng-change="ctrl.handlClick()" type="number" placeholder="0" id="groupTotal" value=0 style="width:80px"/></h3>
         <h3>Number of students: <input type="number" placeholder="1" value=0 id="studentNumber" style="width:80px"/></h3>
         <h3>Number of indiduals in your group including non-students that will be RV camping: <input type="number" value=0 id="rvNumber" style="width:80px"/></h3>
         <h3>Number of indiduals in your group including non-students that will be Cabin camping: <input type="number" value=0 id="cabinNumber" style="width:80px"/></h3>

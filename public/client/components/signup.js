@@ -14,6 +14,9 @@ angular.module('main-app')
   return {
     restrict: 'E',
     controller: function($scope){
+      this.handleClick = () => {
+        console.log("You made it!")
+      }
     },
     controllerAs: 'ctrl',
     bindToController: true,
