@@ -29,6 +29,9 @@ angular.module('main-app', ['ngRoute'])
         .when('/registration', {
           controller: function($scope) {
             $scope.user = userData;
+            $scope.handleClick = function() {
+              console.log("You made it!")
+            }
           },
           templateUrl: 'public/client/templates/registration.html',
           controllerAs: 'ctrl'
