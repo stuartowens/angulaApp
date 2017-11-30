@@ -11,17 +11,23 @@ userData =
           }
 angular.module('main-app', ['ngRoute'])
 
+.controller('MainCtrl', function() {
+  
+})
+
 .config(function ($locationProvider, $routeProvider) {
 
     $routeProvider
         .when('/home', {
-          controller: 'MainCtrl',
+          controller: function($scope) {
+          },
           templateUrl: 'public/client/templates/app.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })
         .when('/faq', {
-          controller: 'MainCtrl',
+          controller: function($scope) {
+          },
           templateUrl: 'public/client/templates/faq.html',
           controllerAs: 'ctrl'
           // hideMenus: true

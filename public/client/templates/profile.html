@@ -1,1 +1,42 @@
-<h1>This is our user {{user}}</h1>
+<h1>Welcome {{user.name}}</h1>
+
+<h1>Signup a group of people here: </h1>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal" >Group</button>
+
+<h1>Signup one person here: </h1>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal">Group</button>
+
+<!-- Registration modal -->
+
+<div class="modal fade" id="registrationmodal" tabindex="-1" role="dialog" aria-labelledby="registrationmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Sign in for Andy Owens Band Camp using your Google account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/>
+        <h3>Name: {{user.name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Number of people in your group including non-participants: <input ng-model="user.groupTotal"  type="number" name="input" placeholder="0" id="groupTotal" value=0 style="width:80px"/></h3><h3>{{user.groupTotal}}</h3>
+        <h3>Number of students: <input ng-model="user.studentTotal"  name="input" type="number" placeholder="1" value=0 id="studentTotal" style="width:80px"/></h3><h3>{{user.studentTotal}}</h3>
+        <h3>Number of indiduals in your group including non-students that will be RV camping: <input ng-model="user.rvCampers"  name="input" type="number" value=0 id="rvCampers" style="width:80px"/></h3><h3>{{user.rvCampers}}</h3>
+        <h3>Number of indiduals in your group including non-students that will be Cabin camping: <input ng-model="user.cabinCampers"  name="input" type="number" value=0 id="cabinCampers" style="width:80px"/></h3><h3>{{user.cabinCampers}}</h3>
+        <h3>Number non-students that are not camping that would like to buy a lunch plan: <input ng-model="user.chaperoneLunches"  name="input" type="number" value=0 id="chaperoneLunches" style="width:80px"/></h3><h3>{{user.chaperoneLunches}}</h3>
+        <h3>Total: </h3>
+        <form>
+          <p>Is the information above correct?</p>
+          <input type="radio" name="info" id="correctInfo" value="correctInfo">Yes</input>
+          <input type="radio" name="info" id="incorrectInfo" value="incorrectInfo">No</input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
