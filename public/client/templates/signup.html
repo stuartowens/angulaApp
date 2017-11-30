@@ -1,5 +1,5 @@
 <h1>Register for Andy Owens Band Camp</h1>
-<modal user="user" ></modal>
+<modal></modal>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupmodal">
   Sign/up
@@ -64,13 +64,13 @@
       </div>
       <div class="modal-body">
         <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/>
-        <h3>Name: {{ctrl.name}}</h3>
-        <h3>Email: </h3>
-        <h3>Number of people in your group including non-participants: <input ng-model="ctrl.input" ng-change="ctrl.handlClick()" type="number" placeholder="0" id="groupTotal" value=0 style="width:80px"/></h3>
-        <h3>Number of students: <input type="number" placeholder="1" value=0 id="studentNumber" style="width:80px"/></h3>
-        <h3>Number of indiduals in your group including non-students that will be RV camping: <input type="number" value=0 id="rvNumber" style="width:80px"/></h3>
-        <h3>Number of indiduals in your group including non-students that will be Cabin camping: <input type="number" value=0 id="cabinNumber" style="width:80px"/></h3>
-        <h3>Number non-students that are not camping that would like to buy a lunch plan: <input type="number" value=0 id="cabinNumber" style="width:80px"/></h3>
+        <h3>Name: {{user.name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Number of people in your group including non-participants: <input ng-model="user.groupTotal"  type="number" name="input" placeholder="0" id="groupTotal" value=0 style="width:80px"/></h3><h3>{{user.groupTotal}}</h3>
+        <h3>Number of students: <input ng-model="user.studentTotal"  name="input" type="number" placeholder="1" value=0 id="studentTotal" style="width:80px"/></h3><h3>{{user.studentTotal}}</h3>
+        <h3>Number of indiduals in your group including non-students that will be RV camping: <input ng-model="user.rvCampers"  name="input" type="number" value=0 id="rvCampers" style="width:80px"/></h3><h3>{{user.rvCampers}}</h3>
+        <h3>Number of indiduals in your group including non-students that will be Cabin camping: <input ng-model="user.cabinCampers"  name="input" type="number" value=0 id="cabinCampers" style="width:80px"/></h3><h3>{{user.cabinCampers}}</h3>
+        <h3>Number non-students that are not camping that would like to buy a lunch plan: <input ng-model="user.chaperoneLunches"  name="input" type="number" value=0 id="chaperoneLunches" style="width:80px"/></h3><h3>{{user.chaperoneLunches}}</h3>
         <h3>Total: </h3>
         <form>
           <p>Is the information above correct?</p>

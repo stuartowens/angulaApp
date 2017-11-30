@@ -6,7 +6,9 @@ angular.module('main-app')
     // },
     restrict: 'E',
     controller: function($scope) {
-
+      $scope.user={
+        name: "you know who"
+      }
     },
     controllerAs: 'ctrl',
     bindToController: true,
