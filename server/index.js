@@ -1,5 +1,5 @@
-var app = require('./angulaApp.js');
+var server = require('./angulaApp.js');
 
-app.listen(3030, function() {
+server.listen(3030, function() {
   console.log('Angular app')
 })

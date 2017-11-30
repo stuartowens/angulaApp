@@ -5,11 +5,13 @@ var session = require('express-session')
 var request = require('request')
 var mongoose = require('mongoose');
 var passport = require('passport');
+var User = require('../db/userSchema')
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var GOOGLE_CLIENT_ID = require('../authConfig.js').GOOGLE_CLIENT_ID;
 var GOOGLE_CLIENT_SECRET = require('../authConfig.js').GOOGLE_CLIENT_SECRET;
 var router = require('./router')
 
+var server = require('http').Server(app)
 
 app.use(bodyParser.json())
 
@@ -27,10 +29,11 @@ app.use(session({ secret: 'downward dog'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // serialize and deserialize user
 
-passport.serializeUser(function(id, done) {
-  console.log('serialize', id)
+passport.serializeUser(function(user, done) {
+  console.log('serialize', user)
   done(null, user._id)
 })
 
@@ -75,10 +78,10 @@ app.get('/auth/google/callback',
   function(req, res) {
     console.log('req.user in google callback auth function', req.user);
     console.log('req.session.passport.user', req.session.passport.user);
-    res.redirect('home', 200, req.user);
+    res.redirect('/profile', 200, req.user);
   });
 
-  // send user ot front end based on session
+  // send user to front end based on session
 
   app.get('/getUser', function(req, res) {
     User.find({ _id: req.session.passport.user }, (err, user) => {
@@ -120,4 +123,4 @@ app.get('/auth/google/callback',
   })
 
 
-module.exports = app;
+module.exports = server;

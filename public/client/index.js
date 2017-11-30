@@ -37,7 +37,38 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        // .otherwise({ redirectTo: '/' });
+        .when('/auth/google', {
+          controller: function($scope, $route, $window) {
+            // $onInit = function() {
+            // $route.reload()
+            $window.location.reload();
+              console.log('on init!!!!')
+            // }
+          },
+          templateUrl: 'public/client/templates/google.html',
+          controllerAs: 'ctrl'
+        })
+        .when('/profile', {
+          controller: function($scope, $http) {
+            $http({
+              method: 'GET',
+              url: '/getUser'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                 console.log(response, 'response')
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+              });
+            console.log($scope)
+          },
+          templateUrl: 'public/client/templates/profile.html',
+          controllerAs: 'ctrl',
+          secure: 'true'
+          // hideMenus: true
+        })
+        .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(true);
 })
