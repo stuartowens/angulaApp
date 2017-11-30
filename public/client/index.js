@@ -37,7 +37,7 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .otherwise({ redirectTo: '/' });
+        // .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(true);
 })
