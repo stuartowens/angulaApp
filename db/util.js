@@ -85,32 +85,35 @@ function createProfile(req, res) {
             .exec(function(error, profiles) {
               console.log(JSON.stringify(profiles, null, "\t"))
             })
-          User.find({ _id: user_id }, (err, user) => {
+          User.findOne({ _id: user_id }, (err, user) => {
             if(err) {
               console.log("error in createProfile", err)
             } else {
               if(profile.participant_profile) {
                 user.participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
-                user.save(function(error) {
-                  if(!error) {
-                    User.find({})
-                    .populate(participant_profiles.profile_id)
-                    .exec(function(error, users) {
-                      console.log(JSON.stringify(users, null, "\t"))
-                    })
-                  }
-                })
+                console.log(user, "this is the user!!!!!")
+                user.save()
+                // user.save(function(error) {
+                //   if(!error) {
+                //     User.find({})
+                //     .populate(participant_profiles.profile_id)
+                //     .exec(function(error, users) {
+                //       console.log(JSON.stringify(users, null, "\t"))
+                //     })
+                //   }
+                // })
               } else {
                 user.non_participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
-                user.save(function(error) {
-                  if(!error) {
-                    User.find({})
-                    .populate(non_participant_profiles.profile_id)
-                    .exec(function(error, users) {
-                      console.log(JSON.stringify(users, null, "\t"))
-                    })
-                  }
-                })
+                user.save()
+                // user.save(function(error) {
+                //   if(!error) {
+                //     User.find({})
+                //     .populate(non_participant_profiles.profile_id)
+                //     .exec(function(error, users) {
+                //       console.log(JSON.stringify(users, null, "\t"))
+                //     })
+                //   }
+                // })
               }
             }
           })
