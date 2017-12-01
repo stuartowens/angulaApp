@@ -58,6 +58,22 @@ function createProfile(req, res) {
     participant_profile: participant_profile,
     minor: minor,
     camping_type: camping_type
+    email: '',
+    image: '',
+    alt_email: '',
+    paid: false,
+    age: 0,
+    release_form: false,
+    chaperone: false,
+    chaperone_name: '',
+    exp_level: 0,
+    address: {},
+    phone: '',
+    dietary_restrictions: '',
+    allergies: '',
+    emergency_contact: {},
+    band_info: {},
+    total_paid: 0
   }, (err, profile) => {
     if (err) {
       console.log("error with creating profile", err)
@@ -73,14 +89,25 @@ function createProfile(req, res) {
             if(err) {
               console.log("error in createProfile", err)
             } else {
-              user.participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
-              user.save(function(error) {
-                if(!error) {
-                  User.find({})
-                    .populate(profiles.profile_id)
+              if(profile.participant_profile) {
+                user.participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
+                user.save(function(error) {
+                  if(!error) {
+                    User.find({})
+                    .populate(participant_profiles.profile_id)
                     .exec(function(error, users) {
-                      console.log(JSON.stringify(profiles, null, "\t"))
+                      console.log(JSON.stringify(users, null, "\t"))
                     })
+              } else {
+                user.non_participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
+                user.save(function(error) {
+                  if(!error) {
+                    User.find({})
+                    .populate(non_participant_profiles.profile_id)
+                    .exec(function(error, users) {
+                      console.log(JSON.stringify(users, null, "\t"))
+                    })
+              }
                 }
               })
             }
@@ -96,3 +123,4 @@ function createProfile(req, res) {
 exports.findOneUser = findOneUser;
 exports.findOneProfile = findOneProfile;
 exports.findManyProfiles = findManyProfiles;
+exports.createProfile = createProfile;

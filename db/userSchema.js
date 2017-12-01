@@ -13,8 +13,8 @@ var User = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Profile' }
     }],
-  non_participant_profile: { type: Array},
-  amt_paid: { type: Number}
+  non_participant_profile: { type: Array },
+  amt_paid: { type: Number }
 });
 
 module.exports = mongoose.model('User', User);

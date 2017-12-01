@@ -62,7 +62,15 @@ passport.use(new GoogleStrategy({
 function(token, tokenSecret, profile, done) {
   User.find({ google_id: profile.id }, (err, user) => {
     if (user.length === 0) {
-      User.create({google_id: profile.id, displayName: profile.displayName, image: profile._json.image.url, email: profile.emails[0].value, created_sessions: []}, (err, user) => {
+      User.create({
+        google_id: profile.id,
+        displayName: profile.displayName,
+        image: profile._json.image.url,
+        email: profile.emails[0].value,
+        participant_profiles: [],
+        non_participant_profile: [],
+        amt_paid: 0
+      }, (err, user) => {
         if(err) {
           console.log('error in inserting the user', err);
         } else {

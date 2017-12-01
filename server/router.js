@@ -16,4 +16,13 @@ router.route('/findProfile')
     util.findOneProfile(req, res);
   })
 
+//Adds a new Profile to the user
+router.route('/profile')
+  .post(function(req, res) {
+    util.createProfile(req, res)
+  })
+  .get(function(req, res) {
+    util.findOneProfile(req, res)
+  })
+
 module.exports = router;
