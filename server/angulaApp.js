@@ -5,7 +5,8 @@ var session = require('express-session')
 var request = require('request')
 var mongoose = require('mongoose');
 var passport = require('passport');
-var User = require('../db/userSchema')
+var User = require('../db/userSchema');
+var Profile = require('../db/profileSchema');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var GOOGLE_CLIENT_ID = require('../authConfig.js').GOOGLE_CLIENT_ID;
 var GOOGLE_CLIENT_SECRET = require('../authConfig.js').GOOGLE_CLIENT_SECRET;
@@ -124,6 +125,19 @@ app.get('/auth/google/callback',
       } else {
         console.log('get user success', user)
         res.json(user)
+      }
+    })
+  })
+
+  // get profiles of user
+
+  app.get('/getProfiles', function(req, res) {
+    Profile.find({ _id: req.session.passport.user }, (err, profile) => {
+      if (err) {
+        console.log('error in getUser route', err);
+      } else {
+        console.log('get user success', profile)
+        res.json(profile)
       }
     })
   })

@@ -11,4 +11,9 @@ router.route('/findUser')
     util.findOneUser(req, res);
   })
 
+router.route('/findProfile')
+  .get(function(req,res) {
+    util.findOneProfile(req, res);
+  })
+
 module.exports = router;

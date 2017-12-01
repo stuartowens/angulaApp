@@ -7,7 +7,12 @@ var User = mongoose.Schema({
   image: { type: String },
   email: { type: String },
   alt_email: { type: String },
-  participant_profile: { type: Array},
+  participant_profiles: [{
+    displayName: { type: String },
+    profile_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Profile' }
+    }],
   non_participant_profile: { type: Array},
   amt_paid: { type: Number}
 });
