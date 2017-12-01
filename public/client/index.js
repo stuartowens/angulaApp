@@ -11,8 +11,21 @@ userData =
           }
 angular.module('main-app', ['ngRoute'])
 
-.controller('MainCtrl', function() {
-  
+.controller('MainCtrl', function($scope, $rootScope, $http) {
+  $http({
+    method: 'GET',
+    url: '/getUser'
+  }).then(function successCallback(response) {
+      // this callback will be called asynchronously
+      // when the response is available
+       console.log(response.data[0], 'userData')
+       $scope.user = response.data[0]
+    }, function errorCallback(response) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
+
+  console.log($scope.user)
 })
 
 .config(function ($locationProvider, $routeProvider) {
@@ -55,20 +68,7 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
         })
         .when('/profile', {
-          controller: function($scope, $http) {
-            $http({
-              method: 'GET',
-              url: '/getUser'
-            }).then(function successCallback(response) {
-                // this callback will be called asynchronously
-                // when the response is available
-                 console.log(response, 'response')
-              }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });
-            console.log($scope)
-          },
+          controller: 'MainCtrl',
           templateUrl: 'public/client/templates/profile.html',
           controllerAs: 'ctrl',
           secure: 'true'

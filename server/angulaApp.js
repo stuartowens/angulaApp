@@ -23,7 +23,7 @@ var server = require('http').Server(app);
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.urlencoded({ extended: false }))
 
 // set headers to allow cross-origin requests
 

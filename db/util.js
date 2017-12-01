@@ -50,14 +50,14 @@ function createProfile(req, res) {
   var displayName = req.body.displayName;
   var participant_profile = req.body.participant_profile;
   var minor = req.body.minor;
-  var camping_type = req.body.camping
+  var camping_type = req.body.camping_type;
 
   Profile.create({
     user_id: user_id,
     displayName: displayName,
     participant_profile: participant_profile,
     minor: minor,
-    camping_type: camping_type
+    camping_type: camping_type,
     email: '',
     image: '',
     alt_email: '',
@@ -98,6 +98,8 @@ function createProfile(req, res) {
                     .exec(function(error, users) {
                       console.log(JSON.stringify(users, null, "\t"))
                     })
+                  }
+                })
               } else {
                 user.non_participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
                 user.save(function(error) {
@@ -107,9 +109,9 @@ function createProfile(req, res) {
                     .exec(function(error, users) {
                       console.log(JSON.stringify(users, null, "\t"))
                     })
+                  }
+                })
               }
-                }
-              })
             }
           })
         }

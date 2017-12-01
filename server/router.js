@@ -17,7 +17,7 @@ router.route('/findProfile')
   })
 
 //Adds a new Profile to the user
-router.route('/profile')
+router.route('/createProfile')
   .post(function(req, res) {
     util.createProfile(req, res)
   })
