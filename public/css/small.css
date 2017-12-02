@@ -1,0 +1,15 @@
+h1 {
+  font-size: 7vw;
+}
+.student {
+  resize: both;
+  height: auto;
+  width: 65vw;
+  border: solid;
+}
+.ready {
+  flex-flow: column;
+}
+.readytitle {
+  margin-left: 12vw;
+}

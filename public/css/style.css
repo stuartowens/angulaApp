@@ -1,6 +1,72 @@
-/*.logo {
-  background-image: url('../Img/header2_bg.jpg');
-}*/
+
+.readycontent {
+  order: 4;
+  margin-left: 12vw;
+}
+.readytitle {
+  order:3;
+  color: rgb(171,138,88);
+  font-style: italic;
+  direction: ltr;
+  text-align: right;
+  margin-right: 1vw;
+}
+
+h1 {
+  font-size: 4vw;
+  font-family: Oswald;
+}
+p {
+  font-family: Oswald;
+}
+
+.banjopic {
+  position: relative;
+  display: inline-block;
+  order: 1;
+  width:50%;
+  height: auto;
+}
+
+.banjo {
+  position: absolute;
+  resize: both;
+  height: 40vw;
+  width: auto;
+  min-width:50px;
+  z-index: 2;
+}
+.student {
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, 0%);
+  resize: both;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  min-width:50px;
+  position: relative;
+  resize: both;
+  z-index: 1;
+}
+.ready {
+  justify-content:flex-start;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url('../Img/whitefog.jpeg');
+  min-width: 300px;
+  height: auto;
+}
+.home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10vw;
+}
+
 .campdates img{
   /*background: url('../Img/bluridgeHeader.jpeg');*/
   position: absolute;
