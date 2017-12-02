@@ -2,14 +2,39 @@ h1 {
   font-size: 7vw;
 }
 .student {
-  resize: both;
-  height: auto;
-  width: 65vw;
+  /*resize: both;*/
   border: solid;
+  height: 120px;
+  width: auto;
+  position: relative;
+}
+.title-banjo {
+  flex-direction: column;
+  margin-left: 0px;
+  justify-content: flex-end;
+}
+.banjopic {
+  width: auto;
+}
+.readycontent {
+  transform: translate(0%, 0%);
+  margin-left: 0px;
 }
 .ready {
   flex-flow: column;
+  min-width:300px;
 }
 .readytitle {
-  margin-left: 12vw;
+  margin-left: 6vw;
+  width: 40vmax;
+}
+.home-container {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.topics-container {
+  min-width:300px;
+}
+.topic-list-container {
+  flex-direction: column;
 }

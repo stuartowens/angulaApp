@@ -1,7 +1,22 @@
 
+.container {
+  margin: 0;
+  padding:0;
+}
+.topic-list-container {
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+  font: Oswald;
+}
 .readycontent {
   order: 4;
-  margin-left: 12vw;
+  transform: translate(0%, -40%);
+  margin-left: 6vw;
+  width: 99%;
+  /*border: solid;
+  border-width: thick;
+  border-color: purple;*/
 }
 .readytitle {
   order:3;
@@ -9,23 +24,39 @@
   font-style: italic;
   direction: ltr;
   text-align: right;
-  margin-right: 1vw;
+  resize: both;
+  width: 45%;
+  margin-top: 7.5vw;
+  margin-left: 1vw;
+  /*border: solid;
+  border-width: thin;
+  border-color: purple;*/
 }
 
 h1 {
-  font-size: 4vw;
+  font-size: 2.5vw;
   font-family: Oswald;
 }
 p {
   font-family: Oswald;
 }
-
+.title-banjo {
+  display: flex;
+  flex-direction: row;
+  /*border: solid;
+  border-width: thick;
+  border-color: green;*/
+}
 .banjopic {
   position: relative;
-  display: inline-block;
+  display: flex;
   order: 1;
   width:50%;
   height: auto;
+  /*border: solid;
+  border-width: thick;
+  border-color: yellow;*/
+  margin: 0;
 }
 
 .banjo {
@@ -37,34 +68,66 @@ p {
   z-index: 2;
 }
 .student {
-  top: 50%;
+  /*top: 50%;
   left:50%;
-  transform: translate(-50%, 0%);
-  resize: both;
-  width: auto;
-  height: auto;
+  transform: translate(-50%, 0%);*/
+  /*resize: both;*/
+  width: 29vw;
+  /*height: auto;
   max-width: 100%;
-  min-width:50px;
-  position: relative;
-  resize: both;
+  min-width:50px;*/
+  position: absolute;
+  /*resize: both;*/
   z-index: 1;
 }
+
+.topics-container {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../Img/whiteGrain.jpeg');
+  min-width: 300px;
+  width: 50vmax;
+  /*border: solid;
+  border-width: thick;
+  border-color: red;*/
+  margin:0;
+  padding:0;
+}
 .ready {
-  justify-content:flex-start;
+  order: 1;
+  /*justify-content:flex-start;*/
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   background-image: url('../Img/whitefog.jpeg');
-  min-width: 300px;
+  width: 50vmax;
   height: auto;
+  resize: both;
+  /*border: solid;
+  border-width: thick;
+  border-color: blue;*/
+  margin:0;
+  padding:0;
 }
-.home {
+.home-container {
+  position: absolute;
+  left:50%;
+  transform: translate(-50%, 0%);
+  resize:both;
+  height:auto;
+  /*max-height: 120px;*/
+  width:100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 10vw;
+  /*align-items: center;*/
+  /*flex-wrap: wrap;*/
+  resize: both;
+  /*border: solid;
+  border-width: thick;
+  border-color: green;*/
+  margin-top: 15vw;
 }
 
 .campdates img{
@@ -93,6 +156,10 @@ p {
   width: auto;
 }
 
+.topics-container > div {
+  margin: 5vw;
+}
+
 /*.banner {
   top: 80px;
   height: 450px;
@@ -100,9 +167,10 @@ p {
 }*/
 
 body {
-  background-image: url('../Img/whiteGrain.jpeg');
+  /*background-image: url('../Img/whiteGrain.jpeg');
   background-repeat: repeat;
-  background-size: contain;
+  background-size: contain;*/
+  background-color: black;
 }
 /*.navbar-expand-lg .navbar-nav .nav-link {
   padding-left: .5rem;

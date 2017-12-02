@@ -13,8 +13,9 @@
 
 }
 */
-.home {
+.home-container {
   margin-top: 20vw;
+  flex-direction: column;
 }
 .campdates img{
   /*background: url('../Img/bluridgeHeader.jpeg');*/
