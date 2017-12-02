@@ -6,7 +6,7 @@ p, li {
   font-size: 5vw;
 }
 .mandolin-image {
-  visibility: hidden;
+  visibility: collapse;
 }
 .student {
   border: solid;
@@ -31,12 +31,13 @@ p, li {
   min-width:300px;
 }
 .readytitle {
-  margin-left: 6vw;
+  margin-left: 4vw;
   width: 40vmax;
 }
 .home-container {
   flex-direction: column;
   justify-content: flex-end;
+  /*height: 1500px;*/
 }
 .topics-container {
   min-width:300px;
@@ -44,3 +45,25 @@ p, li {
 .topic-list-container {
   flex-direction: column;
 }
+.andy-map-container {
+  flex-direction: column;
+}
+.andy-map-container > div {
+  width: 300px;
+  height: 500px;
+}
+
+.map > img {
+  position: absolute;
+  width: 200px;
+}
+.andy > img {
+  width: 300px;
+}
+.camp-map > img {
+  width: 300px;
+}
+/*.andy-map-container {
+  visibility: collapse;
+  display: none;
+}*/
