@@ -1,17 +1,9 @@
-/*.logo {
-  background-image: url('../Img/header2_bg.jpg');
-  height: 60px;
-  width: auto;
-}*/
-/*h1 {
-  font-size: 4vw;
-}*/
-.home-container {
+
+/*.home-container {
   margin-top: 20vw;
-}
+}*/
 
 .campdates {
-  /*background: url('../Img/bluridgeHeader.jpeg');*/
   position: absolute;
   resize:both;
   height:15%;

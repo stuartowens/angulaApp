@@ -1,24 +1,12 @@
-/*.logo {
-  background-image: url(../Img/header2_bg.jpg);
-  height: 60px;
-  width: auto;
-}*/
 
-/*.campdates {
-  background: url('../Img/bluridgeHeader.jpeg');
-  font-size: 45px;
-}
-.menubackground {
-  background-image: url('../Img/footer_bg.jpg');
-
-}
-*/
 .home-container {
   margin-top: 20vw;
+  /*flex-direction: column;*/
+}
+.topic-list-container {
   flex-direction: column;
 }
 .campdates img{
-  /*background: url('../Img/bluridgeHeader.jpeg');*/
   position: absolute;
   resize:both;
   height:auto;

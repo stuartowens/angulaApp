@@ -1,8 +1,14 @@
 h1 {
   font-size: 7vw;
 }
+p, li {
+  font-family: Oswald;
+  font-size: 5vw;
+}
+.mandolin-image {
+  visibility: hidden;
+}
 .student {
-  /*resize: both;*/
   border: solid;
   height: 120px;
   width: auto;
