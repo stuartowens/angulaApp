@@ -17,6 +17,7 @@
   <script src="node_modules/angular-route/angular-route.js"></script>
 </head>
 <header>
+  <div class="banner">
   <nav class="navbar navbar-expand-lg navbar-light bg-light navbarbackground camptext">
   <img class="navbar-brand nav-header" href="/registration" srcset=" ./public/Img/header2_bg.jpg 4000w"  />
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +28,7 @@
   <div class="collapse navbar-collapse menubackground" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link nav-header" href="#" style="color:white">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link nav-header" href="/" style="color:white">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-header camptext" href="/price" style="color:white">Pricing/Lodging</a>
@@ -61,12 +62,14 @@
     </li> -->
   </div>
 </nav>
-<div class="flex campdates">
+<div class="campdates">
 
   <!-- <img src="./public/Img/bluridgeHeader.jpeg" style="position: absolute;width:auto;height:auto;z-index:-1"/> -->
-  <!-- <img src="./public/Img/campDates.png" style:"position: absolute;height:50%;width:25%"/> -->
+  <img src="./public/Img/bluridgeHeader.jpeg" style="z-index:1"/>
+  <img src="./public/Img/campDates.png" style="z-index:2;max-width: 600px;"/>
 </div>
-<img href="/registration" src="./public/Img/header2_bg.jpg" srcset="./public/Img/map.png 2w, ./public/Img/photos1.jpg 300w" sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)" />
+<!-- <img href="/registration" src="./public/Img/header2_bg.jpg" srcset="./public/Img/map.png 2w, ./public/Img/photos1.jpg 300w" sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)" /> -->
+</div>
 </header>
 <body id="body" ng-app="main-app">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

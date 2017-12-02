@@ -4,15 +4,18 @@
   width: auto;
 }*/
 
-/*.campdates {
-  background: url('../Img/bluridgeHeader.jpeg');
-  font-size: 45px;
+.campdates {
+  /*background: url('../Img/bluridgeHeader.jpeg');*/
+  position: absolute;
+  resize:both;
+  height:15%;
+  width:100%;
 }
 .menubackground {
   background-image: url('../Img/footer_bg.jpg');
 
 }
-.camptext {
+.camptext img{
   font-family: Oswald;
   font-size: 18px;
   font-style: normal;
@@ -25,4 +28,4 @@
   background-image: url('../Img/footer_bg.jpg');
   height: 79px;
   width: auto;
-}*/
+}

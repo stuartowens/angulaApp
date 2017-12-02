@@ -1,9 +1,13 @@
 /*.logo {
   background-image: url('../Img/header2_bg.jpg');
 }*/
-.campdates {
-  background: url('../Img/bluridgeHeader.jpeg');
-  font-size: 45px;
+.campdates img{
+  /*background: url('../Img/bluridgeHeader.jpeg');*/
+  position: absolute;
+  resize:both;
+  height:auto;
+  max-height: 120px;
+  width:100%;
 }
 .menubackground {
   background-image: url('../Img/footer_bg.jpg');
@@ -16,12 +20,23 @@
   font-variant: caps;
   font-weight: 400;
   line-height: 20px;
-
 }
 .navbarbackground {
   background-image: url('../Img/footer_bg.jpg');
   height: 79px;
   width: auto;
+}
+
+/*.banner {
+  top: 80px;
+  height: 450px;
+  position: relative;
+}*/
+
+body {
+  background-image: url('../Img/whiteGrain.jpeg');
+  background-repeat: repeat;
+  background-size: contain;
 }
 /*.navbar-expand-lg .navbar-nav .nav-link {
   padding-left: .5rem;

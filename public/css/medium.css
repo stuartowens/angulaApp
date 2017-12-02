@@ -13,7 +13,13 @@
 
 }
 */
-
+.campdates img{
+  /*background: url('../Img/bluridgeHeader.jpeg');*/
+  position: absolute;
+  resize:both;
+  height:auto;
+  width:100%;
+}
 .camptext {
   font-family: Oswald;
   font-size: 18px;

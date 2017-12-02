@@ -31,7 +31,7 @@ angular.module('main-app', ['ngRoute'])
 .config(function ($locationProvider, $routeProvider) {
 
     $routeProvider
-        .when('/home', {
+        .when('/', {
           controller: function($scope) {
           },
           templateUrl: 'public/client/templates/app.html',
