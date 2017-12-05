@@ -39,9 +39,14 @@ angular.module('main-app', ['ngRoute'])
           // hideMenus: true
         })
         .when('/faq', {
-          controller: function($scope) {
+          controller: function() {
+            // $('.collapse').on('show.bs.collapse', function() {
+            //   console.log('collapsed')
+            //   myStyle={color:'red'}
+            // })
+            this.faqs = [{question: "what color is the sky today", answer: "grey"}, {question: "why", answer: "it's cloudy"}]
           },
-          templateUrl: 'public/client/templates/faq.html',
+          templateUrl: 'public/client/templates/faq-page.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })

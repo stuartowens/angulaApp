@@ -1,16 +1,13 @@
 angular.module('main-app')
-.directive('faq', function() {
+.directive('faqPage', function() {
   return {
-    scope: {
-      faq: '<',
-      faqs: '<'
-    },
+    scope: {},
     restrict: 'E',
     controller: function() {
 
     },
     controllerAs: 'ctrl',
     bindToController: true,
-    templateUrl: 'public/client/templates/faq.html'
+    templateUrl: 'public/client/templates/faq-page.html'
   };
 });

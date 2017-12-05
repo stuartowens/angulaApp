@@ -1,3 +1,19 @@
-<div class="navtext">
-  <h1>Here are the faqs</h1>
+<div class="card">
+  <div class="card-header" role="tab" id="headingTwo">
+    <h5 class="mb-0">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        {{ctrl.faq.question}}
+      </a>
+      <div class="icon"><span class="glyphicon glyphicon-play" ng-style="collapsedStyle"></span></div>
+    </h5>
+  </div>
+  <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <div class="card-block">
+      {{ctrl.faq.answer}}
+    </div>
+  </div>
 </div>
+<!--
+<div style="color:white;">
+  {{ctrl.faq.answer}}
+</div> -->

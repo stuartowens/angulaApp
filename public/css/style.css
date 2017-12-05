@@ -1,4 +1,23 @@
-
+.faq-page {
+  margin-top: 15vw;
+  background-image: url('../Img/woodGrain.jpeg');
+}
+.faq-answer {
+  color:black;
+}
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+}
+.icon {
+  float: right;
+  color: #F58723;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 .container {
   margin: 0;
   padding:0;

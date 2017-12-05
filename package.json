@@ -19,6 +19,7 @@
     "angular-stripe": "^5.0.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "e": "0.0.4",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
