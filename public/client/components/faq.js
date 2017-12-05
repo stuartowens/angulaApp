@@ -6,8 +6,8 @@ angular.module('main-app')
       faqs: '<'
     },
     restrict: 'E',
-    controller: function() {
-
+    controller: function(faqService, $rootScope){
+      faqService.dataCompile(this)
     },
     controllerAs: 'ctrl',
     bindToController: true,

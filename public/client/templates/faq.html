@@ -1,13 +1,13 @@
 <div class="card">
-  <div class="card-header" role="tab" id="headingTwo">
+  <div class="card-header" role="tab" id={{ctrl.faq.heading_id}}>
     <h5 class="mb-0">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href={{ctrl.faq.href_id}} aria-expanded="false" aria-controls={{ctrl.faq.collapse_id}} ng-click=ctrl.faq.ngClick(ctrl.faq.collapsed)>
         {{ctrl.faq.question}}
       </a>
-      <div class="icon"><span class="glyphicon glyphicon-play" ng-style="collapsedStyle"></span></div>
+      <div class="icon"><span class="glyphicon glyphicon-play" ng-style={{'color': {{this.faq.collapsed}} ? 'black' : 'yellow'}}></span></div>
     </h5>
   </div>
-  <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+  <div id={{ctrl.faq.collapse_id}} class="collapse" role="tabpanel" aria-labelledby={{ctrl.faq.heading_id}}>
     <div class="card-block">
       {{ctrl.faq.answer}}
     </div>

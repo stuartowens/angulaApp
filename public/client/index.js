@@ -1,3 +1,4 @@
+
 userData =
           { name: 'no name',
             email: 'no email',
@@ -9,9 +10,28 @@ userData =
             chaperoneLunches: 0,
             total: 0
           }
-angular.module('main-app', ['ngRoute'])
+faqData = [
+  {
+    question: 'Question 1',
+    answer: 'Answer1',
+    heading_id: "headingThree",
+    collapse_id: "collapseThree",
+    href_id: "#collapseThree",
+    number: "Three"
+  },
+  {
+    question: 'Question 2',
+    answer: 'Answer2',
+    _id: "Two",
+    heading_id: "headingFour",
+    collapse_id: "collapseFour",
+    href_id: "#collapseFour",
+    number: "Four"
+  },
+]
 
-.controller('MainCtrl', function($scope, $rootScope, $http) {
+angular.module('main-app', ['ngRoute'])
+.controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   $http({
     method: 'GET',
     url: '/getUser'
@@ -24,6 +44,8 @@ angular.module('main-app', ['ngRoute'])
       // called asynchronously if an error occurs
       // or server returns response with an error status.
     });
+    // this.faqs = faqServive.dataCompile()
+    // this.faqs = faqData;
 
   console.log($scope.user)
 })
@@ -39,12 +61,13 @@ angular.module('main-app', ['ngRoute'])
           // hideMenus: true
         })
         .when('/faq', {
-          controller: function() {
+          controller: function(faqService) {
             // $('.collapse').on('show.bs.collapse', function() {
             //   console.log('collapsed')
             //   myStyle={color:'red'}
             // })
-            this.faqs = [{question: "what color is the sky today", answer: "grey"}, {question: "why", answer: "it's cloudy"}]
+            // this.faqs = faqData;
+            this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/faq-page.html',
           controllerAs: 'ctrl'
