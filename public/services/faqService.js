@@ -131,23 +131,7 @@ angular.module('main-app')
       ele['collapse_id'] = "collapse" + num
       ele['href_id'] = "#collapse" + num
       ele['collapsed'] = false;
-      ele['ngStyle'] = (collapsed)=> {
-        if(collapsed) {
-          let myStyles = {
-            'color': 'red',
-            // 'transform': 'rotate(180deg)'
-          }
-        } else {
-          let myStyles = {
-            'color': 'black'
-            // 'transform': 'rotate(180deg)'
-          }
-        }
-        return myStyles
-      }
-      ele['ngClick'] = (collapsed)=>{
-        return !collapsed
-      }
+
     })
     return faqData
     // heading_id = "heading".concat(faqNumber)
@@ -155,4 +139,19 @@ angular.module('main-app')
     // href_id: "#collapseThree",
     // console.log(heading_id)
   }
+  this.ngStyle = function(collapsed) {
+    if(collapsed) {
+      let myStyles = {
+        'color': 'red',
+      }
+    } else {
+      let myStyles = {
+        'color': 'black'
+      }
+    }
+    return myStyles
+  };
+  this.ngClick = (collapsed)=>{
+    return !collapsed
+  };
 });

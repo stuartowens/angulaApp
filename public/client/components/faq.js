@@ -7,7 +7,9 @@ angular.module('main-app')
     },
     restrict: 'E',
     controller: function(faqService, $rootScope){
-      faqService.dataCompile(this)
+      faqService.dataCompile(this);
+      faqService.ngStyle = this.ngStyle;
+      faqService.ngClick = this.ngClick;
     },
     controllerAs: 'ctrl',
     bindToController: true,
