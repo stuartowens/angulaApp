@@ -1,4 +1,6 @@
-
+.header-box {
+  margin-top:9.5vw;
+}
 .home-container {
   margin-top: 20vw;
   /*flex-direction: column;*/
