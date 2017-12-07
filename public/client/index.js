@@ -60,6 +60,19 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
+        .when('/pricing', {
+          controller: function(faqService) {
+            // $('.collapse').on('show.bs.collapse', function() {
+            //   console.log('collapsed')
+            //   myStyle={color:'red'}
+            // })
+            // this.faqs = faqData;
+            this.faqs = faqService.dataCompile()
+          },
+          templateUrl: 'public/client/templates/pricing.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
+        })
         .when('/faq', {
           controller: function(faqService) {
             // $('.collapse').on('show.bs.collapse', function() {
