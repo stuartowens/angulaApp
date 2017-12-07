@@ -73,6 +73,19 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
+        .when('/instructors', {
+          controller: function(faqService) {
+            // $('.collapse').on('show.bs.collapse', function() {
+            //   console.log('collapsed')
+            //   myStyle={color:'red'}
+            // })
+            // this.faqs = faqData;
+            this.faqs = faqService.dataCompile()
+          },
+          templateUrl: 'public/client/templates/instructors.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
+        })
         .when('/registration', {
           controller: function($scope) {
             $scope.user = userData;

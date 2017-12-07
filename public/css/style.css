@@ -1,5 +1,7 @@
 .header-box {
   background-color: white;
+  color: rgb(171,138,88);
+  font-family: "Oswald";
   margin-top:8.5vw;
   margin-bottom: 0;
   margin-left: 7vmax;
@@ -11,22 +13,51 @@
   margin-top: 30px;
   margin-bottom: 0px;
 }
+.instrContent1 {
+  order: 1;
+  width: 30vmax;
+  background:rgba(0,0,0,0);
+  border-radius: 10px;
+  margin: 5vw;
+}
+.instrContent2 {
+  order: 2;
+  width: 30vmax;
+  background:rgba(0,0,0,0);
+  border-radius: 10px;
+  margin: 5vw;
+}
+.instrContent2 > img {
+  width: 29vmax;
+  height: auto;
+}
+/*.instrImage {
+  order: 3;
+  width: 35vmax;
+  background:rgba(0,0,0,0);
+  border-radius: 10px;
+  margin: 5vw;
+  border: solid;
+  border-color: red;
+}*/
 .faq-page {
   display: flex;
   margin-top: 7vw;
   margin-left: 5vmax;
   margin-right: 5vmax;
+  padding: 4vw;
   width: 89vmax;
   border-radius: 25px;
   flex-wrap: wrap;
-  background-image: url('../Img/bg_dots.jpg');
-  /*background-image: url('../Img/whiteGrain.jpeg');*/
+  /*background-image: url('../Img/bg_dots.jpg');*/
+  background-image: url('../Img/whiteGrain.jpeg');
   flex-direction: row;
   justify-content: center;
 
 }
 .faq {
-  background-image: url('../Img/whiteGrain.jpeg');
+  /*background-image: url('../Img/whiteGrain.jpeg');*/
+  background:rgba(0,0,0,0);
   border-radius: 10px;
   margin-left: 1vw;
   margin-top: 1vw;
@@ -149,7 +180,11 @@
   margin-top: 7.5vw;
   margin-left: 1vw;
 }
-
+h2 {
+  color: rgb(171,138,88);
+  font-size: 6vw;
+  font-family: 'Oswald';
+}
 h1 {
   font-size: 4vw;
   font-family: 'Oswald';

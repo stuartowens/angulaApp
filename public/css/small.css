@@ -7,9 +7,13 @@
   margin-left: 0px;
   align-items: center;
 }
-.faq {
+.faq, .instrContent2, .instrContent1 {
   width: 300px;
   margin-left: 0px;
+}
+instrContent2 > img {
+  width: 280px;
+  height: auto;
 }
 h1 {
   font-size: 7vw;
