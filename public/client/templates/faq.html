@@ -1,10 +1,10 @@
 <div class="card faq">
-  <div class="card-header" role="tab" id={{ctrl.faq.heading_id}}>
+  <div class="card-header example" role="tab" id={{ctrl.faq.heading_id}}>
     <h5 class="mb-0">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href={{ctrl.faq.href_id}} aria-expanded="false" aria-controls={{ctrl.faq.collapse_id}} ng-click={{ctrl.ngClick(ctrl.faq.collapsed)}}>
+      <a class="collapsed link" data-toggle="collapse" data-parent="#accordion" href={{ctrl.faq.href_id}} aria-expanded="false" aria-controls={{ctrl.faq.collapse_id}} ng-click={{ctrl.ngClick(ctrl.faq.collapsed)}}>
         {{ctrl.faq.question}}
       </a>
-      <div class="icon"><span class="glyphicon glyphicon-play" ng-style={{ctrl.ngStyle(ctrl.faq.collapsed)}}></span></div>
+      <!-- <div class="icon"><span class="glyphicon glyphicon-play" ng-style={{ctrl.ngStyle(ctrl.faq.collapsed)}}></span></div> -->
     </h5>
   </div>
   <div id={{ctrl.faq.collapse_id}} class="collapse" role="tabpanel" aria-labelledby={{ctrl.faq.heading_id}}>

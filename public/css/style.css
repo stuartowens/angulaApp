@@ -72,14 +72,28 @@
     margin: 20px;
 }
 .icon {
-  float: right;
-  color: #F58723;
+  float: left;
+  color: black;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
-  transform: rotate(90deg);
+  -sand-transform: rotate(10deg);
+  transform: rotate(-90deg);
 }
+.link.collapsed:before {
+  display: inline;
+  font-family: "Material Icons";
+  content: "play_arrow";
+  color: black;
+}
+.link:before {
+  display: inline;
+  font-family: "Material Icons";
+  content: "details";
+  color: black;
+}
+
 .container {
   margin: 0;
   padding:0;
@@ -307,7 +321,7 @@ footer {
   z-index: -1;
 }
 .footer{
-    background:#F00;
+    background-image: url()
     height:6vmax;
     position:fixed;
     bottom:0;
