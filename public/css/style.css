@@ -254,18 +254,18 @@ p, li {
   margin:0;
   padding:0;
 }
-.page-container {
+/*.page-container {
   position: relative;
-}
+}*/
 .home-container {
   order: 1;
-  position: absolute;
+  position: relative;
   flex-wrap: wrap;
   left:50%;
   transform: translate(-50%, 0%);
   resize:both;
   height:auto;
-  width:100%;
+  width:100vmax;
   display: flex;
   flex-direction: row;
   resize: both;
