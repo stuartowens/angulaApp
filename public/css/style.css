@@ -31,7 +31,7 @@
   width: 29vmax;
   height: auto;
 }
-/*.instrImage {
+.instrImage {
   order: 3;
   width: 35vmax;
   background:rgba(0,0,0,0);
@@ -39,7 +39,7 @@
   margin: 5vw;
   border: solid;
   border-color: red;
-}*/
+}
 .faq-page {
   display: flex;
   margin-top: 7vw;
@@ -98,11 +98,6 @@
   margin: 0;
   padding:0;
 }
-
-/*.page-container {
-  display: inline-block;
-  flex-direction: row;
-}*/
 
 .andy-map-container {
   order: 4;
@@ -259,6 +254,9 @@ p, li {
   margin:0;
   padding:0;
 }
+.page-container {
+  position: relative;
+}
 .home-container {
   order: 1;
   position: absolute;
@@ -280,7 +278,7 @@ p, li {
   height:auto;
   max-height: 120px;
   width:100%;
-  margin-top: 5vmax;
+  /*margin-top: 5vmax;*/
 }
 .menubackground {
   background-image: url('../Img/footer_bg.jpg');
@@ -298,9 +296,9 @@ p, li {
   background-image: url('../Img/footer_bg.jpg');
   height: 79px;
   width: 100vmax;
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
-  z-index: 10;
+  /*z-index: 10;*/
 }
 
 .topics-container > div {
@@ -312,27 +310,38 @@ p, li {
   height: 450px;
   position: relative;
 }*/
-footer {
+.footer {
+  position: relative;
+  display: flex;
   bottom: 0;
   left: 0;
-  position: fixed;
+  background-image: url('../Img/footer_bg.jpg');
   text-align: center;
-  width: 100%;
-  z-index: -1;
+  width: 100vmax;
+  z-index: 3;
 }
-.footer{
-    background-image: url()
-    height:6vmax;
-    position:fixed;
+.footer > img{
+    position: relative;
+    left: 0;
     bottom:0;
-    width:100vmax;
-    z-index:10
+    width:50vw;
+    z-index:2;
 }
-/*header {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}*/
+.footer > h1 {
+  position: relative;
+  right: 0;
+  width: 60vmax;
+}
+.footer-link-container {
+  dispay: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.footer-link {
+  font-size: 1vw;
+  color:white;
+}
+
 body {
   background-color: black;
 }

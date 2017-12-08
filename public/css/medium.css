@@ -31,3 +31,6 @@
 /*.andy-map-container {
   visibility: hidden;
 }*/
+.footer {
+  visibility: collapse;
+}

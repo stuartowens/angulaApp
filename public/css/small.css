@@ -80,7 +80,10 @@ p, li {
 .camp-map > img {
   width: 300px;
 }
-/*.andy-map-container {
+.andy-map-container {
   visibility: collapse;
   display: none;
-}*/
+}
+.footer {
+  visibility: collapse;
+}
