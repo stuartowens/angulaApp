@@ -28,9 +28,17 @@
   height: 79px;
   width: auto;
 }
-/*.andy-map-container {
-  visibility: hidden;
-}*/
 .footer {
+  height: 20vmax;
+}
+.footer-image-links {
+  margin: 0;
+  width:15vmax;
+}
+.footer-image-links > a {
+  font-size:1.5vmax;
+}
+.cell-num, .tel-num{
   visibility: collapse;
+  display: none;
 }

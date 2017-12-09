@@ -54,6 +54,7 @@ p, li {
 .home-container {
   flex-direction: column;
   justify-content: flex-end;
+  width: 100%;
   /*height: 1500px;*/
 }
 .topics-container {
@@ -86,4 +87,5 @@ p, li {
 }
 .footer {
   visibility: collapse;
+  display: none;
 }

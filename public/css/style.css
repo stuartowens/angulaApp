@@ -103,6 +103,7 @@
   order: 4;
   display: flex;
   font-size: 2vw;
+  width: 99vmax;
   background-image: url('../Img/woodGrain.jpeg');
 }
 .map-container {
@@ -132,7 +133,7 @@
 .news {
   order:3;
   color: white;
-  width: 30vmax;
+  width: 29vmax;
   background-image: url('../Img/woodGrain.jpeg');
 }
 .news >img {
@@ -261,11 +262,11 @@ p, li {
   order: 1;
   position: relative;
   flex-wrap: wrap;
-  left:50%;
-  transform: translate(-50%, 0%);
+  /*left:50%;*/
+  /*transform: translate(-50%, 0%);*/
   resize:both;
   height:auto;
-  width:100vmax;
+  width:99vmax;
   display: flex;
   flex-direction: row;
   resize: both;
@@ -312,30 +313,57 @@ p, li {
 }*/
 .footer {
   position: relative;
-  display: flex;
+  /*justify-content: space-between;*/
+  /*display: flex;*/
   bottom: 0;
   left: 0;
   background-image: url('../Img/footer_bg.jpg');
-  text-align: center;
-  width: 100vmax;
+  width: 100%;
+  height:10vmax;
   z-index: 3;
 }
-.footer > img{
-    position: relative;
-    left: 0;
-    bottom:0;
-    width:50vw;
-    z-index:2;
-}
-.footer > h1 {
-  position: relative;
-  right: 0;
+.footer-image {
+  position: absolute;
+  bottom: 0;
+  /*order:1;*/
   width: 60vmax;
+  z-index: 4;
+  overflow: hidden;
+}
+.footer-content {
+  /*order: 2;*/
+  z-index: 5;
+}
+.footer-image-links {
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 12vmax;
+  z-index: 3;
+  margin: 10px;
+}
+.footer-image > img{
+  position: relative;
+  left: 0;
+  bottom:0;
+  height:10vmax;
+  z-index:2;
+  margin: 0;
+}
+.footer-image-links > a {
+  font-size: .9vmax;
 }
 .footer-link-container {
-  dispay: flex;
+  text-align: center;
+  position: absolute;
+  right: 15vmax;
+  bottom: 0;
+  order:2;
+  display: flex;
   flex-direction: row;
-  height: 100%;
+  width: 12vmax;
+  padding: 1vmax;
+  /*overflow: hidden;*/
 }
 .footer-link {
   font-size: 1vw;
@@ -344,4 +372,27 @@ p, li {
 
 body {
   background-color: black;
+}
+
+.light-beige {
+  font-family: Oswald;
+  color:#e8e3d7;
+}
+
+.dark-beige{
+  color:#d6ceb8;
+}
+.blue-text {
+  color: #0076a3;
+}
+.brown-text{
+  font-family: Oswald;
+  color:#726328;
+  font-weight: bold;
+}
+.white-text {
+  color:#ffffff;
+}
+.black-text{
+  color:#000000;
 }
