@@ -25,7 +25,8 @@
 <header>
   <div class="banner">
   <nav class="navbar navbar-expand-lg navbar-light bg-light navbarbackground camptext">
-  <img class="navbar-brand nav-header" href="/registration" srcset=" ./public/Img/header2_bg.jpg 4000w"  />
+  <!-- <img class="navbar-brand nav-header" href="/registration" srcset=" ./public/Img/header2_bg.jpg 4000w"  /> -->
+    <a href="/registration" ><i class="navbar-brand nav-header material-icons white-text" href="/registration" style="color:white; font-size:45px">school</i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <!-- <span class="navbar-toggler-icon"></span> -->
     <i class="material-icons" style="color:white; font-size:45px">queue_music</i>
@@ -34,32 +35,32 @@
   <div class="collapse navbar-collapse menubackground" id="navbarSupportedContent" style="z-index:3">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link nav-header" href="/" style="color:white">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link nav-header" href="/" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-header camptext" href="/price" style="color:white">Pricing/Lodging</a>
+        <a class="nav-link nav-header camptext" href="/price" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">Pricing/Lodging</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/location" style="color:white">Location</a>
+        <a class="nav-link" href="/location" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">Location</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/instructors" style="color:white">Instructors</a>
+        <a class="nav-link" href="/instructors" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">Instructors</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/faq" style="color:white">FAQ</a>
+        <a class="nav-link" href="/faq" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">FAQ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="/profile" style="color:white">Profile</a>
+        <a class="nav-link disabled" href="/profile" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">Profile</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
           Signup
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/signup">Sign up</a>
-          <a class="dropdown-item" href="#">Log in</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Log out</a>
+          <a class="dropdown-item" href="/signup" data-toggle="collapse" data-target="#navbarSupportedContent">Sign up</a>
+          <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#navbarSupportedContent">Log in</a>
+          <div class="dropdown-divider" data-toggle="collapse" data-target="#navbarSupportedContent"></div>
+          <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#navbarSupportedContent">Log out</a>
         </div>
       </li>
     </ul>
@@ -71,7 +72,7 @@
 <div class="campdates">
 
   <!-- <img src="./public/Img/bluridgeHeader.jpeg" style="position: absolute;width:auto;height:auto;z-index:-1"/> -->
-  <img src="./public/Img/bluridgeHeader.jpeg" style="z-index:1"/>
+  <img src="./public/Img/bluridgeHeader.jpeg" class="blueridge-header" style=""/>
   <img src="./public/Img/campDates.png" style="z-index:2;max-width: 600px;"/>
 </div>
 <!-- <img href="/registration" src="./public/Img/header2_bg.jpg" srcset="./public/Img/map.png 2w, ./public/Img/photos1.jpg 300w" sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)" /> -->
@@ -107,20 +108,12 @@
       <div class="footer-link-container">
         <div class="footer-item">
           <a class="footer-link" href="/" style="color:white;order:1;">Home <span class="sr-only">(current)</span></a>
-        <!-- </div>
-        <div class="footer-item"> -->
           <a class="footer-link" href="/price" style="color:white;order:2;">Pricing/Lodging</a>
-        <!-- </div>
-        <div class="footer-item"> -->
           <a class="footer-link" href="/location" style="color:white;order:3;">Location</a>
         </div>
         <div class="footer-item">
           <a class="footer-link" href="/instructors" style="color:white;order:4;">Instructors</a>
-        <!-- </div>
-        <div class="footer-item"> -->
           <a class="footer-link" href="/faq" style="color:white;order:5;">FAQ</a>
-        <!-- </div>
-        <div class="footer-item"> -->
           <a class="footer-link" href="/profile" style="color:white;order:6;">Profile</a>
         </div>
       </div>

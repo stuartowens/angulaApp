@@ -49,14 +49,12 @@
   width: 89vmax;
   border-radius: 25px;
   flex-wrap: wrap;
-  /*background-image: url('../Img/bg_dots.jpg');*/
   background-image: url('../Img/whiteGrain.jpeg');
   flex-direction: row;
   justify-content: center;
 
 }
 .faq {
-  /*background-image: url('../Img/whiteGrain.jpeg');*/
   background:rgba(0,0,0,0);
   border-radius: 10px;
   margin-left: 1vw;
@@ -137,7 +135,7 @@
   background-image: url('../Img/woodGrain.jpeg');
 }
 .news >img {
-  width: 30vmax;
+  width: 28vmax;
 }
 .andy {
   background-image: url('../Img/woodGrain.jpeg');
@@ -147,15 +145,11 @@
 .mandolin-image {
   background-image: url('../Img/whiteGrain.jpeg');
   position: relative;
-  /*z-index: 2;*/
   order:3;
-  width:13vmax;
-  /*top: 50%;*/
-  /*left: 50%;*/
-  /*transform: translate(-50%, 0%);*/
+  width:14vmax;
 }
 .mandolin-image >img {
-  width: 13vmax;
+  width: 14vmax;
   position: absolute;
   bottom: 0;
 }
@@ -177,7 +171,6 @@
 }
 .readycontent {
   order: 4;
-  /*transform: translate(0%, -20%);*/
   margin-left: 6vw;
   width: 99%;
 }
@@ -255,15 +248,10 @@ p, li {
   margin:0;
   padding:0;
 }
-/*.page-container {
-  position: relative;
-}*/
 .home-container {
   order: 1;
   position: relative;
   flex-wrap: wrap;
-  /*left:50%;*/
-  /*transform: translate(-50%, 0%);*/
   resize:both;
   height:auto;
   width:99vmax;
@@ -273,18 +261,21 @@ p, li {
   margin-top: 15vw;
 }
 
-.campdates img{
+.campdates > img{
   position: absolute;
   resize:both;
   height:auto;
   max-height: 120px;
   width:100%;
-  /*margin-top: 5vmax;*/
+}
+.blueridge-header {
+  z-index:1;
+  width:99vmax;
 }
 .menubackground {
   background-image: url('../Img/footer_bg.jpg');
-
 }
+
 .camptext {
   font-family: Oswald;
   font-size: 20px;
@@ -297,24 +288,15 @@ p, li {
   background-image: url('../Img/footer_bg.jpg');
   height: 79px;
   width: 100vmax;
-  /*position: fixed;*/
   top: 0;
-  /*z-index: 10;*/
 }
 
 .topics-container > div {
   margin: 5vw;
 }
 
-/*.banner {
-  top: 80px;
-  height: 450px;
-  position: relative;
-}*/
 .footer {
   position: relative;
-  /*justify-content: space-between;*/
-  /*display: flex;*/
   bottom: 0;
   left: 0;
   background-image: url('../Img/footer_bg.jpg');
@@ -325,13 +307,11 @@ p, li {
 .footer-image {
   position: absolute;
   bottom: 0;
-  /*order:1;*/
   width: 60vmax;
   z-index: 4;
   overflow: hidden;
 }
 .footer-content {
-  /*order: 2;*/
   z-index: 5;
 }
 .footer-image-links {
@@ -363,7 +343,6 @@ p, li {
   flex-direction: row;
   width: 12vmax;
   padding: 1vmax;
-  /*overflow: hidden;*/
 }
 .footer-link {
   font-size: 1vw;
@@ -395,4 +374,8 @@ body {
 }
 .black-text{
   color:#000000;
+}
+.navbar {
+  width: 100%;
+  padding-right: 0;
 }

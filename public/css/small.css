@@ -25,6 +25,10 @@ p, li {
 .mandolin-image {
   visibility: collapse;
 }
+.blueridge-header {
+  z-index:1;
+  width:300px;
+}
 .student {
   border: solid;
   height: 120px;
@@ -85,6 +89,7 @@ p, li {
   visibility: collapse;
   display: none;
 }
+
 .footer {
   visibility: collapse;
   display: none;
