@@ -27,8 +27,17 @@ p, li {
 }
 .blueridge-header {
   z-index:1;
-  width:300px;
+  width:100%;
 }
+.campdates-image {
+  position: absolute;
+  resize:both;
+  height:auto;
+  max-height: 8vmax;
+  z-index:1;
+  /*width:99vmax;*/
+}
+
 .student {
   border: solid;
   height: 120px;

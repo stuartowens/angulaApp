@@ -262,13 +262,21 @@ p, li {
 }
 
 .campdates > img{
+
+}
+.campdates-image {
   position: absolute;
   resize:both;
   height:auto;
-  max-height: 120px;
-  width:100%;
+  max-height: 8vmax;
+  z-index:1;
+  /*width:99vmax;*/
 }
 .blueridge-header {
+  position: absolute;
+  resize:both;
+  height:auto;
+  max-height: 8vmax;
   z-index:1;
   width:99vmax;
 }
