@@ -1,18 +1,17 @@
 .contact-submit {
   margin-right: 3vw;
   margin-bottom: 3vw;
-  padding-left: 4vw;
-  padding-right: 4vw;
-  font-weight: bold;
-  border-radius: 7px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  border-radius: 10px;
   background-color: lightblue;
   font-family: Oswald;
-
+  font-size: 2vw;
+  color: white;
 }
 .contact-page {
   background-image: url('../Img/whiteGrain.jpeg');
   border-radius: 10px;
-  border: red solid;
   margin-left: 6vw;
 }
 .contact-container {
@@ -43,20 +42,25 @@
   color: #726328;
 }
 
-#phone, #email, #state, #city, #last-name, #first-name, #comments {
+#phone, #email, #state, #city, #last-name, #first-name {
   width: 37vw;
   float:right;
   margin-top: 3vw;
   margin-right: 3vw;
   border-radius: 10px;
   background:rgba(255,255,255,.2);
-
+  height: 3vw;
+  font-size: 2vw;
 }
 #comments {
   height: 20vw;
   width: 45vw;
   margin-bottom: 3vw;
+  margin-right: 3vw;
+  border-radius: 10px;
+  background:rgba(255,255,255,.2);
   margin-top: 0;
+  /*font-size: 2vw;*/
 }
 #last-name, #first-name {
   width: 33vw;
@@ -71,7 +75,7 @@
 }
 .contact-image > img {
   width:100%;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   padding-top: 3vw;
   padding-right: 3vw;
 }
@@ -91,7 +95,7 @@
   background-color: white;
   color: rgb(171,138,88);
   font-family: "Oswald";
-  margin-top:8.5vw;
+  margin-top:5vw;
   margin-bottom: 0;
   margin-left: 7vmax;
   padding: 10px;

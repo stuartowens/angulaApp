@@ -13,15 +13,15 @@ Black #000000*/
 .contact-page {
   background-image: url('../Img/whiteGrain.jpeg');
   border-radius: 10px;
-  border: red solid;
-  margin-left: 6vw;
+  margin-left: 4vw;
 }
 .contact-container {
   display: flex;
   flex-direction: row;
   background-image: url('../Img/whiteGrain.jpeg');
   border-radius: 10px;
-  margin-left: 4vw;
+  margin-left: 8vw;
+  width: 80vmax;
 }
 .form {
   order: 1;

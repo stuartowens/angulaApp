@@ -1,3 +1,29 @@
 .header-box {
-  margin-top:5vw;
+  margin-top:6vw;
+}
+.contact-page {
+
+}
+.contact-container {
+  width: 80vmax;
+}
+.form-label {
+font-size: 1.5vw;
+}
+.comments-label {
+  font-size: 2vw;
+}
+#phone, #email, #state, #city, #last-name, #first-name {
+  height: 3vw;
+  font-size: 2vw;
+}
+#comments {
+  height: 20vw;
+  width: 45vw;
+  margin-bottom: 3vw;
+  margin-right: 3vw;
+  border-radius: 10px;
+  background:rgba(255,255,255,.2);
+  margin-top: 0;
+  font-size: 2vw;
 }
