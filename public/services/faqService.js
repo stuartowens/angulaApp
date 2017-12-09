@@ -134,24 +134,5 @@ angular.module('main-app')
 
     })
     return faqData
-    // heading_id = "heading".concat(faqNumber)
-    // collapse_id: "collapseThree",
-    // href_id: "#collapseThree",
-    // console.log(heading_id)
   }
-  this.ngStyle = function(collapsed) {
-    if(collapsed) {
-      let myStyles = {
-        'color': 'red',
-      }
-    } else {
-      let myStyles = {
-        'color': 'black'
-      }
-    }
-    return myStyles
-  };
-  this.ngClick = (collapsed)=>{
-    return !collapsed
-  };
 });

@@ -1,3 +1,44 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url('../Img/whiteGrain.jpeg');
+}
+.form {
+  order: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.form-label {
+  margin-top: 4vw;
+}
+#comments {
+  height: 30vw;
+}
+#phone, #email, #state, #city, #last-name, #first-name {
+  width: 80vw;
+  float:right;
+  margin-top: 2vw;
+  margin-right: 0;
+  border-radius: 10px;
+}
+#last-name, #first-name {
+  width: 70vw;
+}
+/*.contact-input > label {
+  margin-top: 3vw;
+  float: left;
+}*/
+.contact-image {
+  order: 2;
+  width: 100%;
+}
+.contact-image > img {
+  width:100%;
+}
 .faq-page {
   border-radius: 0px;
 }

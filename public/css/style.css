@@ -1,3 +1,92 @@
+.contact-submit {
+  margin-right: 3vw;
+  margin-bottom: 3vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  font-weight: bold;
+  border-radius: 7px;
+  background-color: lightblue;
+  font-family: Oswald;
+
+}
+.contact-page {
+  background-image: url('../Img/whiteGrain.jpeg');
+  border-radius: 10px;
+  border: red solid;
+  margin-left: 6vw;
+}
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  background-image: url('../Img/whiteGrain.jpeg');
+  border-radius: 10px;
+  margin-left: 4vw;
+}
+.form {
+  order: 1;
+  width: 50vmax;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.form-label {
+  margin-top: 3.5vw;
+  font-family: Oswald;
+  color: #726328;
+}
+.comments-label {
+  margin-top: 3vw;
+  margin-bottom: 0;
+  font-family: Oswald;
+  color: #726328;
+}
+
+#phone, #email, #state, #city, #last-name, #first-name, #comments {
+  width: 37vw;
+  float:right;
+  margin-top: 3vw;
+  margin-right: 3vw;
+  border-radius: 10px;
+  background:rgba(255,255,255,.2);
+
+}
+#comments {
+  height: 20vw;
+  width: 45vw;
+  margin-bottom: 3vw;
+  margin-top: 0;
+}
+#last-name, #first-name {
+  width: 33vw;
+}
+/*.contact-input > label {
+  margin-top: 3vw;
+  float: left;
+}*/
+.contact-image {
+  order: 2;
+  width: 40vmax;
+}
+.contact-image > img {
+  width:100%;
+  border-radius: 10px;
+  padding-top: 3vw;
+  padding-right: 3vw;
+}
+
+#email:valid {
+
+}
+#email:invalid {
+  border: solid;
+  border-width: thin;
+  border-color: red;
+  background-color: pink;
+}
+
+
 .header-box {
   background-color: white;
   color: rgb(171,138,88);

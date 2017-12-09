@@ -75,11 +75,6 @@ angular.module('main-app', ['ngRoute'])
         })
         .when('/faq', {
           controller: function(faqService) {
-            // $('.collapse').on('show.bs.collapse', function() {
-            //   console.log('collapsed')
-            //   myStyle={color:'red'}
-            // })
-            // this.faqs = faqData;
             this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/faq-page.html',
@@ -87,15 +82,18 @@ angular.module('main-app', ['ngRoute'])
           // hideMenus: true
         })
         .when('/instructors', {
-          controller: function(faqService) {
-            // $('.collapse').on('show.bs.collapse', function() {
-            //   console.log('collapsed')
-            //   myStyle={color:'red'}
-            // })
-            // this.faqs = faqData;
-            this.faqs = faqService.dataCompile()
+          controller: function() {
+            // this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/instructors.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
+        })
+        .when('/contact', {
+          controller: function(contactService) {
+            contactService.submitForm()
+          },
+          templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })

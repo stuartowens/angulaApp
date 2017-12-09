@@ -1,4 +1,75 @@
+/*Here are some hex values to use
+Light beige:#e8e3d7
+Dark beige: #d6ceb8
+Blue text: #0076a3
+Brown text:#726328
+White #ffffff
+Black #000000*/
 
+.contact-submit {
+  margin-right: 3vw;
+  margin-bottom: 3vw;
+}
+.contact-page {
+  background-image: url('../Img/whiteGrain.jpeg');
+  border-radius: 10px;
+  border: red solid;
+  margin-left: 6vw;
+}
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  background-image: url('../Img/whiteGrain.jpeg');
+  border-radius: 10px;
+  margin-left: 4vw;
+}
+.form {
+  order: 1;
+  width: 50vmax;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.form-label {
+  margin-top: 3.5vw;
+}
+.comments-label {
+  margin-top: 3vw;
+  margin-bottom: 0;
+}
+
+#phone, #email, #state, #city, #last-name, #first-name, #comments {
+  width: 37vw;
+  float:right;
+  margin-top: 3vw;
+  margin-right: 3vw;
+  border-radius: 10px;
+}
+#comments {
+  height: 20vw;
+  width: 45vw;
+  margin-bottom: 3vw;
+  margin-top: 0;
+}
+#last-name, #first-name {
+  width: 33vw;
+}
+/*.contact-input > label {
+  margin-top: 3vw;
+  float: left;
+}*/
+.contact-image {
+  order: 2;
+  width: 40vmax;
+}
+.contact-image > img {
+  width:100%;
+  border-radius: 10px;
+  padding-top: 3vw;
+  padding-right: 3vw;
+}
 /*.home-container {
   margin-top: 20vw;
 }*/
