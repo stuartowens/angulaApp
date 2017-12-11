@@ -47,8 +47,8 @@ mailer.extend(app, {
 app.get('/send', function (req, res, next) {
   app.mailer.send('email', {
     to: 'functionfiddler@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
-    subject: 'Test Email', // REQUIRED.
-    otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
+    subject: 'Test Email #8', // REQUIRED.
+    otherProperty: 'Name Date' // All additional properties are also passed to the template as local variables.
   }, function (err) {
     if (err) {
       // handle error
