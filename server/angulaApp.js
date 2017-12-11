@@ -10,6 +10,10 @@ var Profile = require('../db/profileSchema');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var GOOGLE_CLIENT_ID = require('../authConfig.js').GOOGLE_CLIENT_ID;
 var GOOGLE_CLIENT_SECRET = require('../authConfig.js').GOOGLE_CLIENT_SECRET;
+var YAHOO_EMAIL = require('../authConfig.js').YAHOO_EMAIL;
+var YAHOO_USERNAME = require('../authConfig.js').YAHOO_USERNAME;
+var YAHOO_PASS = require('../authConfig.js').YAHOO_PASS;
+var mailer = require('express-mailer');
 // const keyPublishable = require('../stripeConfig').PUBLISHABLE_KEY
 // const keySecret = require('../stripeConfig').SECRET_KEY
 
@@ -20,6 +24,41 @@ var server = require('http').Server(app);
 // const stripe = require("stripe")(keySecret);
 
 // app.set("view engine", "pug")
+
+
+//Setting the views for the express-mailer
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
+// This extends the express application to use the express-mailer
+mailer.extend(app, {
+  from: YAHOO_EMAIL,
+  host: 'smtp.mail.yahoo.com',
+  secureConnection: true,
+  port: 465,
+  transportMethod: 'SMTP',
+  auth: {
+    user: YAHOO_USERNAME,
+    pass: YAHOO_PASS
+  }
+})
+
+app.get('/send', function (req, res, next) {
+  app.mailer.send('email', {
+    to: 'functionfiddler@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+    subject: 'Test Email', // REQUIRED.
+    otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
+  }, function (err) {
+    if (err) {
+      // handle error
+      console.log(err);
+      res.send('There was an error sending the email');
+      return;
+    }
+    res.send('Email Sent');
+  });
+});
 
 app.use(bodyParser.json());
 
