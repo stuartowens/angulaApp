@@ -44,11 +44,19 @@ mailer.extend(app, {
   }
 })
 
+app.use(bodyParser.json());
+
 app.get('/send', function (req, res, next) {
   app.mailer.send('email', {
     to: 'functionfiddler@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
-    subject: 'Test Email #8', // REQUIRED.
-    otherProperty: 'Name Date' // All additional properties are also passed to the template as local variables.
+    subject: 'Band Camp Contact Form from' + req.query.firstName, // REQUIRED.
+    firstName: req.query.firstName,
+    lastName: req.query.lastName,
+    city: req.query.city,
+    state: req.query.state,
+    email: req.query.email,
+    phone: req.query.phone,
+    comments: req.query.comments // All additional properties are also passed to the template as local variables.
   }, function (err) {
     if (err) {
       // handle error
@@ -56,11 +64,11 @@ app.get('/send', function (req, res, next) {
       res.send('There was an error sending the email');
       return;
     }
+    console.log(req.query, 'req.query')
     res.send('Email Sent');
   });
 });
 
-app.use(bodyParser.json());
 
 // app.use(bodyParser.urlencoded({ extended: false }))
 

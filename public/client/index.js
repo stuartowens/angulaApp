@@ -1,4 +1,12 @@
-
+contactInfo = {
+  firstName: 'Stuart',
+  lastName: 'Owens',
+  city: 'Austin',
+  state: 'Texas',
+  email: 'functionfiddler@gmail.com',
+  phone: '999-999-0000',
+  comments: 'get a better UI mofo'
+}
 userData =
           { name: 'no name',
             email: 'no email',
@@ -90,8 +98,17 @@ angular.module('main-app', ['ngRoute'])
           // hideMenus: true
         })
         .when('/contact', {
-          controller: function(contactService) {
-            contactService.submitForm()
+          controller: function(contactService, $scope) {
+            Object.assign($scope, {
+              firstName: '',
+              lastName: '',
+              city: '',
+              state: '',
+              email: '',
+              phone: '',
+              comments: ''
+            })
+            contactService.submitForm(contactInfo)
           },
           templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
