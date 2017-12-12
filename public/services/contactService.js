@@ -1,11 +1,11 @@
 angular.module('main-app')
 
 .service('contactService', function($http, $location) {
-  this.formChange = function (e) {
-    console.log('Form is changing', e)
+  this.formChange = function () {
+    console.log('Form is changing')
   }
   this.submitForm = function(params) {
-    console.log('Form is submitting', email)
+    console.log('Form is submitting', params.email)
     $http({
       method: 'GET',
       url: '/send',

@@ -108,7 +108,11 @@ angular.module('main-app', ['ngRoute'])
               phone: '',
               comments: ''
             })
-            contactService.submitForm(contactInfo)
+            this.formChange = contactService.formChange()
+            this.onChange = function() {
+              console.log('something is changing!!')
+            }
+            this.submitForm = contactService.submitForm($scope);
           },
           templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
