@@ -100,13 +100,13 @@ angular.module('main-app', ['ngRoute'])
         .when('/contact', {
           controller: function(contactService, $scope) {
             Object.assign($scope, {
-              firstName: '',
-              lastName: '',
-              city: '',
-              state: '',
-              email: '',
-              phone: '',
-              comments: ''
+              firstName: 'empty.value',
+              lastName: 'empty.avlue',
+              city: 'empty',
+              state: 'empty',
+              email: 'empty',
+              phone: 'empty',
+              comments: 'empty'
             })
             this.formChange = contactService.formChange()
             this.onChange = function(eventValue, id) {
