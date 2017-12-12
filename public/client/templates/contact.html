@@ -5,7 +5,7 @@
       <form action="" method="post" name="contact-form" class="contact-form">
         <div class="input-group contact-input">
           <label class="form-label" for="first-name">FIRST NAME: </label>
-          <input class="form-control" id="first-name" ng-model="firstName" ng-change={{ctrl.formChange()}} type="text" size="32" minlength="2" maxlength="64">
+          <input class="form-control" id="first-name" value="{{firstName.id}}" ng-model="firstName" ng-change="ctrl.onChange(firstName, 'firstName')" type="text" size="32" minlength="2" maxlength="64">
         </div>
         <div class="input-group contact-input">
           <label class="form-label" for="last-name">LAST NAME: </label>

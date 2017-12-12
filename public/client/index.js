@@ -109,8 +109,11 @@ angular.module('main-app', ['ngRoute'])
               comments: ''
             })
             this.formChange = contactService.formChange()
-            this.onChange = function() {
-              console.log('something is changing!!')
+            this.onChange = function(eventValue, id) {
+              Object.assign($scope, {
+                id: eventValue,
+              })
+              console.log('something is changing!!', eventValue, id, $scope.id)
             }
             this.submitForm = contactService.submitForm($scope);
           },
