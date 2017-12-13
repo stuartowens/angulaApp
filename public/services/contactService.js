@@ -1,9 +1,11 @@
 angular.module('main-app')
 
 .service('contactService', function($http, $location, $event) {
+  //not using this form change to track changes in thr form, instewad using the controller in the index.jd
   this.formChange = function () {
     console.log('Form is changing')
   }
+  //using this submit contact form but havi g trouble with the prevent default not preventing the page reload
   this.submitForm = function(params, event) {
     event.preventDefault();
     console.log('Event', event)
