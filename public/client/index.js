@@ -109,6 +109,7 @@ angular.module('main-app', ['ngRoute'])
               comments: 'empty'
             })
             this.formChange = contactService.formChange()
+           //using this insted of form change but i think instead of using local scope i might use the rootscope instead because thb $scope keeps reseting more than likely due to the prevent default not eworking vorrectly
             this.onChange = function(eventValue, id) {
               Object.assign($scope, {
                 id: eventValue,
