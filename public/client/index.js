@@ -115,8 +115,8 @@ angular.module('main-app', ['ngRoute'])
               })
               console.log('something is changing!!', eventValue, id, $scope.id)
             }
-            this.submitForm = function(e) {
-              console.log('form is submitting', e)
+            this.submitForm = function() {
+              console.log('form is submitting')
             }
             // contactService.submitForm($scope);
           },
