@@ -1,6 +1,6 @@
 angular.module('main-app')
 
-.service('contactService', function($http, $location, $event) {
+.service('contactService', function($http, $location) {
   this.formChange = function () {
     console.log('Form is changing')
   }

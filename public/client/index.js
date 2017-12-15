@@ -100,22 +100,25 @@ angular.module('main-app', ['ngRoute'])
         .when('/contact', {
           controller: function(contactService, $scope) {
             Object.assign($scope, {
-              firstName: 'empty.value',
-              lastName: 'empty.avlue',
-              city: 'empty',
-              state: 'empty',
-              email: 'empty',
-              phone: 'empty',
-              comments: 'empty'
+              firstName: '',
+              lastName: '',
+              city: '',
+              state: '',
+              email: '',
+              phone: '',
+              comments: ''
             })
-            this.formChange = contactService.formChange()
+            // this.formChange = contactService.formChange()
             this.onChange = function(eventValue, id) {
               Object.assign($scope, {
                 id: eventValue,
               })
               console.log('something is changing!!', eventValue, id, $scope.id)
             }
-            this.submitForm = contactService.submitForm($scope);
+            this.submitForm = function(e) {
+              console.log('form is submitting', e)
+            }
+            // contactService.submitForm($scope);
           },
           templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
