@@ -113,13 +113,11 @@ angular.module('main-app', ['ngRoute'])
               Object.assign($scope, {
                 id: eventValue,
               })
-              console.log('something is changing!!', eventValue, id, $scope.id)
+              // console.log('something is changing!!', eventValue, id, $scope.id)
             }
             $scope.submitForm = function($event) {
               $event.preventDefault()
-              // contactService.submitForm($scope);
-
-              console.log('form is submitting', $scope)
+              contactService.submitForm($scope);
             }
           },
           templateUrl: 'public/client/templates/contact.html',

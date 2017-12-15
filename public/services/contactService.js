@@ -4,10 +4,8 @@ angular.module('main-app')
   this.formChange = function () {
     console.log('Form is changing')
   }
-  this.submitForm = function(params, event) {
-    event.preventDefault();
-    console.log('Event', event)
-    console.log('Params', params)
+  this.submitForm = function(params) {
+    // console.log('Params', params)
     $http({
       method: 'GET',
       url: '/send',
@@ -24,6 +22,7 @@ angular.module('main-app')
         // this callback will be called asynchronously
         // when the response is available
          console.log(response, 'response')
+         alert('Your contact form has been submitted')
         //  $scope.user = response.data[0]
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
