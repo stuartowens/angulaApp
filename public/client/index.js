@@ -115,10 +115,12 @@ angular.module('main-app', ['ngRoute'])
               })
               console.log('something is changing!!', eventValue, id, $scope.id)
             }
-            this.submitForm = function() {
-              console.log('form is submitting')
+            $scope.submitForm = function($event) {
+              $event.preventDefault()
+              // contactService.submitForm($scope);
+
+              console.log('form is submitting', $scope)
             }
-            // contactService.submitForm($scope);
           },
           templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
