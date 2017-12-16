@@ -81,6 +81,13 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
+        .when('/location', {
+          controller: function() {
+          },
+          templateUrl: 'public/client/templates/location.html',
+          controllerAs: 'ctrl'
+          // hideMenus: true
+        })
         .when('/faq', {
           controller: function(faqService) {
             this.faqs = faqService.dataCompile()
