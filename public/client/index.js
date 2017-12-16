@@ -68,23 +68,10 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .when('/pricing', {
-          controller: function(faqService) {
-            // $('.collapse').on('show.bs.collapse', function() {
-            //   console.log('collapsed')
-            //   myStyle={color:'red'}
-            // })
-            // this.faqs = faqData;
-            this.faqs = faqService.dataCompile()
-          },
-          templateUrl: 'public/client/templates/pricing.html',
-          controllerAs: 'ctrl'
-          // hideMenus: true
-        })
-        .when('/location', {
+        .when('/lodging', {
           controller: function() {
           },
-          templateUrl: 'public/client/templates/location.html',
+          templateUrl: 'public/client/templates/lodging.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })
@@ -115,7 +102,8 @@ angular.module('main-app', ['ngRoute'])
               phone: '',
               comments: ''
             })
-            // this.formChange = contactService.formChange()
+            this.formChange = contactService.formChange()
+           //using this insted of form change but i think instead of using local scope i might use the rootscope instead because thb $scope keeps reseting more than likely due to the prevent default not eworking vorrectly
             this.onChange = function(eventValue, id) {
               Object.assign($scope, {
                 id: eventValue,
