@@ -1,4 +1,4 @@
-.contact-container {
+/*.contact-container {
   display: flex;
   flex-direction: column;
   background-image: url('../Img/whiteGrain.jpeg');
@@ -35,10 +35,7 @@
 #last-name, #first-name {
   width: 50vw;
 }
-/*.contact-input > label {
-  margin-top: 3vw;
-  float: left;
-}*/
+
 .contact-image {
   order: 2;
   width: 90vmax;
@@ -51,7 +48,6 @@
 }
 .home-container {
   margin-top: 20vw;
-  /*flex-direction: column;*/
 }
 .topic-list-container {
   flex-direction: column;
@@ -89,4 +85,4 @@
 .cell-num, .tel-num{
   visibility: collapse;
   display: none;
-}
+}*/
