@@ -1,4 +1,4 @@
-/*.contact-container {
+.contact-container {
   display: flex;
   flex-direction: column;
   background-image: url('../Img/whiteGrain.jpeg');
@@ -85,4 +85,4 @@
 .cell-num, .tel-num{
   visibility: collapse;
   display: none;
-}*/
+}
