@@ -79,7 +79,7 @@ angular.module('main-app')
       {
         question: 'What music genres are welcome at camp? Is camp for acoustic and electric musicians?',
         answer: ' Genres are not limited, but the camp is based around acoustic musicians due to issues with space and noise. Electric bass is ok, but we aren’t really planning on electric bands at this point, but the concepts all apply to pretty much all genres.'
-      }
+      },
       {
         question: 'Can I bring alcohol to camp?',
         answer: 'Camp Harrison does not allow alcohol on premises.'
