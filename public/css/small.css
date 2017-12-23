@@ -118,6 +118,11 @@ p, li {
   flex-flow: column;
   min-width:300px;
 }
+.readycontent > p {
+  margin-left: 6vw;
+  margin-right: 6vw;
+  text-align: center;
+}
 .readytitle > h1 {
   font-size: 7vw;
   font-style: italic;

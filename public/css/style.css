@@ -296,6 +296,10 @@ p, li {
   font-size: smaller;
   font: Oswald;
 }
+.topic-list1, .topic-list2 {
+  margin-bottom: 5vw;
+  padding-bottom: 3vw;
+}
 .readycontent {
   order: 4;
   margin-left: 6vw;
@@ -315,7 +319,7 @@ p, li {
   /* border: solid red thick; */
 }
 .readytitle > h1 {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 .title-banjo {
