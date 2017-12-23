@@ -218,6 +218,13 @@
   order: 1;
   text-align: center;
 }
+.address > p {
+  /* margin: 2vw; */
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 1.5vw;
+  font-style: oblique;
+}
 .map {
   order: 2
 }
@@ -235,6 +242,11 @@
   width: 35vmax;
   color: white;
 }
+.andy > p {
+  padding: 2vw;
+  margin: 1vw;
+  font-size: 2vw
+}
 .mandolin-image {
   background-image: url('../Img/whiteGrain.jpeg');
   position: relative;
@@ -246,10 +258,18 @@
   position: absolute;
   bottom: 0;
 }
-.topic-header  em{
+.topic-header {
+  /* border: solid green thick; */
+}
+.topic-header > em{
   color: rgb(171,138,88);
-  font-family: 'Bigelow Rules';
-  font-size: 5vw;
+  /* font-family: ''; */
+  /* font-size: 5vw; */
+  /* font-style: oblique; */
+}
+.topic-header > h1 {
+  font-size: 3vw;
+  font-family: 'Oswald';
 }
 .readycontent > em{
   color: rgb(171,138,88);
@@ -274,10 +294,11 @@
   direction: ltr;
   text-align: right;
   resize: both;
-  width: 45%;
+  width: 85%;
   margin-top: 7.5vw;
   margin-left: 2vw;
   margin-right: 2vw;
+  /* border: solid red thick; */
 }
 
 h2 {
@@ -288,6 +309,9 @@ h2 {
 h1 {
   font-size: 4vw;
   font-family: 'Oswald';
+}
+.readytitle > h1 {
+  font-size: 3vw;
 }
 p, li {
   font-family: Oswald;
