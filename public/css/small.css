@@ -114,6 +114,7 @@ p, li {
   margin-left: 0px;
 }
 .ready {
+  width: 96vw;
   flex-flow: column;
   min-width:300px;
 }
@@ -128,6 +129,7 @@ p, li {
   /*height: 1500px;*/
 }
 .topics-container {
+  width: 96vw;
   min-width:300px;
 }
 .topic-list-container {
