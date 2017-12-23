@@ -35,7 +35,9 @@
 #last-name, #first-name {
   width: 50vw;
 }
-
+h1 {
+  font-size: 6vw;
+}
 .contact-image {
   order: 2;
   width: 90vmax;

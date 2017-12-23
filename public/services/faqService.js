@@ -10,7 +10,7 @@ angular.module('main-app')
       },
       {
         question: 'When should I plan to arrive and leave?',
-        answer: 'You can arrive starting at 2pm on the Sunday beginning day of camp, with activities beginning at 6pm, and camp will end early afternoon on the Thursday of camp. We will be starting Sunday afternoon and evening doing playing and jamming so that our instructors can start deciding how to group the participants each into a band of four to six people, so Sunday afternoon arrival would be best, as we’ll start fairly early Monday.'
+        answer: 'You can arrive any time after 5pm on Sunday, the first day of camp. Activities begin at 6pm, and camp will end at 1pm Thursday. We will start playing and jamming Sunday evening so that our instructors can decide how to group the participants into bands of four to six people. We’ll start again fairly early Monday morning.'
       },
       {
         question: 'What should I bring to the camp?',
@@ -26,11 +26,11 @@ angular.module('main-app')
       },
       {
         question: 'How proficient do I need to be with my instrument?',
-        answer: 'We don’t expect people to be at a high professional level, but you should be able to learn new songs quickly, play at a level where you would be comfortable playing at a local basic gig like a coffee shop or other public performance.'
+        answer: 'We don’t expect people to be at a high professional level, but you should be able to learn new songs quickly, play at a level where you would be comfortable playing at an opn mic.'
       },
       {
         question: 'Are there any prerequisites?',
-        answer: 'You should be at a level of playing and or singing which you are comfortable in a basic jam session, this isn’t a “jam” camp, we will be concentrating on preparing you to be at a level of playing in a group which hopes to play gigs or at least play together in settings in front of people.'
+        answer: 'You should be at a level at which you are comfortable in a basic jam session, this isn’t a “jam” camp, we are a "band" camp.'
       },
       {
         question: 'How much does camp cost?',
@@ -38,15 +38,15 @@ angular.module('main-app')
       },
       {
         question: 'Can I bring a family member that will not be participating?',
-        answer: 'Yes, non BandCamp people can attend. Please see registration form for food and lodging costs. But if they are a musician who plans to play in jams at night and such them we would be very likely to strongly suggest they sign up for camp, as this is kind of a “music boot camp” and distractions might be a problem.'
+        answer: 'Yes, non-participants and chaperones can attend. Please see registration for food and lodging costs for non-participants. We encourage non-participants that wish to jam during off hours to sign up for camp instead if they would like to participate. We want to minimize distractions to be respectful to bands that are rehearsing at night.'
       },
       {
         question: 'Are friends and family allowed at camp sessions?',
-        answer: 'This would be on a case by case basis. Kids under 16 should be chaperoned, so there’s that, but in general keep in mind that this is like school, the schedule will be tight, and we really don’t need distractions and space may be an issue.'
+        answer: 'Kids under 16 should be chaperoned but in general we want to minimize distractions, and space may be an issue.'
       },
       {
         question: 'I am under 18. Can I attend the camp? What is the minimum age for campers? ',
-        answer: 'There is no minimum age, but minors under 16 must be accompanied by a guardian. All attendees 18 and under must have the “Minor Release Form” filled out by their parent/guardian prior to attending the camp. This form can be found on the registration page.'
+        answer: 'There is no minimum age, but minors under 16 must be accompanied by a chaperone. All attendees 18 and under must have the “Minor Release Form” filled out by their parent/guardian prior to attending the camp. This form can be found on the registration page.'
       },
       {
         question: 'What is the cancellation policy?',
@@ -62,20 +62,24 @@ angular.module('main-app')
       },
       {
         question: 'What topics are covered at the camp?',
-        answer: 'The main goal of BandCamp is to help people move from jamming or just playing on their own towards playing in an organized group. The goal of most organized groups is to work towards “playing out”, playing in front of people either for free or for money. To do this, people eventually learn, by hands on experience, about things like organizing material, arrangements, finding people to play with, finding gigs or places to play for experience, pictures, press kits, bios, how to set up and play over a pa system, stage presence, MC work, getting along with people, how to quit or move someone gracefully out of the group, writing songs or finding original songs for the group, singing and harmonies, instrumental organization of songs, travel and transportation, keeping your instruments healthy, keeping yourself happy and healthy and so on. Of course, in a four day BandCamp we can’t cover all these things completely, but we will plan to deal with topics so that our campers can learn to learn on their own and understand the basic concepts.'
+        answer: 'The main goal of BandCamp is to help people move from jamming or just playing on their own towards playing in an organized group. The goal of most organized groups is to work towards “playing out”, playing in front of people either for free or for money. To do this people eventually learn by hands on experience about things like organizing material, arrangements, finding people to play with, finding gigs or places to play for experience, pictures, press kits, bios, how to set up and play over a pa system, stage presence, MC work, getting along with people, how to quit or move someone gracefully out of the group, writing songs or finding original songs for the group, singing and harmonies, instrumental organization of songs, travel, keeping your instruments healthy, keeping yourself happy and healthy.'
       },
       {
         question: 'What will a typical day look like?',
-        answer: 'BandCamp will be divided about 50/50 into class type instruction with the whole camp present and playing with your assigned band grouping to work on two songs which our instructors will help each band organize and arrange at a level where they could be played out in a public setting. We plan to help each grouping have one original song and one cover song. In the evenings we will encourage the groups to work on their songs and arrangements, but there will likely be some jamming and such too.'
+        answer: 'BandCamp will be divided into classroom instruction and band practic. Each band works the organization and arrangements of two songs with their coach everyday. In the evenings, we encourage the groups to work on their songs and arrangements but there will likely be some jamming and such.'
       },
       {
         question: 'What time do camp sessions begin on the first day?',
-        answer: 'You can arrive Sunday at Camp Harrison anytime after 2 pm and we will begin doing some playing and organizing of the groupings. Formal activities begin at 6 pm. We will be starting Sunday afternoon and evening doing playing and jamming so that our instructors can start deciding how to group the participants each into a band of four to six people, so Sunday afternoon arrival would be best, as we’ll start fairly early Monday.'
+        answer: 'You can arrive Sunday at Camp Harrison anytime after 5pm and we will begin doing some playing and organizing of the groupings. Formal activities begin at 6 pm. We will be starting Sunday afternoon and evening doing playing and jamming so that our instructors can start deciding how to group the participants each into a band of four to six people, so Sunday afternoon arrival would be best, as we’ll start fairly early Monday.'
       },
       {
         question: 'What time do camp activities end on the last day?',
-        answer: 'Around 2pm on Thursday. What music genres are welcome at camp? Is camp for acoustic and electric musicians? Genres are not limited, but the camp is based around acoustic musicians due to issues with space and noise. Electric bass is ok, but we aren’t really planning on electric groupings at this point, but the concepts all apply to pretty much all genres.'
+        answer: 'Around 1pm on Thursday following our camp concert.'
       },
+      {
+        question: 'What music genres are welcome at camp? Is camp for acoustic and electric musicians?',
+        answer: ' Genres are not limited, but the camp is based around acoustic musicians due to issues with space and noise. Electric bass is ok, but we aren’t really planning on electric bands at this point, but the concepts all apply to pretty much all genres.'
+      }
       {
         question: 'Can I bring alcohol to camp?',
         answer: 'Camp Harrison does not allow alcohol on premises.'
@@ -86,7 +90,7 @@ angular.module('main-app')
       },
       {
         question: 'Are linens/pillows provided for cabin lodging?',
-        answer: 'No they are  not provided, you must bring your own'
+        answer: 'No linens are not provided, you must bring your own'
       },
       {
         question: 'Are cabins heated?',
@@ -98,11 +102,11 @@ angular.module('main-app')
       },
       {
         question: 'Are cabins cleaned daily?',
-        answer: 'No they are not cleaned daily'
+        answer: 'No they are not cleaned daily, they are cleaned before you arrive at camp.'
       },
       {
         question: 'Are RV hookups available?',
-        answer: 'Yes RV Hookups are available'
+        answer: 'No traditional RV Hookups are not available. There are low amperage electrical outlets to hook up your RV. No water or sewage is available at your site.'
       },
       {
         question: 'If I am staying in an RV or tent, can I use the camp\'s showers?',
@@ -110,7 +114,7 @@ angular.module('main-app')
       },
       {
         question: 'Do you provide RVs and Tents?',
-        answer: 'No, payment is for staying in an and RV or tent space. Campers must bring their own RVs or tents.'
+        answer: 'No, payment is for staying in an RV or tent space. Campers must bring their own RVs or tents.'
       },
       {
         question: 'I am sharing an RV or Tent with another person. Do I also need to pay for a separate RV or Tent package?',
@@ -118,7 +122,7 @@ angular.module('main-app')
       },
       {
         question: 'Can I stay off-campus?',
-        answer: 'Yes but the schedule would dictate that not to be a great idea. Since each person is in a specific grouping and a large part of the camp is about that grouping learning together, each person will be important to their group and it would impact severely the productivity of that group to have a member late or missing. And there will be group homework and nightly playing or jams. The nearest hotels are about 30 minutes away.'
+        answer: 'Yes you can off campus but there will be many opportunities to jam after classes are over and the nearest hotels are about 30 minutes away. A large part of the camp is about their band learning to play together, and each person will play an important in their group.'
       },
       {
         question: 'I have dietary needs/allergies. Can they be accommodated?',

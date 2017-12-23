@@ -251,7 +251,7 @@
   font-family: 'Bigelow Rules';
   font-size: 5vw;
 }
-.readycontent  em{
+.readycontent > em{
   color: rgb(171,138,88);
   font-family: sans-serif;
   font-style: normal;
@@ -276,8 +276,10 @@
   resize: both;
   width: 45%;
   margin-top: 7.5vw;
-  margin-left: 1vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
+
 h2 {
   color: rgb(171,138,88);
   font-size: 6vw;
@@ -334,7 +336,9 @@ p, li {
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  background-image: url('../Img/whitefog.jpeg');
+  background-image: url('../Img/whiteFog.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 42.5vmax;
   height: auto;
   resize: both;
