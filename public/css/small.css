@@ -66,7 +66,15 @@
 }
 .faq, .instrContent2, .instrContent1 {
   width: 300px;
-  margin-left: 0px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+}
+.instrContent2  > p, .instrContent1 > p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.instrContent2 > h2, .instrContent1 > h2 {
+  margin-left: 10px;
 }
 instrContent2 > img {
   width: 280px;

@@ -47,7 +47,8 @@ angular.module('main-app', ['ngRoute'])
       // this callback will be called asynchronously
       // when the response is available
        console.log(response.data[0], 'userData')
-       $scope.user = response.data[0]
+       $rootScope.user = response.data[0]
+       console.log($rootScope.user, "during callback")
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
@@ -55,7 +56,7 @@ angular.module('main-app', ['ngRoute'])
     // this.faqs = faqServive.dataCompile()
     // this.faqs = faqData;
 
-  console.log($scope.user)
+  console.log($rootScope.user, "after callback")
 })
 
 .config(function ($locationProvider, $routeProvider) {
@@ -130,17 +131,17 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .when('/auth/google', {
-          controller: function($scope, $route, $window) {
-            // $onInit = function() {
-            // $route.reload()
-            $window.location.reload();
-              console.log('on init!!!!')
-            // }
-          },
-          templateUrl: 'public/client/templates/google.html',
-          controllerAs: 'ctrl'
-        })
+        // .when('/auth/google', {
+        //   controller: function($scope, $route, $window) {
+        //     // $onInit = function() {
+        //     // $route.reload()
+        //     $window.location.reload();
+        //       console.log('on init!!!!')
+        //     // }
+        //   },
+        //   templateUrl: 'public/client/templates/google.html',
+        //   controllerAs: 'ctrl'
+        // })
         .when('/profile', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/profile.html',
