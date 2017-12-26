@@ -131,17 +131,17 @@ angular.module('main-app', ['ngRoute'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        // .when('/auth/google', {
-        //   controller: function($scope, $route, $window) {
-        //     // $onInit = function() {
-        //     // $route.reload()
-        //     $window.location.reload();
-        //       console.log('on init!!!!')
-        //     // }
-        //   },
-        //   templateUrl: 'public/client/templates/google.html',
-        //   controllerAs: 'ctrl'
-        // })
+        .when('/auth/google', {
+          controller: function($scope, $route, $window) {
+            // $onInit = function() {
+            // $route.reload()
+            $window.location.reload();
+              console.log('on init!!!!')
+            // }
+          },
+          templateUrl: 'public/client/templates/google.html',
+          controllerAs: 'ctrl'
+        })
         .when('/profile', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/profile.html',
