@@ -112,6 +112,9 @@ function(token, tokenSecret, profile, done) {
       User.create({
         google_id: profile.id,
         displayName: profile.displayName,
+        isUnpaidUser: true,
+        isPaidUser: false,
+        isAdmin: false,
         image: profile._json.image.url,
         email: profile.emails[0].value,
         participant_profiles: [],

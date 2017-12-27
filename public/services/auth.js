@@ -16,12 +16,27 @@ angular.module('main-app')
           this.getPermission(this.permissionModel, roleCollection, deffered);
         } else {
 
-          $resource('/getUser').get().$promise.then(function (response) {
-            parentPointer.permissionModel.permission = response;
+          $resource('/getUser').get().$promise.then(function successCallback(response) {
+
+            parentPointer.permissionModel.permission = response.data[0];
 
             parentPointer.permissionModel.isPermissionLoaded = true;
 
             parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deffered);
+
+            $http({
+              method: 'GET',
+              url: '/getUser'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                 console.log(response.data[0], 'userData')
+                 $rootScope.user = response.data[0]
+                 console.log($rootScope.user, "during callback")
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+              });
 
           });
 

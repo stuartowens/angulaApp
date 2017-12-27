@@ -26,7 +26,7 @@ var roles = {
 
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
-angular.module('main-app', ['ngRoute'])
+angular.module('main-app', ['ngRoute', 'ngResource'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   $http({
     method: 'GET',
@@ -134,8 +134,16 @@ angular.module('main-app', ['ngRoute'])
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/profile.html',
           controllerAs: 'ctrl',
+          resolve: {
+            permission: function(authorizationService, $route) {
+              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser])
+            }
+          }
           secure: 'true'
           // hideMenus: true
+        })
+        .when('/unauthorizedAccess', {
+          templateUrl: 'public/client/templates/unauthorized.html'
         })
         .otherwise({ redirectTo: '/' });
 

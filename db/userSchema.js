@@ -4,6 +4,9 @@ var User = mongoose.Schema({
   // unique id syntax: _id
   google_id: { type: String, required: true, unique: true },
   displayName: { type: String },
+  isUnpaidUser: { type: Boolean },
+  isPaidUser: { type: Boolean },
+  isAdmin: { type: Boolean },
   image: { type: String },
   email: { type: String },
   alt_email: { type: String },
