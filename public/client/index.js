@@ -18,25 +18,13 @@ userData =
             chaperoneLunches: 0,
             total: 0
           }
-faqData = [
-  {
-    question: 'Question 1',
-    answer: 'Answer1',
-    heading_id: "headingThree",
-    collapse_id: "collapseThree",
-    href_id: "#collapseThree",
-    number: "Three"
-  },
-  {
-    question: 'Question 2',
-    answer: 'Answer2',
-    _id: "Two",
-    heading_id: "headingFour",
-    collapse_id: "collapseFour",
-    href_id: "#collapseFour",
-    number: "Four"
-  },
-]
+var roles = {
+  unpaidUser: 0,
+  paidUser: 1,
+  admin: 2
+}
+
+var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
