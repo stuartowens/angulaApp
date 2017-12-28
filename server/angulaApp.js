@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var User = require('../db/userSchema');
 var Profile = require('../db/profileSchema');
+var Util = require('../db/util');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var GOOGLE_CLIENT_ID = require('../authConfig.js').GOOGLE_CLIENT_ID;
 var GOOGLE_CLIENT_SECRET = require('../authConfig.js').GOOGLE_CLIENT_SECRET;
@@ -119,6 +120,13 @@ function(token, tokenSecret, profile, done) {
         email: profile.emails[0].value,
         participant_profiles: [],
         non_participant_profile: [],
+        groupTotal: 0,
+        studentTotal: 0,
+        rvCampers: 0,
+        cabinCampers: 0,
+        tentCampers: 0,
+        chaperoneLunches: 0,
+        total: 0,
         amt_paid: 0
       }, (err, user) => {
         if(err) {
@@ -167,11 +175,11 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 //GET /auth/google/callback
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login'}),
+  passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
     console.log('req.user in google callback auth function', req.user);
     console.log('req.session.passport.user', req.session.passport.user);
-    res.redirect('/profile', 200, req.user);
+    res.redirect('/registration', 200, req.user);
   });
 
   // send user to front end based on session
@@ -186,6 +194,20 @@ app.get('/auth/google/callback',
       }
     })
   })
+
+  app.put('/updateUser', function(req, res){
+    Util.updateUser(req, res)
+  })
+  // app.put('/updateUser', function(req, res) {
+  //   User.findOne({ _id: req.session.passport.user }, (err, user) => {
+  //     if (err) {
+  //       console.log('error in getUser route', err);
+  //     } else {
+  //       console.log('get user success', user)
+  //       res.json(user)
+  //     }
+  //   })
+  // })
 
   // get profiles of user
 

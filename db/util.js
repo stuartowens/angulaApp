@@ -16,6 +16,28 @@ function findOneUser(req, res) {
   })
 }
 
+function updateUser(req, res) {
+  console.log(req.session.passport.user, 'req~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  var id = req.id;
+  User.findOne({ _id: req.session.passport.user }, (err, user) => {
+    if (err) {
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
+    } else {
+      console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
+      user.isPaidUser = true;
+      console.log('user before save', user)
+      user.save(function (err) {
+        if(err) {
+          return handleError(err)
+        } else {
+          console.log('user after save', user)
+        }
+      })
+      res.json(user);
+    }
+  })
+}
+
 // search for a profile
 function findOneProfile(req, res) {
   var id = req.query.id;
@@ -126,6 +148,7 @@ function createProfile(req, res) {
 
 
 exports.findOneUser = findOneUser;
+exports.updateUser = updateUser;
 exports.findOneProfile = findOneProfile;
 exports.findManyProfiles = findManyProfiles;
 exports.createProfile = createProfile;

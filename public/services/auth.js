@@ -4,7 +4,7 @@ angular.module('main-app')
     return {
       permissionModel: {
         permission: {},
-        isPermisionLoaded: false
+        isPermissionLoaded: false
       },
 
       permissionCheck: function (roleCollection) {
@@ -18,11 +18,14 @@ angular.module('main-app')
 
           $resource('/getUser').get().$promise.then(function successCallback(response) {
 
+            $rootScope.user = response;
             parentPointer.permissionModel.permission = response;
 
             parentPointer.permissionModel.isPermissionLoaded = true;
 
             parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
+
+            console.log(parentPointer.permissionModel, 'parentPointer.permissionModel')
 
             // $http({
             //   method: 'GET',

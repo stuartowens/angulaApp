@@ -17,6 +17,13 @@ var User = mongoose.Schema({
       ref: 'Profile' }
     }],
   non_participant_profile: { type: Array },
+  groupTotal: { type: Number },
+  studentTotal: { type: Number },
+  rvCampers: { type: Number },
+  cabinCampers: { type: Number },
+  tentCampers: { type: Number },
+  chaperoneLunches: { type: Number },
+  total: { type: Number },
   amt_paid: { type: Number }
 });
 

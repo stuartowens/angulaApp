@@ -28,23 +28,25 @@ var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
-  $http({
-    method: 'GET',
-    url: '/getUser'
-  }).then(function successCallback(response) {
-      // this callback will be called asynchronously
-      // when the response is available
-       console.log(response, 'userData')
-       $rootScope.user = response
-       console.log($rootScope.user, "during callback")
-    }, function errorCallback(response) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-    });
+  console.log($rootScope, 'rootScope~~~~~~~~~~');
+  // $http({
+  //   method: 'GET',
+  //   url: '/getUser'
+  // }).then(function successCallback(response) {
+  //     // this callback will be called asynchronously
+  //     // when the response is available
+  //      console.log(response, 'userData')
+  //      $rootScope.user = response
+  //      console.log($rootScope.user, "during callback")
+  //   }, function errorCallback(response) {
+  //     // called asynchronously if an error occurs
+  //     // or server returns response with an error status.
+  //   });
+
     // this.faqs = faqServive.dataCompile()
     // this.faqs = faqData;
 
-  console.log($rootScope.user, "after callback")
+  // console.log($rootScope.user, "after callback")
 })
 
 .config(function ($locationProvider, $routeProvider) {
@@ -108,7 +110,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .when('/registration', {
+        .when('/signin', {
           // controller: 'MainCtrl',
           controller: function($scope) {
             $scope.user = userData;
@@ -116,7 +118,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
               console.log("You made it!", $scope.user)
             }
           },
-          templateUrl: 'public/client/templates/registration.html',
+          templateUrl: 'public/client/templates/signin.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })
@@ -131,13 +133,46 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           templateUrl: 'public/client/templates/google.html',
           controllerAs: 'ctrl'
         })
+        .when('/registration', {
+          controller: function($scope, $http, $rootScope) {
+            $scope.handleSave = function() {
+              console.log("You saved it!", $scope.user)
+              $scope.user.total = $scope.user.studentTotal * 379 + $scope.user.rvCampers * 279 + $scope.user.cabinCampers * 199 + $scope.user.tentCampers * 150 + $scope.user.chaperoneLunches*50
+            }
+            $scope.handleCheckout = function () {
+              $http({
+                method: 'PUT',
+                url: '/updateUser',
+                data: $scope.user
+              }).then(function successCallback(response) {
+                  // this callback will be called asynchronously
+                  // when the response is available
+                   console.log(response, 'userData')
+                   $scope.user = response.data
+                   console.log($rootScope.user, "during callback")
+                }, function errorCallback(response) {
+                  // called asynchronously if an error occurs
+                  // or server returns response with an error status.
+                });
+            }
+          },
+          templateUrl: 'public/client/templates/registration.html',
+          controllerAs: 'ctrl',
+          resolve: {
+            permission: function(authorizationService, $route) {
+              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
+            }
+          },
+          secure: 'true'
+          // hideMenus: true
+        })
         .when('/profile', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/profile.html',
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {
-              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
+              return authorizationService.permissionCheck([roles.paidUser, roles.admin])
             }
           },
           secure: 'true'
