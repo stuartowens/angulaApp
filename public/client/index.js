@@ -147,12 +147,14 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
               }).then(function successCallback(response) {
                   // this callback will be called asynchronously
                   // when the response is available
-                   console.log(response, 'userData')
-                   $rootScope.user = response.data
-                   console.log($rootScope.user, "during callback")
+
                 }, function errorCallback(response) {
                   // called asynchronously if an error occurs
                   // or server returns response with an error status.
+                }).then(function afterCallback(response){
+                  console.log(response, 'userData')
+                  $rootScope.user = response.data
+                  console.log($rootScope.user, "during callback")
                 });
             }
           },
