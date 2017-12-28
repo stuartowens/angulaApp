@@ -16,6 +16,10 @@ var Profile = mongoose.Schema({
   release_form: { type: Boolean },
   chaperone: { type: Boolean },
   chaperone_name: { type: String },
+  bio: { type: String },
+  instruments: { type: String },
+  singer: { type: String },
+  genres: { type: String },
   exp_level: { type: Number },
   address: { type: Object },
   phone: { type: String },
@@ -23,7 +27,6 @@ var Profile = mongoose.Schema({
   allergies: { type: String },
   emergency_contact: { type: Object },
   band_info: { type: Object },
-  total_paid: { type: Number }
 });
 
 module.exports = mongoose.model('Profile', Profile);

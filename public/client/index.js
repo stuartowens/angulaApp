@@ -170,7 +170,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           controller: function($scope){
             console.log($scope.user)
           },
-          templateUrl: 'public/client/templates/profile.html',
+          templateUrl: 'public/client/templates/profile-container.html',
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {

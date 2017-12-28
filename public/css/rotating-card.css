@@ -1,0 +1,48 @@
+.card-container {
+  width: 99vmax;
+  height: 60vmax;
+  position: relative;
+  margin-top: 10vmax;
+  display: flex;
+  justify-content: space-around;
+  border: solid red thick;
+  flex-wrap: wrap;
+}
+.profile-card {
+  /* margin: 2vmax; */
+  width: 25vmax;
+  /* height: 60vmax; */
+  transform-style: preserve-3d;
+  transition: all 0.5% ease;
+  border: solid green thick;
+  background-color: black;
+}
+.profile-card:hover {
+  transform: rotateY(180deg);
+}
+.header-image-container {
+  display: flex;
+  justify-content: center;
+  height: 12.5vmax;
+  background-image: url("../Img/whiteFog.jpeg")
+}
+.circle-image {
+  order: 1;
+  align-self: flex-end;
+  border-radius: 50%;
+  height: 8vmax;
+  width: 8vmax;
+}
+.front {
+  position: absolute;
+  background-image: url('../Img/whiteGrain.jpeg');
+  backface-visibility: hidden;
+  border: solid yellow thick;
+}
+.back {
+  position: absolute;
+  background-image: url('../Img/whiteGrain.jpeg');
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border: solid blue thick;
+}
