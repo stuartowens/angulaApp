@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 var Profile = mongoose.Schema({
   // unique id syntax: _id
   google_id: { type: String},
-  displayName: { type: String, required: true },
-  participant_profile: { type: Boolean, required: true },
+  displayName: { type: String },
+  participant_profile: {type: Boolean },
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  minor: { type: Boolean, required: true },
-  camping_type: { type: String, required: true },
+  minor: { type: Boolean },
+  camping_type: { type: String },
   email: { type: String },
   image: { type: String },
   alt_email: { type: String },

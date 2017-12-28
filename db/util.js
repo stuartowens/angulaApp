@@ -17,7 +17,9 @@ function findOneUser(req, res) {
 }
 
 function updateUser(req, res) {
-  console.log(req.session.passport.user, 'req~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  console.log(req.session.passport.user, 'req.session~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  console.log(req.body, 'req.body~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
   var id = req.id;
   User.findOne({ _id: req.session.passport.user }, (err, user) => {
     if (err) {
@@ -25,6 +27,15 @@ function updateUser(req, res) {
     } else {
       console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
       user.isPaidUser = true;
+      user.groupTotal = user.groupTotal + req.body.groupTotal;
+      user.studentTotal = user.studentTotal + req.body.studentTotal;
+      user.rvCampers = user.rvCampers + req.body.rvCampers;
+      user.cabinCampers = user.cabinCampers + req.body.cabinCampers;
+      user.tentCampers = user.tentCampers + req.body.tentCampers;
+      user.chaperoneLunches = user.chaperoneLunches + req.body.chaperoneLunches;
+      user.total = user.total + req.body.total;
+      user.amt_paid = user.amt_paid + req.body.total;
+      createProfile(req.session.passport.user)
       console.log('user before save', user)
       user.save(function (err) {
         if(err) {
@@ -67,23 +78,23 @@ function findManyProfiles(req, res) {
 
 // create a new profile add the user id, and add the profile id to the user profiles array
 
-function createProfile(req, res) {
-  var user_id = req.body.user_id;
-  var displayName = req.body.displayName;
-  var participant_profile = req.body.participant_profile;
-  var minor = req.body.minor;
-  var camping_type = req.body.camping_type;
+function createProfile(user_id) {
+  var user_id = user_id;
+  // var displayName = req.body.displayName;
+  // var participant_profile = req.body.participant_profile;
+  // var minor = req.body.minor;
+  // var camping_type = req.body.camping_type;
 
   Profile.create({
     user_id: user_id,
-    displayName: displayName,
-    participant_profile: participant_profile,
-    minor: minor,
-    camping_type: camping_type,
+    displayName: '',
+    participant_profile: true,
+    minor: false,
+    camping_type: 'none',
     email: '',
     image: '',
     alt_email: '',
-    paid: false,
+    paid: true,
     age: 0,
     release_form: false,
     chaperone: false,
