@@ -82,7 +82,8 @@ function findManyProfiles(req, res) {
 
 function createProfile(user_id, i) {
   var user_id = user_id;
-  var displayName = 'Camper '+ i.toString()
+  var number = i + 1
+  var displayName = 'Camper '+ number.toString()
   // var displayName = req.body.displayName;
   // var participant_profile = req.body.participant_profile;
   // var minor = req.body.minor;
@@ -90,7 +91,7 @@ function createProfile(user_id, i) {
 
   Profile.create({
     user_id: user_id,
-    displayName: '',
+    displayName: displayName,
     participant_profile: true,
     minor: false,
     camping_type: 'none',
