@@ -177,8 +177,8 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
-    console.log('req.user in google callback auth function', req.user);
-    console.log('req.session.passport.user', req.session.passport.user);
+    // console.log('req.user in google callback auth function', req.user);
+    // console.log('req.session.passport.user', req.session.passport.user);
     res.redirect('/registration', 200, req.user);
   });
 
@@ -189,7 +189,7 @@ app.get('/auth/google/callback',
       if (err) {
         console.log('error in getUser route', err);
       } else {
-        console.log('get user success', user)
+        // console.log('get user success', user)
         res.json(user)
       }
     })
@@ -212,11 +212,11 @@ app.get('/auth/google/callback',
   // get profiles of user
 
   app.get('/getProfiles', function(req, res) {
-    Profile.find({ _id: req.session.passport.user }, (err, profile) => {
+    Profile.find({ user_id: req.session.passport.user }, (err, profile) => {
       if (err) {
         console.log('error in getUser route', err);
       } else {
-        console.log('get user success', profile)
+        // console.log('get user success', profile)
         res.json(profile)
       }
     })

@@ -136,7 +136,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
         .when('/registration', {
           controller: function($scope, $http, $rootScope) {
             $scope.handleSave = function() {
-              console.log("You saved it!", $scope.user)
+              // console.log("You saved it!", $scope.user)
               $scope.user.total = $scope.user.studentTotal * 379 + $scope.user.rvCampers * 279 + $scope.user.cabinCampers * 199 + $scope.user.tentCampers * 150 + $scope.user.chaperoneLunches*50
             }
             $scope.handleCheckout = function () {
@@ -147,14 +147,14 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
               }).then(function successCallback(response) {
                   // this callback will be called asynchronously
                   // when the response is available
-
+                  return response;
                 }, function errorCallback(response) {
                   // called asynchronously if an error occurs
                   // or server returns response with an error status.
-                }).then(function afterCallback(response){
-                  console.log(response, 'userData')
-                  $rootScope.user = response.data
-                  console.log($rootScope.user, "during callback")
+                }).then(function(res){
+                  // console.log(res, 'userData')
+                  $rootScope.user = res
+                  // console.log($rootScope.user, "during callback")
                 });
             }
           },
@@ -169,8 +169,20 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           // hideMenus: true
         })
         .when('/profile', {
-          controller: function($scope){
-            console.log($scope.user)
+          controller: function($scope, $http, $rootScope){
+            $http({
+              method: 'GET',
+              url: '/getProfiles'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                 $rootScope.user.participant_profiles = response.data
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(response, 'error in the response of profiles')
+              });
+
           },
           templateUrl: 'public/client/templates/profile-container.html',
           controllerAs: 'ctrl',

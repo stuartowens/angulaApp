@@ -9,7 +9,7 @@ angular.module('main-app')
       // $scope.user={
       //   name: "you know who"
       // }
-      console.log($rootScope.user.participant_profiles[0].displayName, 'profile rootScope~~~~~')
+      // console.log($rootScope.user.participant_profiles[0].displayName, 'profile rootScope~~~~~')
     },
     controllerAs: 'ctrl',
     bindToController: true,

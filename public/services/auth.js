@@ -25,7 +25,7 @@ angular.module('main-app')
 
             parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
 
-            console.log(parentPointer.permissionModel, 'parentPointer.permissionModel')
+            // console.log(parentPointer.permissionModel, 'parentPointer.permissionModel')
 
             // $http({
             //   method: 'GET',

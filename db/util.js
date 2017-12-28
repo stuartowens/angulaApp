@@ -10,22 +10,22 @@ function findOneUser(req, res) {
     if (err) {
       console.log('error in findUser', err)
     } else {
-      console.log('user', user)
+      // console.log('user', user)
       res.json(user);
     }
   })
 }
 
 function updateUser(req, res) {
-  console.log(req.session.passport.user, 'req.session~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-  console.log(req.body, 'req.body~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  // console.log(req.session.passport.user, 'req.session~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  // console.log(req.body, 'req.body~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
   var id = req.id;
   User.findOne({ _id: req.session.passport.user }, (err, user) => {
     if (err) {
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
+      // console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
-      console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
+      // console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
       user.isPaidUser = true;
       user.groupTotal = user.groupTotal + req.body.groupTotal;
       user.studentTotal = user.studentTotal + req.body.studentTotal;
@@ -38,15 +38,16 @@ function updateUser(req, res) {
       for (var i = 0; i < req.body.studentTotal; i++) {
         createProfile(req.session.passport.user, i)
       }
-      console.log('user before save', user)
+      // console.log('user before save', user)
       user.save(function (err) {
         if(err) {
           return handleError(err)
         } else {
-          console.log('user after save', user)
+          // console.log('user after save', user)
+          res.json(user);
         }
       })
-      res.json(user);
+
     }
   })
 }
@@ -58,7 +59,7 @@ function findOneProfile(req, res) {
     if (err) {
       console.log('error in findProfile', err)
     } else {
-      console.log('user', profile)
+      console.log('profile', profile)
       res.json(profile);
     }
   })
@@ -71,7 +72,7 @@ function findManyProfiles(req, res) {
     if (err) {
       console.log('error in findProfile', err)
     } else {
-      console.log('user', user)
+      // console.log('user', user)
       Profile.find({})
       res.json(profile);
     }
@@ -128,7 +129,7 @@ function createProfile(user_id, i) {
             } else {
               if(profile.participant_profile) {
                 user.participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
-                console.log(user, "this is the user!!!!!")
+                // console.log(user, "this is the user!!!!!")
                 user.save()
                 // user.save(function(error) {
                 //   if(!error) {

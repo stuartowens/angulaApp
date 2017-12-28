@@ -1,25 +1,30 @@
 .card-container {
   width: 99vmax;
-  height: 60vmax;
+  height: auto;
   position: relative;
   margin-top: 10vmax;
   display: flex;
   justify-content: space-around;
-  border: solid red thick;
+  /* border: solid red thick; */
   flex-wrap: wrap;
+  flex-direction: row;
 }
 .profile-card {
   /* margin: 2vmax; */
-  width: 25vmax;
-  /* height: 60vmax; */
+  /* position: relative; */
+  margin: 3vmax;
+  /* width: 25vmax; */
+  flex-basis: content;
+  min-width: 300px;
+  height: auto;
   transform-style: preserve-3d;
   transition: all 0.5% ease;
-  border: solid green thick;
+  /* border: solid green thick; */
   background-color: black;
 }
-.profile-card:hover {
+/* .profile-card:hover {
   transform: rotateY(180deg);
-}
+} */
 .header-image-container {
   display: flex;
   justify-content: center;
@@ -34,15 +39,15 @@
   width: 8vmax;
 }
 .front {
-  position: absolute;
+  position: relative;
   background-image: url('../Img/whiteGrain.jpeg');
   backface-visibility: hidden;
-  border: solid yellow thick;
+  /* border: solid yellow thick; */
 }
 .back {
-  position: absolute;
+  position: relative;
   background-image: url('../Img/whiteGrain.jpeg');
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  border: solid blue thick;
+  /* backface-visibility: hidden; */
+  /* transform: rotateY(180deg); */
+  /* border: solid blue thick; */
 }
