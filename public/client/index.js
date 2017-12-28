@@ -34,8 +34,8 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
   }).then(function successCallback(response) {
       // this callback will be called asynchronously
       // when the response is available
-       console.log(response.data[0], 'userData')
-       $rootScope.user = response.data[0]
+       console.log(response, 'userData')
+       $rootScope.user = response
        console.log($rootScope.user, "during callback")
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
@@ -109,6 +109,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           // hideMenus: true
         })
         .when('/registration', {
+          // controller: 'MainCtrl',
           controller: function($scope) {
             $scope.user = userData;
             $scope.handleClick = function() {
@@ -136,14 +137,16 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {
-              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser])
+              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
             }
-          }
+          },
           secure: 'true'
           // hideMenus: true
         })
         .when('/unauthorizedAccess', {
-          templateUrl: 'public/client/templates/unauthorized.html'
+          controller: 'MainCtrl',
+          templateUrl: 'public/client/templates/unauthorized.html',
+          controllerAs: 'ctrl'
         })
         .otherwise({ redirectTo: '/' });
 

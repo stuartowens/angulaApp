@@ -177,7 +177,7 @@ app.get('/auth/google/callback',
   // send user to front end based on session
 
   app.get('/getUser', function(req, res) {
-    User.find({ _id: req.session.passport.user }, (err, user) => {
+    User.findOne({ _id: req.session.passport.user }, (err, user) => {
       if (err) {
         console.log('error in getUser route', err);
       } else {

@@ -3,48 +3,48 @@ angular.module('main-app')
   .factory('authorizationService', function($resource, $q, $rootScope, $location) {
     return {
       permissionModel: {
-        permission: (),
+        permission: {},
         isPermisionLoaded: false
       },
 
       permissionCheck: function (roleCollection) {
-        var deffered = $q.defer();
+        var deferred = $q.defer();
 
         var parentPointer = this;
 
         if(this.permissionModel.isPermissionLoaded) {
-          this.getPermission(this.permissionModel, roleCollection, deffered);
+          this.getPermission(this.permissionModel, roleCollection, deferred);
         } else {
 
           $resource('/getUser').get().$promise.then(function successCallback(response) {
 
-            parentPointer.permissionModel.permission = response.data[0];
+            parentPointer.permissionModel.permission = response;
 
             parentPointer.permissionModel.isPermissionLoaded = true;
 
-            parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deffered);
+            parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
 
-            $http({
-              method: 'GET',
-              url: '/getUser'
-            }).then(function successCallback(response) {
-                // this callback will be called asynchronously
-                // when the response is available
-                 console.log(response.data[0], 'userData')
-                 $rootScope.user = response.data[0]
-                 console.log($rootScope.user, "during callback")
-              }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });
+            // $http({
+            //   method: 'GET',
+            //   url: '/getUser'
+            // }).then(function successCallback(response) {
+            //     // this callback will be called asynchronously
+            //     // when the response is available
+            //      console.log(response.data[0], 'userData')
+            //      $rootScope.user = response.data[0]
+            //      console.log($rootScope.user, "during callback")
+            //   }, function errorCallback(response) {
+            //     // called asynchronously if an error occurs
+            //     // or server returns response with an error status.
+            //   });
 
           });
 
         }
-        return deffered.promise;
+        return deferred.promise;
       },
 
-      getPermission: function (permissionModel, roleCollection, deffered) {
+      getPermission: function (permissionModel, roleCollection, deferred) {
 
         var ifPermissionPassed = false;
 
@@ -70,12 +70,12 @@ angular.module('main-app')
           }
         });
         if(!ifPermissionPassed) {
-          $location.path(UnauthorizedAccess);
+          $location.path('/unauthorizedAccess');
           $rootScope.$on('$locationChangeSuccess', function(next, current){
             deferred.resolve();
           });
         } else {
-          deffered.resolve();
+          deferred.resolve();
         }
       }
     }
