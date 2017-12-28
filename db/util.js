@@ -35,7 +35,9 @@ function updateUser(req, res) {
       user.chaperoneLunches = user.chaperoneLunches + req.body.chaperoneLunches;
       user.total = user.total + req.body.total;
       user.amt_paid = user.amt_paid + req.body.total;
-      createProfile(req.session.passport.user)
+      for (var i = 0; i < req.body.studentTotal; i++) {
+        createProfile(req.session.passport.user, i)
+      }
       console.log('user before save', user)
       user.save(function (err) {
         if(err) {
@@ -78,8 +80,9 @@ function findManyProfiles(req, res) {
 
 // create a new profile add the user id, and add the profile id to the user profiles array
 
-function createProfile(user_id) {
+function createProfile(user_id, i) {
   var user_id = user_id;
+  var displayName = 'Camper '+ i.toString()
   // var displayName = req.body.displayName;
   // var participant_profile = req.body.participant_profile;
   // var minor = req.body.minor;
