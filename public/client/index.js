@@ -167,12 +167,14 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
           // hideMenus: true
         })
         .when('/profile', {
-          controller: 'MainCtrl',
+          controller: function($scope){
+            console.log($scope.user)
+          },
           templateUrl: 'public/client/templates/profile.html',
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {
-              return authorizationService.permissionCheck([roles.paidUser, roles.admin])
+              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
             }
           },
           secure: 'true'
