@@ -148,7 +148,7 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
                   // this callback will be called asynchronously
                   // when the response is available
                    console.log(response, 'userData')
-                   $scope.user = response.data
+                   $rootScope.user = response.data
                    console.log($rootScope.user, "during callback")
                 }, function errorCallback(response) {
                   // called asynchronously if an error occurs
