@@ -1,7 +1,7 @@
-angular.module('main-app', ['angular-stripe'])
-.config(function(stripeProvider){
-  stripeProvider.setPublishableKey('pk_test_LkOowhWWdMD6tjPkg3EicMLK')
-})
+angular.module('main-app')
+// .config(function(stripeProvider){
+//   stripeProvider.setPublishableKey('pk_test_LkOowhWWdMD6tjPkg3EicMLK')
+// })
 .directive('checkout', function() {
   return {
     scope: {
@@ -9,7 +9,13 @@ angular.module('main-app', ['angular-stripe'])
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http) {
-
+      $scope.stripeCallback = function (code, result) {
+        if (result.error) {
+          window.alert('it failed! error: ' + result.error.message);
+        } else {
+          window.alert('success! token: ' + result.id);
+        }
+      };
       // $scope.charge = function charge () {
       //   stripe = Stripe('pk_test_LkOowhWWdMD6tjPkg3EicMLK')
       //   elements = stripe.elements();

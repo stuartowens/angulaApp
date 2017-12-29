@@ -26,7 +26,7 @@ var roles = {
 
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
-angular.module('main-app', ['ngRoute', 'ngResource'])
+angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   console.log($rootScope, 'rootScope~~~~~~~~~~');
   // $http({
@@ -49,8 +49,9 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
   // console.log($rootScope.user, "after callback")
 })
 
-.config(function ($locationProvider, $routeProvider) {
-
+.config(function ($locationProvider, $routeProvider, $windowProvider) {
+    var $window = $windowProvider.$get();
+    $window.Stripe.setPublishableKey('pk_test_LkOowhWWdMD6tjPkg3EicMLK');
     $routeProvider
         .when('/', {
           controller: function($scope) {
@@ -202,4 +203,5 @@ angular.module('main-app', ['ngRoute', 'ngResource'])
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(true);
+
 })
