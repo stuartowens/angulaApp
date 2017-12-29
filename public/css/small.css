@@ -1,5 +1,5 @@
 .profile-card {
-  width: 320px;
+  width: 40vmax;
   /* margin: 5vmax; */
   margin-top: 6vmax;
   flex-basis: auto;
@@ -7,7 +7,7 @@
 .card-container {
   margin: 4vmax;
   /* margin-top: 10vmax; */
-  width: 350px;
+  width: 50vmax;
 }
 .contact-container {
   display: flex;
