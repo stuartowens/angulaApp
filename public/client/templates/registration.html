@@ -1,7 +1,12 @@
 <h1>Welcome {{user.name}}</h1>
-<div class="sign-up">
-  <h1>Sign someone up for The Band Camp: </h1>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal" >Add campers</button>
+<div class="sign-up card text-center">
+  <img class="card-img-top" src="./public/Img/andy_photo.png" alt="Card image cap">
+  <div class="card-block sign-up-block text-center">
+    <h2 class="">Sign up for The Band Camp: </h2>
+  </div>
+  <a><button type="button" class="btn btn-primary sign-up-button" data-toggle="modal" data-target="#registrationmodal" >Register campers</button></a>
+  <h2>Once you have paid for camp registration click here to get to camper profiles: </h2>
+  <a ng-href="/profile"><button type="button" class="btn btn-primary sign-up-button">Camper Profiles</button></a>
 </div>
 <!-- <h1>Signup one person here: </h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal">Group</button> -->
@@ -83,4 +88,3 @@
     </div>
   </div>
 </div>
-<a ng-href="/profile"><button type="button" class="btn btn-primary"  >Profile</button></a>
