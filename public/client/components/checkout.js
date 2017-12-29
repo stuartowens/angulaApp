@@ -1,15 +1,34 @@
-angular.module('main-app')
+angular.module('main-app', ['angular-stripe'])
+.config(function(stripeProvider){
+  stripeProvider.setPublishableKey('pk_test_LkOowhWWdMD6tjPkg3EicMLK')
+})
 .directive('checkout', function() {
   return {
     scope: {
-      // user: '<',
+      // card: '<',
     },
     restrict: 'E',
-    controller: function($scope, $rootScope, $http, stripe) {
-      $scope.charge = function charge () {
-        console.log(stripe.card.createToken($scope.payment.card))
-      }
+    controller: function($scope, $rootScope, $http) {
 
+      // $scope.charge = function charge () {
+      //   stripe = Stripe('pk_test_LkOowhWWdMD6tjPkg3EicMLK')
+      //   elements = stripe.elements();
+      //   console.log(stripe, 'stripe~~~~~~~~')
+      //   console.log(elements, 'elements~~~~~~~~')
+      //   $scope.card = elements.create('card')
+      //   console.log($scope.card, 'card~~~~~~~~~')
+      //   $scope.card.mount('#card-element')
+      //   // console.log(stripe.card.createToken($scope.payment.card))
+      // }
+      // $scope.charge();
+      // $scope.card.addEventListener('change', function(event) {
+      //   var displayError = document.getElementById('card-errors');
+      //   if (event.error) {
+      //     displayError.textContent = event.error.message;
+      //   } else {
+      //     displayError.textContent = '';
+      //   }
+      // });
       // $scope.user={
       //   name: "you know who"
       // }
