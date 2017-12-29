@@ -1,5 +1,5 @@
 var server = require('./angulaApp.js');
 
-server.listen(3010, function() {
+server.listen(443, function() {
   console.log('Angular app')
 })
