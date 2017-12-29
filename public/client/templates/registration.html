@@ -86,3 +86,35 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="paymentmodal" tabindex="-1" role="dialog" aria-labelledby="paymentmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Cart: </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/> -->
+        <h4>Please make sure the information below is correct then proceed to payment</h4>
+        <h4>Name: {{user.displayName}}</h4>
+        <h4>Email: {{user.email}}</h4>
+        <h4>{{user.groupTotal}} Group members: </h4>
+        <h4>Student Total: {{user.studentTotal}} x $379 = ${{user.studentTotal * 379 }}</h4>
+        <h4>RV Campers: {{user.rvCampers}} x $279 = ${{user.rvCampers * 279 }}</h4>
+        <h4>Cabin Campers: {{user.cabinCampers}} x $199 = ${{user.cabinCampers * 199 }}</h4>
+        <h4>Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</h4>
+        <h4>Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</h4>
+        <h4>Total: ${{user.total}}</h4>
+      </div>
+      <div class="modal-footer">
+        <checkout />
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#registrationmodal">Edit Cart</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentmodal" data-dismiss="modal" ng-click="handleCheckout()">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

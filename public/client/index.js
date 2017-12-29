@@ -26,7 +26,7 @@ var roles = {
 
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
-angular.module('main-app', ['ngRoute', 'ngResource'])
+angular.module('main-app', ['ngRoute', 'ngResource', 'angular-stripe'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   console.log($rootScope, 'rootScope~~~~~~~~~~');
   // $http({
