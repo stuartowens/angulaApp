@@ -1,13 +1,13 @@
 .profile-card {
-  width: 350px;
-  margin: 2vmax;
-  margin-top: 10vmax;
+  width: 320px;
+  /* margin: 5vmax; */
+  margin-top: 6vmax;
   flex-basis: auto;
 }
 .card-container {
-  /* margin: 5vmax; */
+  margin: 4vmax;
   /* margin-top: 10vmax; */
-  width: 400px;
+  width: 350px;
 }
 .contact-container {
   display: flex;
