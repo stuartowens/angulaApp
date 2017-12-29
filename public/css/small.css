@@ -1,3 +1,14 @@
+.profile-card {
+  width: 50vmax;
+  margin: 2vmax;
+  margin-top: 10vmax;
+  flex-basis: auto;
+}
+.card-container {
+  margin: 5vmax;
+  /* margin-top: 10vmax; */
+  width: 400px;
+}
 .contact-container {
   display: flex;
   flex-direction: column;
