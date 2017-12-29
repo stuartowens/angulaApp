@@ -88,3 +88,8 @@ h1 {
   visibility: collapse;
   display: none;
 }
+
+.home-container {
+  flex-direction: row;
+
+}
