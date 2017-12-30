@@ -9,6 +9,7 @@ var User = mongoose.Schema({
   isAdmin: { type: Boolean },
   image: { type: String },
   address: { type: Object },
+  token: { type: String },
   email: { type: String },
   alt_email: { type: String },
   participant_profiles: [{

@@ -136,11 +136,15 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .when('/registration', {
           controller: function($scope, $http, $rootScope) {
+            this.user = $rootScope.user;
             $rootScope.handleSave = function() {
               // console.log("You saved it!", $rootScope.user)
+              this.user = $rootScope.user;
               $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50
             }
-            $rootScope.handleCheckout = function () {
+            $rootScope.handleCheckout = function (address, token) {
+              $rootScope.user.address = address;
+              $rootScope.user.id = token;
               $http({
                 method: 'PUT',
                 url: '/updateUser',
@@ -161,6 +165,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           },
           templateUrl: 'public/client/templates/registration.html',
           controllerAs: 'ctrl',
+          bindToController: true,
           resolve: {
             permission: function(authorizationService, $route) {
               return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])

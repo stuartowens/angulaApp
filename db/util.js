@@ -33,7 +33,9 @@ function updateUser(req, res) {
       user.cabinCampers = user.cabinCampers + req.body.cabinCampers;
       user.tentCampers = user.tentCampers + req.body.tentCampers;
       user.chaperoneLunches = user.chaperoneLunches + req.body.chaperoneLunches;
-      user.total = user.total + req.body.total;
+      user.total = 0;
+      user.address = req.body.address;
+      user.token = req.body.token;
       user.amt_paid = user.amt_paid + req.body.total;
       for (var i = 0; i < req.body.studentTotal; i++) {
         createProfile(req.session.passport.user, i)

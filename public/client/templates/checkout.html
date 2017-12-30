@@ -1,24 +1,52 @@
-<div>
-  <form stripe-form="stripeCallback" name="checkoutForm">
-    <input type="text" ng-model="name" placeholder="Full Name" name="name"/>
-    <input type="text" ng-model="addressLine1" placeholder="Address" name="address_line1"/>
-    <input type="text" ng-model="addressLine2" placeholder="Apt Number"  name="address_line2"/>
-    <input type="text" ng-model="addressCity" placeholder="City"  name="address_city"/>
-    <input type="text" ng-model="addressState" placeholder="State"  name="address_state"/>
-    <input type="text" ng-model="addressZip" placeholder="Zip code" name="address_zip"/>
-    <input type="text" ng-model="addressCountry" placeholder="Country" name="address_country"/>
-    <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card"/>
-    <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry"/>
-    <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc"/>
-    <button type="submit">Submit</button>\
-    <div ng-if="checkoutForm.card.$invalid">
-      Error: invalid card number!
+<div class="modal fade" id="checkoutmodal" tabindex="-1" role="dialog" aria-labelledby="checkoutmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitle">Cart: </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/> -->
+        <h4>Please make sure the information below is correct then proceed to complete payment</h4>
+        <h4>Name: {{$ctrl.user.displayName}}</h4>
+        <h4>Email: {{$ctrl.user.email}}</h4>
+        <h4>{{$ctrl.user.groupTotal}} Group members: </h4>
+        <h4>Student Total: {{$ctrl.user.studentTotal}} x $379 = ${{$ctrl.user.studentTotal * 379 }}</h4>
+        <h4>RV Campers: {{$ctrl.user.rvCampers}} x $279 = ${{$ctrl.user.rvCampers * 279 }}</h4>
+        <h4>Cabin Campers: {{$ctrl.user.cabinCampers}} x $199 = ${{$ctrl.user.cabinCampers * 199 }}</h4>
+        <h4>Tent Campers: {{$ctrl.user.tentCampers}} x $150 = ${{$ctrl.user.tentCampers * 150 }}</h4>
+        <h4>Chaperone Lunch Plans: {{$ctrl.user.chaperoneLunches}} x $50 = ${{$ctrl.user.chaperoneLunches*50}}</h4>
+        <h4>Total: ${{$ctrl.user.total}}</h4>
+      </div>
+      <form stripe-form="stripeCallback" name="checkoutForm">
+        <input type="text" ng-model="name" placeholder="Full Name" name="name"/>
+        <input type="text" ng-model="addressLine1" placeholder="Address" name="address_line1"/>
+        <input type="text" ng-model="addressLine2" placeholder="Apt Number"  name="address_line2"/>
+        <input type="text" ng-model="addressCity" placeholder="City"  name="address_city"/>
+        <input type="text" ng-model="addressState" placeholder="State"  name="address_state"/>
+        <input type="text" ng-model="addressZip" placeholder="Zip code" name="address_zip"/>
+        <input type="text" ng-model="addressCountry" placeholder="Country" name="address_country"/>
+        <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card"/>
+        <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry"/>
+        <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc"/>
+        <!-- <button type="submit">Submit</button>\ -->
+        <div ng-if="checkoutForm.card.$invalid">
+          Error: invalid card number!
+        </div>
+        <div ng-if="checkoutForm.expiry.$invalid">
+          Error: invalid expiration date!
+        </div>
+        <div ng-if="checkoutForm.cvc.$invalid">
+          Error: invalid cvc number!
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#registrationmodal">Edit Cart</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#paymentmodal" data-dismiss="modal" ng-click="handleCheckout()">Submit</button>
+      </div>
+    </form>
     </div>
-    <div ng-if="checkoutForm.expiry.$invalid">
-      Error: invalid expiration date!
-    </div>
-    <div ng-if="checkoutForm.cvc.$invalid">
-      Error: invalid cvc number!
-    </div>
-</form>
+  </div>
 </div>

@@ -1,8 +1,9 @@
 angular.module('main-app')
-.directive('checkout', function() {
+.directive('example', function() {
   return {
     scope: {
       user: '<',
+      name: '<'
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
@@ -40,6 +41,6 @@ angular.module('main-app')
     controllerAs: 'ctrl',
     bindToController: true,
     replace: true,
-    templateUrl: 'public/client/templates/checkout.html'
+    templateUrl: 'public/client/templates/example.html'
   };
 });
