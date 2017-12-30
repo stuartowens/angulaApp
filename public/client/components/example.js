@@ -38,7 +38,7 @@ angular.module('main-app')
           }
       };
     },
-    controllerAs: 'ctrl',
+    controllerAs: 'vm',
     bindToController: true,
     replace: true,
     templateUrl: 'public/client/templates/example.html'

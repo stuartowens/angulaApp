@@ -80,7 +80,8 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
             // this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/instructors.html',
-          controllerAs: 'ctrl'
+          controllerAs: 'ctrl',
+          bindToController: true
           // hideMenus: true
         })
         .when('/contact', {
