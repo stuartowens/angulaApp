@@ -15,8 +15,11 @@ var YAHOO_EMAIL = require('../authConfig.js').YAHOO_EMAIL;
 var YAHOO_USERNAME = require('../authConfig.js').YAHOO_USERNAME;
 var YAHOO_PASS = require('../authConfig.js').YAHOO_PASS;
 var mailer = require('express-mailer');
-// const keyPublishable = require('../stripeConfig').PUBLISHABLE_KEY
-// const keySecret = require('../stripeConfig').SECRET_KEY
+const keyPublishable = require('../stripeConfig').PUBLISHABLE_KEY
+const keySecret = require('../stripeConfig').SECRET_KEY
+// "sk_test_iAhMKuT8CzPLXiT125IzVj2n"
+const stripe = require("stripe")("sk_test_iAhMKuT8CzPLXiT125IzVj2n");
+// const stripe = require("stripe")(keySecret);
 
 var router = require('./router');
 
@@ -46,6 +49,7 @@ mailer.extend(app, {
 })
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/send', function (req, res, next) {
   app.mailer.send('email', {
@@ -142,31 +146,35 @@ function(token, tokenSecret, profile, done) {
   })
 }
 ));
+//GET stripe route to display paymnent form
 
-// //GET stripe route to display paymnent form
-//
 // app.get("/", (req, res) =>
 //   res.render("index.pug", {keyPublishable}));
-//
-// // POST stripe  route to recieve payment token ID and create charge
-//
-//
-// app.post("/charge", (req, res) => {
-//   let amount = 500;
-//
-//   stripe.customers.create({
-//      email: req.body.stripeEmail,
-//     source: req.body.stripeToken
-//   })
-//   .then(customer =>
-//     stripe.charges.create({
-//       amount,
-//       description: "Sample Charge",
-//          currency: "usd",
-//          customer: customer.id
-//     }))
-//   .then(charge => res.render("charge.pug"));
-// });
+
+// POST stripe  route to recieve payment token ID and create charge
+
+
+app.post("/charge", (req, res) => {
+  let amount = 500;
+
+  stripe.customers.create({
+     email: 'homerowens@yahoo.com',
+    source: req.body.stripeToken,
+  })
+  .then(customer =>
+    stripe.charges.create({
+      amount,
+      description: "Sample Charge",
+         currency: "usd",
+         customer: customer.id
+    }))
+  .then(charge => {
+    // res.json(charge);
+    res.render("charge.pug");
+  });
+});
+
+
 
 //GET /auth/google
 

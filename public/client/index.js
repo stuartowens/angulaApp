@@ -51,7 +51,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
-    $window.Stripe.setPublishableKey('pk_test_LkOowhWWdMD6tjPkg3EicMLK');
+    $window.Stripe.setPublishableKey('pk_test_lbTK16cxnGSUtbaZD38raLTR');
     $routeProvider
         .when('/', {
           controller: function($scope) {
