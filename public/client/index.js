@@ -136,15 +136,15 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .when('/registration', {
           controller: function($scope, $http, $rootScope) {
-            $scope.handleSave = function() {
-              // console.log("You saved it!", $scope.user)
-              $scope.user.total = $scope.user.studentTotal * 379 + $scope.user.rvCampers * 279 + $scope.user.cabinCampers * 199 + $scope.user.tentCampers * 150 + $scope.user.chaperoneLunches*50
+            $rootScope.handleSave = function() {
+              // console.log("You saved it!", $rootScope.user)
+              $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50
             }
-            $scope.handleCheckout = function () {
+            $rootScope.handleCheckout = function () {
               $http({
                 method: 'PUT',
                 url: '/updateUser',
-                data: $scope.user
+                data: $rootScope.user
               }).then(function successCallback(response) {
                   // this callback will be called asynchronously
                   // when the response is available

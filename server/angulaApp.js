@@ -155,22 +155,22 @@ function(token, tokenSecret, profile, done) {
 
 
 app.post("/charge", (req, res) => {
-  let amount = 500;
-
+  let amount = req.body.amount;
+  console.log(req.body.amount,'req.body.amount')
   stripe.customers.create({
-     email: 'homerowens@yahoo.com',
+     email: req.body.email,
     source: req.body.stripeToken,
   })
   .then(customer =>
     stripe.charges.create({
       amount,
-      description: "Sample Charge",
+      description: "Band Camp Dues",
          currency: "usd",
          customer: customer.id
     }))
   .then(charge => {
-    // res.json(charge);
-    res.render("charge.pug");
+    res.json(charge);
+    // res.render("charge.pug");
   });
 });
 

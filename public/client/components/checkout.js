@@ -8,20 +8,25 @@ angular.module('main-app')
     controller: function($scope, $rootScope, $http) {
       $scope.stripeCallback = function (code, result) {
         if (result.error) {
-          window.alert('it failed! error: ' + result.error.message);
+          window.alert('Your card failed to process because: ' + result.error.message);
         } else {
+          // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
           window.alert('success! token: ' + result.id);
           $http({
               method: 'POST',
               url: '/charge',
               data: {
-                email: 'homerowen@yahoo.com',
-                stripeToken: result.id
+                email: 'homerowens@yahoo.com',
+                stripeToken: result.id,
+                amount: $rootScope.user.total
               }
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
                 console.log(response, 'charge response~~~~~~~~~')
+                if (response.data.paid) {
+
+                }
               }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
