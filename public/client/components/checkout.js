@@ -37,7 +37,7 @@ angular.module('main-app')
           }
       };
     },
-    controllerAs: 'ctrl',
+    controllerAs: 'chkoutCtrl',
     bindToController: true,
     replace: true,
     templateUrl: 'public/client/templates/checkout.html'

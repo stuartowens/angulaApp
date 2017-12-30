@@ -10,15 +10,15 @@
       <div class="modal-body">
         <!-- <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/> -->
         <h4>Please make sure the information below is correct then proceed to complete payment</h4>
-        <h4>Name: {{$ctrl.user.displayName}}</h4>
-        <h4>Email: {{$ctrl.user.email}}</h4>
-        <h4>{{$ctrl.user.groupTotal}} Group members: </h4>
-        <h4>Student Total: {{$ctrl.user.studentTotal}} x $379 = ${{$ctrl.user.studentTotal * 379 }}</h4>
-        <h4>RV Campers: {{$ctrl.user.rvCampers}} x $279 = ${{$ctrl.user.rvCampers * 279 }}</h4>
-        <h4>Cabin Campers: {{$ctrl.user.cabinCampers}} x $199 = ${{$ctrl.user.cabinCampers * 199 }}</h4>
-        <h4>Tent Campers: {{$ctrl.user.tentCampers}} x $150 = ${{$ctrl.user.tentCampers * 150 }}</h4>
-        <h4>Chaperone Lunch Plans: {{$ctrl.user.chaperoneLunches}} x $50 = ${{$ctrl.user.chaperoneLunches*50}}</h4>
-        <h4>Total: ${{$ctrl.user.total}}</h4>
+        <h4>Name: {{chkoutCtrl.user.displayName}}</h4>
+        <h4>Email: {{chkoutCtrl.user.email}}</h4>
+        <h4>{{chkoutCtrl.user.groupTotal}} Group members: </h4>
+        <h4>Student Total: {{chkoutCtrl.user.studentTotal}} x $379 = ${{chkoutCtrl.user.studentTotal * 379 }}</h4>
+        <h4>RV Campers: {{chkoutCtrl.user.rvCampers}} x $279 = ${{chkoutCtrl.user.rvCampers * 279 }}</h4>
+        <h4>Cabin Campers: {{chkoutCtrl.user.cabinCampers}} x $199 = ${{chkoutCtrl.user.cabinCampers * 199 }}</h4>
+        <h4>Tent Campers: {{chkoutCtrl.user.tentCampers}} x $150 = ${{chkoutCtrl.user.tentCampers * 150 }}</h4>
+        <h4>Chaperone Lunch Plans: {{chkoutCtrl.user.chaperoneLunches}} x $50 = ${{chkoutCtrl.user.chaperoneLunches*50}}</h4>
+        <h4>Total: ${{chkoutCtrl.user.total}}</h4>
       </div>
       <form stripe-form="stripeCallback" name="checkoutForm">
         <input type="text" ng-model="name" placeholder="Full Name" name="name"/>

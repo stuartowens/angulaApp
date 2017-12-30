@@ -165,7 +165,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
             }
           },
           templateUrl: 'public/client/templates/registration.html',
-          controllerAs: 'ctrl',
+          controllerAs: 'regCtrl',
           bindToController: true,
           resolve: {
             permission: function(authorizationService, $route) {
