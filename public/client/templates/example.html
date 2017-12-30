@@ -1,3 +1,15 @@
 <div>
   <h1> Hello {{vm.name}} !!!!!</h1>
+  <form stripe-form="vm.stripeCallback" name="checkoutForm">
+    <input type="text" ng-model="name" placeholder="Full Name" name="name"/>
+    <input type="text" ng-model="addressLine1" placeholder="Address" name="address_line1"/>
+    <input type="text" ng-model="addressLine2" placeholder="Apt Number"  name="address_line2"/>
+    <input type="text" ng-model="addressCity" placeholder="City"  name="address_city"/>
+    <input type="text" ng-model="addressState" placeholder="State"  name="address_state"/>
+    <input type="text" ng-model="addressZip" placeholder="Zip code" name="address_zip"/>
+    <input type="text" ng-model="addressCountry" placeholder="Country" name="address_country"/>
+    <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card"/>
+    <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry"/>
+    <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc"/>
+    <button type="submit">Submit</button>
 </div>

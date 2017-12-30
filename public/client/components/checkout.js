@@ -8,12 +8,13 @@ angular.module('main-app')
     controller: function($scope, $rootScope, $http, $location) {
       console.log($scope, "scope")
       console.log($rootScope, "rootScope")
-      stripeCallback = function (code, result) {
+      this.stripeCallback = function (code, result) {
         if (result.error) {
           window.alert('Your card failed to process because: ' + result.error.message);
         } else {
           // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
-          window.alert('success! token: ' + result.id);
+          // window.alert('success! token: ' + result.id);
+          $('#checkoutmodal').modal('hide');
           $http({
               method: 'POST',
               url: '/charge',
@@ -35,7 +36,7 @@ angular.module('main-app')
                 // or server returns response with an error status.
               })
           }
-      };
+      }.bind(this);
     },
     controllerAs: 'chkoutCtrl',
     bindToController: true,
