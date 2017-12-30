@@ -8,7 +8,7 @@ angular.module('main-app')
     controller: function($scope, $rootScope, $http, $location) {
       console.log($scope, "scope")
       console.log($rootScope, "rootScope")
-      $scope.stripeCallback = function (code, result) {
+      stripeCallback = function (code, result) {
         if (result.error) {
           window.alert('Your card failed to process because: ' + result.error.message);
         } else {

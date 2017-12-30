@@ -31,7 +31,7 @@
         <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card"/>
         <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry"/>
         <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc"/>
-        <!-- <button type="submit">Submit</button>\ -->
+        <button type="submit">Submit</button>
         <div ng-if="checkoutForm.card.$invalid">
           Error: invalid card number!
         </div>
@@ -44,7 +44,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#registrationmodal">Edit Cart</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#paymentmodal" data-dismiss="modal" ng-click="handleCheckout()">Submit</button>
+        <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button> -->
       </div>
     </form>
     </div>
