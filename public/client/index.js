@@ -77,6 +77,11 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .when('/instructors', {
           controller: function() {
+            this.name = "stu";
+            this.profile = {
+              instruments: 'Violin',
+              Genres: 'Blues'
+            }
             // this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/instructors.html',

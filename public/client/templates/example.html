@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <h1> Hello {{vm.name}} !!!!!</h1>
   <form stripe-form="vm.stripeCallback" name="checkoutForm">
     <input type="text" ng-model="name" placeholder="Full Name" name="name"/>
@@ -12,4 +12,121 @@
     <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry"/>
     <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc"/>
     <button type="submit">Submit</button>
+</div> -->
+
+<div>
+
+<div class="card profile-card" >
+  <div class="front">
+    <div class="card-header  header-image-container">
+      <div class="circle-image">
+        <img class="circle-image" src="./public/Img/photos3.jpg" alt="Card image cap">
+      </div>
+    </div>
+    <div class="card-body text-center">
+      <h2 class="card-title">{{vm.name}}</h2>
+      <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <form ng-submit="vm.submitProfile(e)">
+        <li class="list-group-item">Instruments:<h2 class="animate-show-hide" ng-hide="edit">{{vm.profile.instruments}}</h2> <input id="instr" type="text" class="animate-show-hide" ng-show="edit" value={{vm.profile.instruments}}></input></li>
+        <li class="list-group-item">Singer: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <li class="list-group-item">Genres: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <li class="list-group-item">Experience Level: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <li class="list-group-item">Emergency contact: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <li class="list-group-item">Minor: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <li class="list-group-item">Camping: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+        <button type="submit" class="animate-show-hide" ng-show="edit" >Submit changes</button>
+        <input type="checkbox" ng-model="edit" aria-label="Toggle ngShow ngHide" style="width: 200px; height: 200px;" />
+      </form>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link" data-toggle="modal" data-target="#editProfile">Edit Info</a>
+      <a href="#" class="card-link">Flip</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editProfile" style="width:95vw; margin: 3vw;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Please tell us a little about yourself</p>
+        <form>
+          <div class="form-group col-md-2">
+            <label for="inputSummary">Zip</label>
+            <input type="text" class="form-control" id="inputSummary">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputInstruments">Instruments</label>
+              <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
+            </div>
+            <div class="col-sm-2">Checkbox</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="singerCheck">
+                <label class="form-check-label" for="singerCheck">
+                  Singer
+                </label>
+                <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
+                <label class="form-check-label" for="instrumentalistCheck">
+                  Instrumentalist
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputGenres">Genres</label>
+              <input type="text" class="form-control" id="inputGenres" placeholder="Genres">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputExperience">Experience Level 1-3</label>
+            <input type="number" class="form-control" id="inputExperience" placeholder="Experience Level scale 1-3">
+          </div>
+          <div class="form-group">
+            <label for="inputEmergency">Emergency Contact Info</label>
+            <input type="text" class="form-control" id="inputEmergency" placeholder="Emergency Contact Info">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputMinor">Minor</label>
+              <input type="text" class="form-control" id="inputMinor">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputCamping">Camping</label>
+              <select id="inputCamping" class="form-control">
+                <option selected>Choose...</option>
+                <option>None</option>
+                <option>Tent Camper</option>
+                <option>RV Camper</option>
+                <option>Cabin Camper</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
