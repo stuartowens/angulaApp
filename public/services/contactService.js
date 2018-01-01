@@ -8,7 +8,7 @@ angular.module('main-app')
     // console.log('Params', params)
     $http({
       method: 'GET',
-      url: '/send',
+      url: 'localhost:3010/send/',
       params: {
         firstName: params.firstName,
         lastName: params.lastName,
