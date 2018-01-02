@@ -257,11 +257,12 @@ app.get('/api/auth/google/callback',
     })
   })
 
-  // check for session for react router
+  // check for session for angular router
 
   app.get('/api/authenticate', function(req, res) {
 
-    if(req.session.passport.user) {
+    // if(req.session.passport.user) {
+    if(req.session.passport) {
       res.sendStatus(200);
     } else {
       res.sendStatus(400);
