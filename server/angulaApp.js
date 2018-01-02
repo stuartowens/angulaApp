@@ -229,8 +229,6 @@ app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
     res.redirect(req.redirUrl, 200, req.user);
-    res.redirect(req.redirUrl + '/registration', 200, req.user);
-
   });
 
   // send user to front end based on session
@@ -297,6 +295,11 @@ app.get('/api/auth/google/callback',
 
   app.use('/', router);
 
+  router.use('/', express.static('app', { redirect: false }));
+
+  router.get('*', function (req, res, next) {
+      res.sendFile(path.resolve('angulaApp/index.html'));
+  });
 
   app.use('/*', function(req, res) {
     res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
