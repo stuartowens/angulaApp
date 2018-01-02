@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.route('/registration')
   .get(function(req, res) {
-    res.redirect('/registration')
+    res.redirect('https://localhost:/registration')
   })
 
 router.route('/api/findUser')
