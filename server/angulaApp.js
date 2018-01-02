@@ -17,6 +17,7 @@ var YAHOO_EMAIL = require('../authConfig.js').YAHOO_EMAIL;
 var YAHOO_USERNAME = require('../authConfig.js').YAHOO_USERNAME;
 var YAHOO_PASS = require('../authConfig.js').YAHOO_PASS;
 var mailer = require('express-mailer');
+var path = require('path');
 const keyPublishable = require('../stripeConfig').PUBLISHABLE_KEY
 const keySecret = require('../stripeConfig').SECRET_KEY
 // "sk_test_iAhMKuT8CzPLXiT125IzVj2n"
@@ -34,8 +35,8 @@ var server = require('http').Server(app);
 
 //Setting the views for the express-mailer
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('views', __dirname + '/client/templates');
+app.set('view engine', 'html');
 
 // This extends the express application to use the express-mailer
 mailer.extend(app, {
@@ -50,7 +51,7 @@ mailer.extend(app, {
   }
 })
 app.set('trust proxy', 'loopback, 54.177.210.89');
-app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
