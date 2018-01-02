@@ -298,12 +298,12 @@ app.get('/api/auth/google/callback',
   router.use('/', express.static(__dirname.slice(0, __dirname.length - 6), { redirect: false }));
 
   router.get('*', function (req, res, next) {
-      res.sendFile(path.resolve('../index.html'));
+      res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
   });
 
-  app.use('/*', function(req, res) {
-    res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
-  })
+  // app.use('/*', function(req, res) {
+  //   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
+  // })
 
 
 module.exports = server;
