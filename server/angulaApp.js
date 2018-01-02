@@ -35,7 +35,7 @@ var server = require('http').Server(app);
 
 //Setting the views for the express-mailer
 
-app.set('views', __dirname + '/templates');
+app.set('views', __dirname + '/client/templates');
 app.set('view engine', 'html');
 
 // This extends the express application to use the express-mailer
