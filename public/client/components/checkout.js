@@ -12,8 +12,8 @@ angular.module('main-app')
         if (result.error) {
           window.alert('Your card failed to process because: ' + result.error.message);
         } else {
-           console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
-          window.alert('success! token: ' + result.id);
+           // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
+          window.alert('Your card has been successfully charged  ' + $rootScope.user.total);
           $('#checkoutmodal').modal('hide');
           $http({
               method: 'POST',
@@ -26,7 +26,7 @@ angular.module('main-app')
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
-                console.log(response, 'charge response~~~~~~~~~')
+                // console.log(response, 'charge response~~~~~~~~~')
                 if (response.data.paid) {
                   $rootScope.handleCheckout(response.data.source, response.data.id)
                   $location.path('/profile')

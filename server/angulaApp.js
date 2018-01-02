@@ -223,7 +223,7 @@ app.get('/api/auth/google/callback',
     console.log('req.session.passport.user', req.session.passport.user);
     console.log('req.session.passport', req.session.passport);
     console.log('req.session', req.session);
-    res.redirect(req.redirUrl, 200, req.user);
+    res.redirect(req.redirUrl + '/registration', 200, req.user);
   });
 
   // send user to front end based on session
