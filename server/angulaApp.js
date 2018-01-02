@@ -88,7 +88,7 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
 
-  console.log(req, 'req', req.headers, 'req.headers')
+  console.log(req.headers.host 'req.headers.host')
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
      // proxy in effect
      req.redirUrl = req.headers['x-forwarded-proto']
