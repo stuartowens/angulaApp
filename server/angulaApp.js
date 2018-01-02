@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -292,7 +293,7 @@ app.get('/api/auth/google/callback',
   // })
   app.use('/', router);
 
-
+app.use('/*', express.static(path.join(__dirname, '../index.html')))
 //  app.use('/*', function(req, res) {
 //    res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
 //  })
