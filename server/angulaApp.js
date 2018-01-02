@@ -280,7 +280,7 @@ app.get('/api/auth/google/callback',
     req.logout();
     res.redirect('/');
   });
-  app.get('/registration', function(req, res){
+  app.get('*', function(req, res){
     res.render('registration');
   })
   app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
