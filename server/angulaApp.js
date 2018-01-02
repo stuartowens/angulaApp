@@ -50,6 +50,7 @@ mailer.extend(app, {
   }
 })
 app.set('trust proxy', 'loopback, 54.177.210.89');
+app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -289,7 +290,7 @@ app.get('/api/auth/google/callback',
 
   app.use('/', router);
 
-  app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
+
 
   app.use('/*', function(req, res) {
     res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
