@@ -27,9 +27,9 @@ var roles = {
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
-.run(['$log', '$rootScope', '$route', function ($log, $rootScope, $route, angular.noop) {
-  // nothing
-})
+// .run(['$log', '$rootScope', '$route', function ($log, $rootScope, $route, angular.noop) {
+//   // nothing
+// })
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   console.log($rootScope, 'rootScope~~~~~~~~~~');
   // $http({
@@ -54,6 +54,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
     $window.Stripe.setPublishableKey('pk_test_lbTK16cxnGSUtbaZD38raLTR');
+    $routeProvider.eagerInstantiationEnabled(true);
     $routeProvider
         .when('/', {
           controller: function($scope) {
