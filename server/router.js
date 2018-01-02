@@ -6,6 +6,11 @@ var util = require('../db/util')
 
 var router = express.Router();
 
+router.route('/registration')
+  .get(function(req. res) {
+    res.redirect('/registration')
+  })
+
 router.route('/api/findUser')
   .get(function(req,res) {
     util.findOneUser(req, res);
