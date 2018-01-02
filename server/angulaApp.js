@@ -293,7 +293,7 @@ app.get('/api/auth/google/callback',
   app.use('/', router);
 
 
-  app.get('/[^\.]+$', function(req, res){
+  app.use('/*', function(req, res){
       res.sendfile("index.html", { root: __dirname + '/public' });
   });
   // app.use('/*', function(req, res) {
