@@ -228,7 +228,7 @@ app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile',
 app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
-    res.redirect('/registration', 200, req.user);
+    res.redirect(req.redirUrl, 200, req.user);
   });
 
   // send user to front end based on session
@@ -290,20 +290,15 @@ app.get('/api/auth/google/callback',
     res.redirect('/');
   });
 
-  // app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
+  app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
   // implement express router
 
-  // app.use('/', router);
+  app.use('/', router);
 
-  router.use('/', express.static(__dirname.slice(0, __dirname.length - 6), { redirect: true }));
 
-  router.get('/*', function (req, res, next) {
-      res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
-  });
-
-  // app.use('/*', function(req, res) {
-  //   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
-  // })
+  app.use('/*', function(req, res) {
+    res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
+  })
 
 
 module.exports = server;
