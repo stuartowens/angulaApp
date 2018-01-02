@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var session = require('express-session')
+var cookieParser = require('cookieParser');
+var session = require('express-session');
 var request = require('request')
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -47,8 +48,9 @@ mailer.extend(app, {
     pass: YAHOO_PASS
   }
 })
-
+app.enable('trust proxy');
 app.use(bodyParser.json());
+app.use(express.cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/api/send', function (req, res, next) {
@@ -114,7 +116,13 @@ app.use(function(req, res, next) {
 
 //initialize express-session and passport
 
-app.use(session({ secret: 'downward dog'}));
+app.use(express.session({
+  secret: 'downward dog',
+  proxy: true,
+  key: 'session.sid',
+  cookie: { secure: true },
+  // store: new sessionStore()
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
