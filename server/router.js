@@ -6,11 +6,11 @@ var util = require('../db/util')
 
 var router = express.Router();
 
-router.get('/registration', (req,res) => {
-  res.sendFile('index.html', {
-    root: './../'
-  })
-})
+// router.get('/registration', (req,res) => {
+//   res.sendFile('index.html', {
+//     root: './../'
+//   })
+// })
 
 router.route('/registration')
   .get(function(req, res) {

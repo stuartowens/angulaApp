@@ -284,6 +284,12 @@ app.get('/api/auth/google/callback',
   app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
   // implement express router
 
+  app.get('/registration', (req,res) => {
+    res.sendFile('index.html', {
+      root: './../'
+    })
+  })
+
   app.use('/', router);
 
 
