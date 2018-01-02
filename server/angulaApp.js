@@ -220,7 +220,7 @@ app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
     console.log(req.redirUrl)
-    res.redirect(req.redirUrl, 200, req.user);
+    res.redirect(req.redirUrl + '/#/registration', 200, req.user);
   });
 
   // send user to front end based on session
