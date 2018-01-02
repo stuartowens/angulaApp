@@ -294,9 +294,9 @@ app.get('/api/auth/google/callback',
   app.use('/', router);
 
 app.use('/*', express.static(path.join(__dirname, '../index.html')))
-  // app.use('/*', function(req, res) {
-  //  res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
-  // })
+  app.use('/*', function(req, res) {
+   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
+  })
 
 
 module.exports = server;
