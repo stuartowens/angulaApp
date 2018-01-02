@@ -92,7 +92,7 @@ app.use(function(req, res, next) {
 app.use(function(req, res, next) {
   console.log(req.session, 'req.session~~~~~~~~~~~~~~')
   console.log(passport.serializeUser, 'passport.serializeUser!!!')
-  console.log(passport.serializeUser(), 'passport.serializeUser()!!!')
+  // console.log(passport.serializeUser(), 'passport.serializeUser()!!!')
   console.log(passport.deserializeUser, 'passport.deserializeUser!!!')
   console.log(passport.session, 'passport.session!!!')
   console.log(passport.session(), 'passport.session()!!!')
