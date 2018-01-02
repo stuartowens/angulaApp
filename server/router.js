@@ -6,6 +6,12 @@ var util = require('../db/util')
 
 var router = express.Router();
 
+router.get('/', (req,res) => {
+  res.sendFile('index.html', {
+    root: './../'
+  })
+})
+
 router.route('/registration')
   .get(function(req, res) {
     res.redirect('https://bandcamp.cc/registration')
