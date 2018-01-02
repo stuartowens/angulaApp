@@ -7,7 +7,7 @@ var util = require('../db/util')
 var router = express.Router();
 
 router.route('/registration')
-  .get(function(req. res) {
+  .get(function(req, res) {
     res.redirect('/registration')
   })
 
