@@ -17,7 +17,6 @@ var YAHOO_EMAIL = require('../authConfig.js').YAHOO_EMAIL;
 var YAHOO_USERNAME = require('../authConfig.js').YAHOO_USERNAME;
 var YAHOO_PASS = require('../authConfig.js').YAHOO_PASS;
 var mailer = require('express-mailer');
-var path = require('path');
 const keyPublishable = require('../stripeConfig').PUBLISHABLE_KEY
 const keySecret = require('../stripeConfig').SECRET_KEY
 // "sk_test_iAhMKuT8CzPLXiT125IzVj2n"
@@ -35,10 +34,8 @@ var server = require('http').Server(app);
 
 //Setting the views for the express-mailer
 
-app.set('views', __dirname + '/client/templates');
-app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname.slice(0, __dirname.length - 6) + 'index.html')));
-
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
 // This extends the express application to use the express-mailer
 mailer.extend(app, {
@@ -94,6 +91,15 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   console.log(req.session, 'req.session~~~~~~~~~~~~~~')
+  console.log(passport.serializeUser, 'passport.serializeUser!!!')
+  // console.log(passport.serializeUser(), 'passport.serializeUser()!!!')
+  console.log(passport.deserializeUser, 'passport.deserializeUser!!!')
+  console.log(passport.session, 'passport.session!!!')
+  console.log(passport.session(), 'passport.session()!!!')
+
+
+  console.log(req.headers.host, 'req.headers.host')
+  console.log(req.user, 'req.user')
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
      // proxy in effect
      req.redirUrl = req.headers['x-forwarded-proto']
@@ -191,7 +197,7 @@ function(token, tokenSecret, profile, done) {
 // POST stripe  route to recieve payment token ID and create charge
 
 
-app.post("/api/charge/", (req, res) => {
+app.post("/api/charge", (req, res) => {
   let amount = req.body.amount;
   console.log(req.body.amount,'req.body.amount')
   stripe.customers.create({
@@ -222,11 +228,7 @@ app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile',
 app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
-    console.log('req.user in google callback auth function', req.user);
-    console.log('req.session.passport.user', req.session.passport.user);
-    console.log('req.session.passport', req.session.passport);
-    console.log('req.session', req.session);
-    res.redirect(req.redirUrl + '/registration#', 200, req.user);
+    res.redirect(req.redirUrl, 200, req.user);
   });
 
   // send user to front end based on session
@@ -288,17 +290,15 @@ app.get('/api/auth/google/callback',
     res.redirect('/');
   });
 
+  app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
   // implement express router
 
   app.use('/', router);
 
 
-  app.use('/*', function(req, res){
-      res.sendfile("index.html", { root: __dirname.slice(0, __dirname.length - 6) });
-  });
-  // app.use('/*', function(req, res) {
-  //   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
-  // })
+  app.use('/*', function(req, res) {
+    res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
+  })
 
 
 module.exports = server;
