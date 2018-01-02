@@ -49,7 +49,7 @@ mailer.extend(app, {
     pass: YAHOO_PASS
   }
 })
-app.enable('trust proxy', 1);
+app.enable('trust proxy', 'loopback, 54.177.210.89');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
