@@ -58,6 +58,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
     $routeProvider
         .when('/', {
           controller: function($scope) {
+
           },
           templateUrl: 'public/client/templates/app.html',
           controllerAs: 'ctrl'
@@ -216,7 +217,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .otherwise({ redirectTo: '/' });
 
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('#');
 
 })
