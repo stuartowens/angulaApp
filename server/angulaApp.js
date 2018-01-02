@@ -37,7 +37,7 @@ var server = require('http').Server(app);
 
 app.set('views', __dirname + '/client/templates');
 app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname.slice(0, __dirname.length - 6) + 'index.html')));
 
 
 // This extends the express application to use the express-mailer
@@ -294,7 +294,7 @@ app.get('/api/auth/google/callback',
 
 
   app.use('/*', function(req, res){
-      res.sendfile("index.html", { root: __dirname + '/public' });
+      res.sendfile("index.html", { root: __dirname.slice(0, __dirname.length - 6) });
   });
   // app.use('/*', function(req, res) {
   //   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
