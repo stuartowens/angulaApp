@@ -91,7 +91,7 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   if(req.session) {
-    console.log(req.session, 'req.session~~~~~~~~~~~~~~``')
+    console.log(req.session, 'req.session~~~~~~~~~~~~~~')
   }
   console.log(req.headers.host, 'req.headers.host')
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
@@ -123,7 +123,7 @@ app.use(session({
   secret: 'downward dog',
   proxy: true,
   cookie: { secure: 'auto' },
-  store: new sessionStore()
+  // store: new sessionStore()
 }));
 app.use(passport.initialize());
 app.use(passport.session());
