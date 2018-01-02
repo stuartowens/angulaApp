@@ -91,7 +91,7 @@ app.use(function(req, res, next) {
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
      // proxy in effect
      req.redirUrl = req.headers['x-forwarded-proto']
-        + "://"
+        + "https://bandcamp.cc"
         + req.headers.host    // proxy
         // plus any proxy subdirs if needed
         + "/"
