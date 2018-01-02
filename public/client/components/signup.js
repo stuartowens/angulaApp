@@ -6,10 +6,10 @@ angular.module('main-app')
     controller: function($scope, $http, $window){
       this.onClick = function(){
         console.log('clicked the onClick')
-        $http.get('/api/auth/config')
+        $http.get('/api/auth/google')
           .then(function successCallback(response) {
             console.log(response, 'response from axios');
-            $window.location.reload();
+            // $window.location.reload();
 
           })
           .catch(function errorCallback(error) {
