@@ -50,7 +50,7 @@ mailer.extend(app, {
 })
 app.enable('trust proxy');
 app.use(bodyParser.json());
-app.use(express.cookieParser());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/api/send', function (req, res, next) {
@@ -116,7 +116,7 @@ app.use(function(req, res, next) {
 
 //initialize express-session and passport
 
-app.use(express.session({
+app.use(session({
   secret: 'downward dog',
   proxy: true,
   key: 'session.sid',
