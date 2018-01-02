@@ -9,7 +9,7 @@ angular.module('main-app')
         $http.get('/api/auth/google')
           .then(function successCallback(response) {
             console.log(response, 'response from axios');
-            $window.reload();
+            $window.location.reload();
           })
           .catch(function errorCallback(error) {
             console.log(error, 'error from axios');
