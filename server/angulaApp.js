@@ -127,7 +127,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+console.log(passport, 'passport')
 // serialize and deserialize user
 
 passport.serializeUser(function(user, done) {
