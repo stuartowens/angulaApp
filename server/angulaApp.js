@@ -188,7 +188,7 @@ app.get('/api/auth/google/callback',
   function(req, res) {
     // console.log('req.user in google callback auth function', req.user);
     // console.log('req.session.passport.user', req.session.passport.user);
-    res.redirect('/registration', 200, req.user);
+    res.redirect('https://bandcamp.cc/registration', 200, req.user);
   });
 
   // send user to front end based on session
