@@ -95,7 +95,7 @@ app.use(function(req, res, next) {
         + req.headers.host    // proxy
         // plus any proxy subdirs if needed
         + "/"
-        + proxy_subdir
+        // + proxy_subdir
      ;
 
   } else {
