@@ -129,7 +129,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl'
           // hideMenus: true
         })
-        .when('/auth/google', {
+        .when('/api/auth/google', {
           controller: function($scope, $route, $window) {
             // $onInit = function() {
             // $route.reload()
