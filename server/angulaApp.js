@@ -86,6 +86,29 @@ app.use(function(req, res, next) {
   next()
 })
 
+app.use(function(req, res, next) {
+
+  if (req.headers.hasOwnProperty('x-forwarded-for')) {
+     // proxy in effect
+     req.redirUrl = req.headers['x-forwarded-proto']
+        + "://"
+        + req.headers.host    // proxy
+        // plus any proxy subdirs if needed
+        + "/"
+        + proxy_subdir
+     ;
+
+  } else {
+     // direct requeset
+     req.redirUrl = req.protocol
+        + "://"
+        + req.headers.host
+     ;
+  }
+
+  next();
+});
+
 //initialize express-session and passport
 
 app.use(session({ secret: 'downward dog'}));
@@ -188,7 +211,7 @@ app.get('/api/auth/google/callback',
   function(req, res) {
     // console.log('req.user in google callback auth function', req.user);
     // console.log('req.session.passport.user', req.session.passport.user);
-    res.redirect('https://bandcamp.cc/registration', 200, req.user);
+    res.redirect(req.redirUrl + '/registration', 200, req.user);
   });
 
   // send user to front end based on session
