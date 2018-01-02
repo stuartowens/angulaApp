@@ -133,7 +133,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controller: function($scope, $route, $window) {
             // $onInit = function() {
             // $route.reload()
-            // $window.location.reload();
+            $window.location.reload();
               console.log('on init!!!!')
             // }
           },
