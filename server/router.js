@@ -6,7 +6,7 @@ var util = require('../db/util')
 
 var router = express.Router();
 
-router.get('/*', (req,res) => {
+router.get('/registration', (req,res) => {
   res.sendFile('index.html', {
     root: './../'
   })
