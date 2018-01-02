@@ -20,7 +20,7 @@
         <h4>Chaperone Lunch Plans: {{chkoutCtrl.user.chaperoneLunches}} x $50 = ${{chkoutCtrl.user.chaperoneLunches*50}}</h4>
         <h4>Total: ${{chkoutCtrl.user.total}}</h4>
       </div>
-      <form stripe-form="chkoutCtrl.stripeCallback" name="checkoutForm">
+      <form stripe-form="chkoutCtrl.stripeCallback()" name="checkoutForm">
         <input type="text" ng-model="name" placeholder="Full Name" name="name"/>
         <input type="text" ng-model="addressLine1" placeholder="Address" name="address_line1"/>
         <input type="text" ng-model="addressLine2" placeholder="Apt Number"  name="address_line2"/>
