@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-// var session = require('express-session');
-var session = require('cookie-session');
+var session = require('express-session');
+// var session = require('cookie-session');
 var request = require('request')
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -90,7 +90,9 @@ app.use(function(req, res, next) {
 })
 
 app.use(function(req, res, next) {
-
+  if(req.session) {
+    console.log(req.session, 'req.session~~~~~~~~~~~~~~``')
+  }
   console.log(req.headers.host, 'req.headers.host')
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
      // proxy in effect
@@ -118,12 +120,10 @@ app.use(function(req, res, next) {
 //initialize express-session and passport
 
 app.use(session({
-  name: 'session',
-  // keys: ['session.sid'],
   secret: 'downward dog',
-  // proxy: true,
-  // cookie: { secure: true },
-  // store: new sessionStore()
+  proxy: true,
+  cookie: { secure: 'auto' },
+  store: new sessionStore()
 }));
 app.use(passport.initialize());
 app.use(passport.session());
