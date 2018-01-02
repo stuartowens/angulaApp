@@ -228,7 +228,7 @@ app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile',
 app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
-    res.redirect(req.redirUrl + '/registration', 200, req.user);
+    res.redirect('/registration', 200, req.user);
   });
 
   // send user to front end based on session
