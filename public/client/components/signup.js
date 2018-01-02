@@ -6,7 +6,7 @@ angular.module('main-app')
     controller: function($scope, $http, $window){
       this.onClick = function(){
         console.log('clicked the onClick')
-        $http.get('http://bandcamp.cc/api/auth/google')
+        $http.get('https://bandcamp.cc/api/auth/google')
           .then(function successCallback(response) {
             console.log(response, 'response from axios');
             // $window.location.reload();
