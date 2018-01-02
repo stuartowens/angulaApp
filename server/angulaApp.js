@@ -49,7 +49,7 @@ mailer.extend(app, {
     pass: YAHOO_PASS
   }
 })
-app.enable('trust proxy');
+app.enable('trust proxy', 1);
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -118,10 +118,11 @@ app.use(function(req, res, next) {
 //initialize express-session and passport
 
 app.use(session({
+  name: 'session',
+  // keys: ['session.sid'],
   secret: 'downward dog',
-  proxy: true,
-  key: 'session.sid',
-  cookie: { secure: true },
+  // proxy: true,
+  // cookie: { secure: true },
   // store: new sessionStore()
 }));
 app.use(passport.initialize());
