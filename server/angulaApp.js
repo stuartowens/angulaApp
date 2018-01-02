@@ -91,15 +91,6 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   console.log(req.session, 'req.session~~~~~~~~~~~~~~')
-  console.log(passport.serializeUser, 'passport.serializeUser!!!')
-  // console.log(passport.serializeUser(), 'passport.serializeUser()!!!')
-  console.log(passport.deserializeUser, 'passport.deserializeUser!!!')
-  console.log(passport.session, 'passport.session!!!')
-  console.log(passport.session(), 'passport.session()!!!')
-
-
-  console.log(req.headers.host, 'req.headers.host')
-  console.log(req.user, 'req.user')
   if (req.headers.hasOwnProperty('x-forwarded-for')) {
      // proxy in effect
      req.redirUrl = req.headers['x-forwarded-proto']
