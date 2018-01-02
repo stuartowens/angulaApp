@@ -178,13 +178,7 @@ app.post("/api/charge", (req, res) => {
 
 //GET /auth/google
 
-app.get('/api/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email']}),
-  function(req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  }
-);
+app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}));
 
 //GET /auth/google/callback
 
