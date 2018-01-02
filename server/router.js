@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.route('/registration')
   .get(function(req, res) {
-    res.redirect('https://localhost:/registration')
+    res.redirect('https://bandcamp.cc/registration')
   })
 
 router.route('/api/findUser')
