@@ -37,6 +37,8 @@ var server = require('http').Server(app);
 
 app.set('views', __dirname + '/client/templates');
 app.set('view engine', 'html');
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // This extends the express application to use the express-mailer
 mailer.extend(app, {
@@ -51,7 +53,6 @@ mailer.extend(app, {
   }
 })
 app.set('trust proxy', 'loopback, 54.177.210.89');
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
