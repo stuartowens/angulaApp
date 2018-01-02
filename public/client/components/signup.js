@@ -3,10 +3,21 @@ angular.module('main-app')
 .directive('signup', function() {
   return {
     restrict: 'E',
-    controller: function($scope){
-      // $scope.handleClick = this.handleClick
+    controller: function($scope, $http, $window){
+      this.onClick = function(){
+        console.log('clicked the onClick')
+        $http.get('/api/auth/config')
+          .then(function successCallback(response) {
+            console.log(response, 'response from axios');
+            $window.location.reload();
+
+          })
+          .catch(function errorCallback(error) {
+            console.log(error, 'error from axios');
+          });
+      }
     },
-    controllerAs: 'ctrl',
+    controllerAs: 'signupCtrl',
     bindToController: true,
     templateUrl: 'public/client/templates/signup.html'
   };
