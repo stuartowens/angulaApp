@@ -280,7 +280,9 @@ app.get('/api/auth/google/callback',
     req.logout();
     res.redirect('/');
   });
-
+  app.get('*', function(req, res){
+    res.render('index');
+  })
   app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
   // implement express router
 
