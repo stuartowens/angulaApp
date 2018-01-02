@@ -6,18 +6,18 @@ var util = require('../db/util')
 
 var router = express.Router();
 
-router.route('/findUser')
+router.route('/api/findUser')
   .get(function(req,res) {
     util.findOneUser(req, res);
   })
 
-router.route('/findProfile')
+router.route('/api/findProfile')
   .get(function(req,res) {
     util.findOneProfile(req, res);
   })
 
 //Adds a new Profile to the user
-router.route('/createProfile')
+router.route('/api/createProfile')
   .post(function(req, res) {
     util.createProfile(req, res)
   })

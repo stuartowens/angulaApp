@@ -17,7 +17,7 @@ angular.module('main-app')
           $('#checkoutmodal').modal('hide');
           $http({
               method: 'POST',
-              url: '/charge/',
+              url: 'https://bandcamp.cc/api/charge/',
               data: {
                 email: 'homerowens@yahoo.com',
                 stripeToken: result.id,

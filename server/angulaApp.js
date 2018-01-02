@@ -154,7 +154,7 @@ function(token, tokenSecret, profile, done) {
 // POST stripe  route to recieve payment token ID and create charge
 
 
-app.post("/charge", (req, res) => {
+app.post("/api/charge", (req, res) => {
   let amount = req.body.amount;
   console.log(req.body.amount,'req.body.amount')
   stripe.customers.create({
@@ -178,11 +178,11 @@ app.post("/charge", (req, res) => {
 
 //GET /auth/google
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}));
+app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}));
 
 //GET /auth/google/callback
 
-app.get('/auth/google/callback',
+app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
     // console.log('req.user in google callback auth function', req.user);
@@ -192,7 +192,7 @@ app.get('/auth/google/callback',
 
   // send user to front end based on session
 
-  app.get('/getUser', function(req, res) {
+  app.get('/api/getUser', function(req, res) {
     User.findOne({ _id: req.session.passport.user }, (err, user) => {
       if (err) {
         console.log('error in getUser route', err);
@@ -203,7 +203,7 @@ app.get('/auth/google/callback',
     })
   })
 
-  app.put('/updateUser', function(req, res){
+  app.put('/api/updateUser', function(req, res){
     Util.updateUser(req, res)
   })
   // app.put('/updateUser', function(req, res) {
@@ -219,7 +219,7 @@ app.get('/auth/google/callback',
 
   // get profiles of user
 
-  app.get('/getProfiles', function(req, res) {
+  app.get('/api/getProfiles', function(req, res) {
     Profile.find({ user_id: req.session.passport.user }, (err, profile) => {
       if (err) {
         console.log('error in getUser route', err);
@@ -232,7 +232,7 @@ app.get('/auth/google/callback',
 
   // check for session for react router
 
-  app.get('/authenticate', function(req, res) {
+  app.get('/api/authenticate', function(req, res) {
 
     if(req.session.passport.user) {
       res.sendStatus(200);
@@ -242,7 +242,7 @@ app.get('/auth/google/callback',
   })
 
   // logout route
-  app.get('/logout', function(req, res){
+  app.get('/api/logout', function(req, res){
 
     req.logout();
     res.redirect('/');

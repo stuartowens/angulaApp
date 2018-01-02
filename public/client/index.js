@@ -153,7 +153,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
               $rootScope.user.id = token;
               $http({
                 method: 'PUT',
-                url: '/updateUser/',
+                url: 'https://bandcamp.cc/api/updateUser/',
                 data: $rootScope.user
               }).then(function successCallback(response) {
                   // this callback will be called asynchronously
@@ -184,7 +184,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controller: function($scope, $http, $rootScope){
             $http({
               method: 'GET',
-              url: '/getProfiles/'
+              url: 'https://bandcamp.cc/api/getProfiles/'
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available

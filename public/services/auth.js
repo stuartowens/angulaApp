@@ -16,7 +16,7 @@ angular.module('main-app')
           this.getPermission(this.permissionModel, roleCollection, deferred);
         } else {
 
-          $resource('/getUser').get().$promise.then(function successCallback(response) {
+          $resource('https://bandcamp.cc/api/getUser').get().$promise.then(function successCallback(response) {
 
             $rootScope.user = response;
             parentPointer.permissionModel.permission = response;
