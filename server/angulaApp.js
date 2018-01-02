@@ -219,6 +219,7 @@ app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile',
 app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/unauthorizedAccess'}),
   function(req, res) {
+    console.log(req.redirUrl)
     res.redirect(req.redirUrl, 200, req.user);
   });
 
@@ -289,7 +290,6 @@ app.get('/api/auth/google/callback',
   //     root: './../'
   //   })
   // })
-
   app.use('/', router);
 
 

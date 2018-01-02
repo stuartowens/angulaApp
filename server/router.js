@@ -11,11 +11,10 @@ var router = express.Router();
 //     root: './../'
 //   })
 // })
-
-// router.route('/registration')
-//   .get(function(req, res) {
-//     res.redirect('https://bandcamp.cc/registration')
-//   })
+//router.route('/registration')
+// .get(function(req, res) {
+//  res.redirect('https://bandcamp.cc/registration')
+//})
 
 router.route('/api/findUser')
   .get(function(req,res) {
