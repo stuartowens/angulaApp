@@ -34,8 +34,8 @@ var server = require('http').Server(app);
 
 //Setting the views for the express-mailer
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('views', __dirname + '../public/client/templates');
+app.set('view engine', 'html');
 
 // This extends the express application to use the express-mailer
 mailer.extend(app, {
@@ -280,8 +280,8 @@ app.get('/api/auth/google/callback',
     req.logout();
     res.redirect('/');
   });
-  app.get('*', function(req, res){
-    res.render('index');
+  app.get('/registration', function(req, res){
+    res.render('registration');
   })
   app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
   // implement express router
@@ -290,7 +290,7 @@ app.get('/api/auth/google/callback',
 
 
   app.use('/*', function(req, res) {
-    res.sendFile(__dirname.slice(0, __dirname.length - 6) + '/piblic/index.html');
+    res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
   })
 
 
