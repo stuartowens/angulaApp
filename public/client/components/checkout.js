@@ -12,8 +12,8 @@ angular.module('main-app')
         if (result.error) {
           window.alert('Your card failed to process because: ' + result.error.message);
         } else {
-          // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
-          // window.alert('success! token: ' + result.id);
+           console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
+          window.alert('success! token: ' + result.id);
           $('#checkoutmodal').modal('hide');
           $http({
               method: 'POST',

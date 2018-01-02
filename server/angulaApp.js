@@ -188,7 +188,7 @@ function(token, tokenSecret, profile, done) {
 // POST stripe  route to recieve payment token ID and create charge
 
 
-app.post("/api/charge", (req, res) => {
+app.post("/api/charge/", (req, res) => {
   let amount = req.body.amount;
   console.log(req.body.amount,'req.body.amount')
   stripe.customers.create({
