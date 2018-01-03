@@ -8,6 +8,8 @@ angular.module('main-app')
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
+      $scope.dataId = "#".(this.profile._id)
+      console.log($scope.dataId)
       $scope.submitProfile = function(){
         $http({
           method: 'PUT',
