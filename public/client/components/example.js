@@ -10,7 +10,7 @@ angular.module('main-app')
     controller: function($scope, $rootScope, $http, $location) {
       $scope.submitProfile = function(){
         console.log($scope.vm, '$scope')
-        console.log(vm.profile, 'profile')
+        console.log(this.profile, 'this.profile')
         console.log(this, 'this')
         // $http({
         //   method: 'PUT',
