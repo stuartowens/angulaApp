@@ -51,7 +51,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Edit {{vm.profile.displayName}}'s Profile</h4>
+        <h3 class="modal-title">Edit {{vm.profile.displayName}}'s Profile</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -59,51 +59,61 @@
       <div class="modal-body">
         <p>Please tell us a little about yourself</p>
         <form>
-          <div class="form-group col-md-6">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputAge">Age</label>
-            <input type="text" class="form-control" id="inputAge">
-          </div>
-          <div class="form-row">
+          <div class="form-row row">
             <div class="form-group col-md-6">
-              <label for="inputInstruments">Instruments</label>
+              <label for="inputName">Name</label>
               <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
             </div>
-            <div class="col-sm-2">Checkbox</div>
-            <div class="col-sm-10">
+            <div class="form-group col-md-4">
+              <label for="inputMinor">Minor</label>
+              <select id="inputMinor" class="form-control">
+                <option selected>Choose...</option>
+                <option>yes</option>
+                <option>no</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputAge">Age</label>
+              <input type="text" class="form-control" id="inputAge">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-xl-12">
+              <label for="inputBio">Bio</label>
+              <input type="text" class="form-control" id="inputBio" placeholder="Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?" >
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="col-sm-4">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="singerCheck">
-                <label class="form-check-label" for="singerCheck">
-                  Singer
-                </label>
+                <label class="form-check-label" for="singerCheck">Singer</label>
                 <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
-                <label class="form-check-label" for="instrumentalistCheck">
-                  Instrumentalist
-                </label>
+                <label class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+              </div>
+              <div class="form-group col-md-8">
+                <label for="inputInstruments">Instruments</label>
+                <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
               </div>
             </div>
-            <div class="form-group col-md-6">
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-8">
               <label for="inputGenres">Genres</label>
               <input type="text" class="form-control" id="inputGenres" placeholder="Genres">
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputExperience">Experience Level 1-3</label>
-            <input type="number" class="form-control" id="inputExperience" placeholder="Experience Level scale 1-3">
-          </div>
-          <div class="form-group">
-            <label for="inputEmergency">Emergency Contact Info</label>
-            <input type="text" class="form-control" id="inputEmergency" placeholder="Emergency Contact Info">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputMinor">Minor</label>
-              <input type="text" class="form-control" id="inputMinor">
-            </div>
             <div class="form-group col-md-4">
+              <label for="inputExperience">Experience</label>
+              <select id="inputExperience" class="form-control">
+                <option selected>Choose...</option>
+                <option>Level 1</option>
+                <option>Level 2</option>
+                <option>Level 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
               <label for="inputCamping">Camping</label>
               <select id="inputCamping" class="form-control">
                 <option selected>Choose...</option>
@@ -114,23 +124,31 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="inputEmergencyName">Emergency Contact Name</label>
+              <input type="text" class="form-control" id="inputEmergencyName" placeholder="Emergency Contact Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmergencyNumber">Emergency Contact Number</label>
+              <input type="text" class="form-control" id="inputEmergencyNumber" placeholder="Emergency Contact Number">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="inputDietary">Dietary Restrictions</label>
+              <input type="text" class="form-control" id="inputDietary" placeholder="Dietary Restrictions">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAllergies">Allergies</label>
+              <input type="text" class="form-control" id="inputAllergies" placeholder="Allergies">
+            </div>
+          </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
-
 </div>
