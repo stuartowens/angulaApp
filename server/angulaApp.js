@@ -295,7 +295,7 @@ app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
 
 // app.use('/*', express.static(path.join(__dirname, '../index.html')))
   app.use('/*', function(req, res) {
-   res.sendFile(__dirname.slice(0, __dirname.length - 6) + '');
+   res.sendFile(__dirname.slice(0, __dirname.length - 6) + 'index.html');
   })
 
 
