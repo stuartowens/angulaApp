@@ -9,8 +9,8 @@ angular.module('main-app')
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
       $scope.submitProfile = function(){
-        console.log($scope, '$scope')
-        console.log(profile, 'profile')
+        console.log($scope.vm, '$scope')
+        console.log(vm.profile, 'profile')
         console.log(this, 'this')
         // $http({
         //   method: 'PUT',
