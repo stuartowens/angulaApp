@@ -6,14 +6,14 @@ angular.module('main-app')
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
-      console.log($scope, "scope")
-      console.log($rootScope, "rootScope")
+      // console.log($scope, "scope")
+      // console.log($rootScope, "rootScope")
       this.stripeCallback = function (code, result) {
         if (result.error) {
           window.alert('Your card failed to process because: ' + result.error.message);
         } else {
            // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
-          window.alert('Your card has been successfully charged  ' + $rootScope.user.total);
+          window.alert('Your card has been successfully charged  $' + $rootScope.user.total);
           $('#checkoutmodal').modal('hide');
           $http({
               method: 'POST',

@@ -27,7 +27,7 @@
           <li class="list-group-item">Cabin Campers: {{user.cabinCampers}} x $199 = ${{user.cabinCampers * 199 }}</li>
           <li class="list-group-item">Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</li>
           <li class="list-group-item">Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</li>
-          <li class="list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50 - user.amt_paid}}</li>
+          <li class="list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches * 50 - user.amt_paid}}</li>
         </ul>
         <form>
           <div class="form-row row">
@@ -66,7 +66,94 @@
   </div>
 </div>
 
+<div class="modal fade" id="checkoutmodal" tabindex="-1" role="dialog" aria-labelledby="checkoutmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title" id="modaltitle">Cart: </p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Make sure the order is correct</p>
+        <ul class="list-group list-group-flush">
+          <li ng-show="regCtrl.user.groupTotal > 0" class="animate-show-hide list-group-item">{{regCtrl.user.groupTotal}} Total Group Members: </li>
+          <li ng-show="regCtrl.user.studentTotal > 0" class="animate-show-hide list-group-item">Student Total: {{regCtrl.user.studentTotal}} x $379 = ${{regCtrl.user.studentTotal * 379 }}</li>
+          <li ng-show="regCtrl.user.rvCampers > 0" class="animate-show-hide list-group-item">RV Campers: {{regCtrl.user.rvCampers}} x $279 = ${{regCtrl.user.rvCampers * 279 }}</li>
+          <li ng-show="regCtrl.user.cabinCampers > 0" class="animate-show-hide list-group-item">Cabin Campers: {{regCtrl.user.cabinCampers}} x $199 = ${{regCtrl.user.cabinCampers * 199 }}</li>
+          <li ng-show="regCtrl.user.tentCampers > 0" class="animate-show-hide list-group-item">Tent Campers: {{regCtrl.user.tentCampers}} x $150 = ${{regCtrl.user.tentCampers * 150 }}</li>
+          <li ng-show="regCtrl.user.chaperoneLunches > 0" class="animate-show-hide list-group-item">Chaperone Lunch Plans: {{regCtrl.user.chaperoneLunches}} x $50 = ${{regCtrl.user.chaperoneLunches*50}}</li>
+          <li class="list-group-item">Total: ${{regCtrl.user.studentTotal * 379 + regCtrl.user.rvCampers * 279 + regCtrl.user.cabinCampers * 199 + regCtrl.user.tentCampers * 150 + regCtrl.user.chaperoneLunches * 50 - chckoutCtrl.user.amt_paid}}</li>
+        </ul>
+        <form stripe-form="regCtrl.stripeCallback" name="checkoutForm">
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="name">Full Name:</label>
+              <input type="text" ng-model="name" placeholder="Full Name" name="name" class="form-control" id="name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="address_line1">Address:</label>
+              <input type="text" ng-model="addressLine1" placeholder="Address" name="address_line1" class="form-control" id="address_line1">
+            </div>
+          </div>
+          <div class="form-row row">
+            <!-- <div class="form-group col-md-2">
+              <label for="address_state">Apt:</label>
+              <input type="text" ng-model="addressLine2" placeholder="Apt Number"  name="address_line2" class="form-control" id="address_line2">
+            </div> -->
+            <div class="form-group col-md-4">
+              <label for="address_city">City:</label>
+              <input type="text" ng-model="addressCity" placeholder="City"  name="address_city" class="form-control" id="address_city">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="address_state">State:</label>
+              <input type="text" ng-model="addressState" placeholder="State"  name="address_state" class="form-control" id="address_state">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="address_zip">Zip-Code:</label>
+              <input type="text" ng-model="addressZip" placeholder="Zip code" name="address_zip" class="form-control" id="address_zip">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="address_country">Country:</label>
+              <input type="text" ng-model="addressCountry" placeholder="Country" name="address_country" class="form-control" id="address_country">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="cardNumber">Credit/Debit Card Number:</label>
+              <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card" class="form-control" id="cardNumber">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="expiry">Expiration Date:</label>
+              <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry" class="form-control" id="expiry">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="cvc">CVC:</label>
+              <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" class="form-control" id="cvc">
+            </div>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+          <div ng-if="checkoutForm.card.$invalid">
+            Error: invalid card number!
+          </div>
+          <div ng-if="checkoutForm.expiry.$invalid">
+            Error: invalid expiration date!
+          </div>
+          <div ng-if="checkoutForm.cvc.$invalid">
+            Error: invalid cvc number!
+          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#registrationmodal">Edit Cart</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit">Submit</button>
+        </form>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CheckoutModal -->
-<checkout user="regCtrl.user" />
+<!-- <checkout user="regCtrl.user" /> -->
 </div>
