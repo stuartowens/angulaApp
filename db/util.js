@@ -72,6 +72,7 @@ function updateProfile(req, res) {
       profile.alt_email = req.body.alt_email
       profile.age = req.body.age
       profile.release_form = req.body.release_form
+      profile.chaperone = req.body.chaperone
       profile.chaperone_name = req.body.chaperone_name
       profile.bio = req.body.bio
       profile.instruments = req.body.instruments
@@ -148,6 +149,7 @@ function createProfile(user_id, i) {
     alt_email: '',
     age: 0,
     release_form: false,
+    chaperone: false,
     chaperone_name: '',
     bio: '',
     instruments: '',

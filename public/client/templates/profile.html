@@ -12,7 +12,7 @@
         <p class="card-text">{{vm.profile.bio}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Instruments:{{vm.profile.instruments}}</li>
+        <li class="list-group-item">Instruments: {{vm.profile.instruments}}</li>
         <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
         <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
         <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
@@ -45,20 +45,6 @@
                 <label for="inputName">Name</label>
                 <input ng-model="vm.profile.displayName" type="text" class="form-control" id="inputName" placeholder="Name" value={{vm.profile.displayName}}>
               </div>
-              <div class="form-group col-md-4">
-                <label for="inputMinor">Minor</label>
-                <select ng-model="vm.profile.minor" id="inputMinor" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>true</option>
-                  <option>false</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputAge">Age</label>
-                <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age">
-              </div>
-            </div>
-            <div class="form-row row">
               <div class="form-group col-md-6">
                 <label for="inputCamping">Camping</label>
                 <select ng-model="vm.profile.camping_type" id="inputCamping" class="form-control">
@@ -68,6 +54,20 @@
                   <option>RV Camper</option>
                   <option>Cabin Camper</option>
                 </select>
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="col-sm-6">
+                <div class="form-check">
+                  <input ng-model="vm.profile.minor" class="form-check-input" type="checkbox" id="minorCheck">
+                  <label class="form-check-label" for="singerCheck">Singer</label>
+                  <input class="form-check-input" type="checkbox" id="chaperonedCheck">
+                  <label ng-model="vm.profile.chaperone" class="form-check-label" for="chaperonedCheck">Chaperoned</label>
+                </div>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputAge">Age</label>
+                <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputChaperone">Chaperone Name</label>

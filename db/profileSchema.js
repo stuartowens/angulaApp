@@ -11,6 +11,7 @@ var Profile = mongoose.Schema({
   age: { type: Number },
   release_form: { type: Boolean },
   chaperone_name: { type: String },
+  chaperone: { type: Boolean },
   bio: { type: String },
   instruments: { type: String },
   singer: { type: Boolean },
