@@ -10,7 +10,8 @@
         </div>
         <div class="modal-body">
           <p>Please make sure the information below is correct then proceed to complete payment</p>
-          <ul class="list-group list-group-flush">
+          <p>Total: ${{chkoutCtrl.user.studentTotal * 379 + chkoutCtrl.user.rvCampers * 279 + chkoutCtrl.user.cabinCampers * 199 + chkoutCtrl.user.tentCampers * 150 + chkoutCtrl.user.chaperoneLunches*50 - chckoutCtrl.user.amt_paid}}</p>
+          <!-- <ul class="list-group list-group-flush">
             <li class="list-group-item">{{chkoutCtrl.user.groupTotal}} Total Group Members: </li>
             <li class="list-group-item">Student Total: {{chkoutCtrl.user.studentTotal}} x $379 = ${{chkoutCtrl.user.studentTotal * 379 }}</li>
             <li class="list-group-item">RV Campers: {{chkoutCtrl.user.rvCampers}} x $279 = ${{chkoutCtrl.user.rvCampers * 279 }}</li>
@@ -18,7 +19,7 @@
             <li class="list-group-item">Tent Campers: {{chkoutCtrl.user.tentCampers}} x $150 = ${{chkoutCtrl.user.tentCampers * 150 }}</li>
             <li class="list-group-item">Chaperone Lunch Plans: {{chkoutCtrl.user.chaperoneLunches}} x $50 = ${{chkoutCtrl.user.chaperoneLunches*50}}</li>
             <li class="list-group-item">Total: ${{chkoutCtrl.user.studentTotal * 379 + chkoutCtrl.user.rvCampers * 279 + chkoutCtrl.user.cabinCampers * 199 + chkoutCtrl.user.tentCampers * 150 + chkoutCtrl.user.chaperoneLunches*50 - chckoutCtrl.user.amt_paid}}</li>
-          </ul>
+          </ul> -->
           <form stripe-form="chkoutCtrl.stripeCallback" name="checkoutForm">
             <div class="form-row row">
               <div class="form-group col-md-12">
