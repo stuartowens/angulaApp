@@ -71,7 +71,7 @@
             </div>
             <div class="form-group col-md-2">
               <label for="inputAge">Age</label>
-              <input type="number" class="form-control" id="inputAge" placeholder="age">
+              <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age" value="vm.profile.age">
             </div>
           </div>
           <div class="form-row row">
@@ -87,7 +87,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputChaperone">Chaperone Name</label>
-              <input type="text" class="form-control" id="inputChaperone" placeholder="If under 16, who is the chaperone?">
+              <input ng-model="vm.profile.chaperone_name" type="text" class="form-control" id="inputChaperone" placeholder="If under 16, who is the chaperone?" value="vm.profile.chaperone_name">
             </div>
           </div>
           <div class="form-row row">
