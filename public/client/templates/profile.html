@@ -19,11 +19,12 @@
         <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
         <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
         <li class="list-group-item">Minor: {{vm.profile.minor ? "Yes" : "No"}}</li>
+        <li ng-show="vm.profile.minor" class="animate-show-hide list-group-item">Age: {{vm.profile.age}}</li>
         <li class="list-group-item">Chaperoned: {{vm.profile.chaperone ? "Yes" : "No"}}</li>
         <li ng-show="vm.profile.chaperone" class="animate-show-hide list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>
         <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
         <li ng-show="vm.profile.allergies.length > 0" class="animate-show-hide list-group-item">Allergies: {{vm.profile.allergies}}</li>
-        <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
+        <li ng-show="vm.profile.dietary_restrictions.length > 0" class="animate-show-hide list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
       </ul>
       <div class="card-footer">
         <a class="btn btn-primary" data-toggle="modal" data-target={{dataId}}>Edit Profile</a>
