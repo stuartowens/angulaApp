@@ -127,7 +127,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                     url: 'https://bandcamp.cc/api/send/',
                     params: {
                       firstName: res.data.address.name,
-                      lastName: "amount charged: $" + res.data.amt_paid,
+                      lastName: "Amount charged: $" + res.data.amt_paid,
                       city: "Number of students: " + res.data.studentTotal,
                       state: "Number of tent campers: " + res.data.tentCampers,
                       email: res.data.email,
@@ -138,7 +138,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                       // this callback will be called asynchronously
                       // when the response is available
                        // console.log(response, 'response')
-                       alert('Your payment has been processed')
+                       alert('Your payment has been processed, please fill out the camper profiles for each participant')
                       //  $scope.user = response.data[0]
                     }, function errorCallback(response) {
                       // called asynchronously if an error occurs
