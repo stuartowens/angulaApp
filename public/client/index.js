@@ -145,6 +145,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
             this.user = $rootScope.user;
             $rootScope.handleSave = function() {
               // console.log("You saved it!", $rootScope.user)
+              $('#registrationmodal').modal('hide');
               this.user = $rootScope.user;
               $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50 - $rootScope.user.amt_paid;
             }
