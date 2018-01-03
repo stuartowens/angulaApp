@@ -12,7 +12,7 @@
         <p class="card-text">{{vm.profile.bio}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Ids: {{vm.dataId}}  {{vm.$id}}</li>
+        <li class="list-group-item">Ids: {{$scope.dataId}}  {{$scope.$id}}</li>
         <li class="list-group-item">Instruments: {{vm.profile.instruments}}</li>
         <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
         <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
@@ -25,12 +25,12 @@
         <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
       </ul>
       <div class="card-footer">
-        <a class="btn btn-primary" data-toggle="modal" data-target="vm.dataId">Edit Profile</a>
+        <a class="btn btn-primary" data-toggle="modal" data-target="$scope.dataId">Edit Profile</a>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="vm.$id" style="margin: 3vw;">
+  <div class="modal fade" id="$scope.$id" style="margin: 3vw;">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
