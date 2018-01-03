@@ -83,26 +83,36 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controller: function() {
             this.name = "stu";
             this.profile = {
-              "_id" : ObjectId("5a4be231d97f535a61537e18"),
-              "user_id" : ObjectId("5a4b5195b394310a7eb69460"),
-              "displayName" : "Camper 1",
-              "participant_profile" : true,
-              "minor" : false,
-              "camping_type" : "none",
-              "email" : "",
-              "image" : "",
-              "alt_email" : "",
-              "age" : 0,
-              "release_form" : false,
-              "chaperone" : false,
-              "chaperone_name" : "",
-              "exp_level" : 0,
-              "phone" : "",
-              "dietary_restrictions" : "",
-              "allergies" : "",
-              "__v" : 0 }
-            
-            // this.faqs = faqService.dataCompile()
+              "_id": "5a4c64c7fda43f2d517a9d25",
+          		"user_id": "5a4c64a3fda43f2d517a9d24",
+          		"displayName": "Camper 1",
+          		"minor": false,
+          		"camping_type": "none",
+          		"email": "",
+          		"image": "",
+          		"alt_email": "",
+          		"age": 0,
+          		"release_form": false,
+          		"chaperone": false,
+          		"chaperone_name": "",
+          		"bio": "",
+          		"instruments": "",
+          		"singer": false,
+          		"genres": "",
+          		"exp_level": 0,
+          		"phone": "",
+          		"dietary_restrictions": "",
+          		"allergies": "",
+          		"emergency_contact": {
+          			"name": "",
+          			"phone": ""
+          		},
+          		"band_info": {
+          			"band": false,
+          			"name": "",
+          			"otherMembers": ""
+          		},
+          		"__v": 0
           },
           templateUrl: 'public/client/templates/instructors.html',
           controllerAs: 'ctrl',
