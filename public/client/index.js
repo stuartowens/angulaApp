@@ -218,6 +218,6 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         .otherwise({ redirectTo: '/' });
 
     // $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix('index.html');
 
 })
