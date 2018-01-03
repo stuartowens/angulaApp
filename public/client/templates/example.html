@@ -28,17 +28,15 @@
       <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
     </div>
     <ul class="list-group list-group-flush">
-      <form ng-submit="vm.submitProfile(e)">
-        <li class="list-group-item">Instruments:<h2 class="animate-show-hide" ng-hide="edit">{{vm.profile.instruments}}</h2> <input id="instr" type="text" class="animate-show-hide" ng-show="edit" value={{vm.profile.instruments}}></input></li>
-        <li class="list-group-item">Singer: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <li class="list-group-item">Genres: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <li class="list-group-item">Experience Level: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <li class="list-group-item">Emergency contact: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <li class="list-group-item">Minor: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <li class="list-group-item">Camping: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-        <button type="submit" class="animate-show-hide" ng-show="edit" >Submit changes</button>
-        <input type="checkbox" ng-model="edit" aria-label="Toggle ngShow ngHide" style="width: 200px; height: 200px;" />
-      </form>
+      <li class="list-group-item">Instruments:<h2 class="animate-show-hide" ng-hide="edit">{{vm.profile.instruments}}</h2></li>
+      <li class="list-group-item">Singer: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <li class="list-group-item">Genres: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <li class="list-group-item">Experience Level: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <li class="list-group-item">Emergency contact: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <li class="list-group-item">Minor: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <li class="list-group-item">Camping: <input type="text" class="animate-show-hide" ng-show="edit"></li>
+      <button type="submit" class="animate-show-hide" ng-show="edit" >Submit changes</button>
+      <input type="checkbox" ng-model="edit" aria-label="Toggle ngShow ngHide" style="width: 200px; height: 200px;" />
     </ul>
     <div class="card-body">
       <a class="card-link" data-toggle="modal" data-target="#editProfile">Edit Info</a>
@@ -61,7 +59,7 @@
           <div class="form-row row">
             <div class="form-group col-md-6">
               <label for="inputName">Name</label>
-              <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
+              <input ng-model="vm.profile.displayName" type="text" class="form-control" id="inputName" placeholder="Name" value={{vm.profile.displayName}}>
             </div>
             <div class="form-group col-md-4">
               <label for="inputMinor">Minor</label>
@@ -73,7 +71,7 @@
             </div>
             <div class="form-group col-md-2">
               <label for="inputAge">Age</label>
-              <input type="text" class="form-control" id="inputAge">
+              <input type="number" class="form-control" id="inputAge" placeholder="age">
             </div>
           </div>
           <div class="form-row row">
@@ -115,7 +113,7 @@
           <div class="form-row row">
             <div class="form-group col-md-8">
               <label for="inputGenres">Genres</label>
-              <input type="text" class="form-control" id="inputGenres" placeholder="Genres">
+              <input type="text" class="form-control" id="inputGenres" placeholder="Genres" >
             </div>
             <div class="form-group col-md-4">
               <label for="inputExperience">Experience Level</label>
