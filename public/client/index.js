@@ -84,7 +84,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
             this.name = "stu";
             this.profile = {
               "_id": "5a4c64c7fda43f2d517a9d25",
-          		"user_id": "5a4c64a3fda43f2d517a9d24",
+          		"user_id": "5a4c7d0144af933d304fedc9",
           		"displayName": "Camper 1",
           		"minor": false,
           		"camping_type": "none",
