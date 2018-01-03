@@ -82,7 +82,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         .when('/instructors', {
           controller: function() {
             this.name = "stu";
-            this.profile = { "_id" : ObjectId("5a4c7d2244af933d304fedcb"), "user_id" : ObjectId("5a4c7d0144af933d304fedc9"), "displayName" : "Camper 2", "minor" : false, "camping_type" : "none", "email" : "", "image" : "", "alt_email" : "", "age" : 0, "release_form" : false, "chaperone_name" : "", "bio" : "", "instruments" : "", "singer" : false, "instrumentalist" : false, "genres" : "", "exp_level" : "", "phone" : "", "dietary_restrictions" : "", "allergies" : "", "emergency_contact" : { "phone" : "", "name" : "" }, "band_info" : { "otherMembers" : "", "name" : "", "band" : false }, "__v" : 0 }
+            this.profile = { "_id" : 'ObjectId("5a4c7d2244af933d304fedcb")', "user_id" : 'ObjectId("5a4c7d0144af933d304fedc9")', "displayName" : "Camper 2", "minor" : false, "camping_type" : "none", "email" : "", "image" : "", "alt_email" : "", "age" : 0, "release_form" : false, "chaperone_name" : "", "bio" : "", "instruments" : "", "singer" : false, "instrumentalist" : false, "genres" : "", "exp_level" : "", "phone" : "", "dietary_restrictions" : "", "allergies" : "", "emergency_contact" : { "phone" : "", "name" : "" }, "band_info" : { "otherMembers" : "", "name" : "", "band" : false }, "__v" : 0 }
           },
           templateUrl: 'public/client/templates/instructors.html',
           controllerAs: 'ctrl',
