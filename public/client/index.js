@@ -75,7 +75,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .when('/signin', {
           controller: function($scope) {
-            $scope.user = userData;
+            // $scope.user = userData;
             $scope.handleClick = function() {
               // console.log("You made it!", $scope.user)
             }
