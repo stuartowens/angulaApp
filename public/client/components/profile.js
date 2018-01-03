@@ -9,7 +9,7 @@ angular.module('main-app')
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
       // $scope.vm.dataId = "#".concat($scope.vm.profile._id)
-      // console.log($scope.dataId)
+      console.log($scope.vm, 'scope.vm')
       $scope.submitProfile = function(){
         $http({
           method: 'PUT',
