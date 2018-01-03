@@ -73,7 +73,7 @@ angular.module('main-app')
           }
         });
         if(!ifPermissionPassed) {
-          $location.path('/unauthorizedAccess');
+          $location.path('/signin');
           $rootScope.$on('$locationChangeSuccess', function(next, current){
             deferred.resolve();
           });
