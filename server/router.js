@@ -6,16 +6,6 @@ var util = require('../db/util')
 
 var router = express.Router();
 
-// router.get('/registration', (req,res) => {
-//   res.sendFile('index.html', {
-//     root: './../'
-//   })
-// })
-//router.route('/registration')
-// .get(function(req, res) {
-//  res.redirect('https://bandcamp.cc/registration')
-//})
-
 router.route('/api/findUser')
   .get(function(req,res) {
     util.findOneUser(req, res);

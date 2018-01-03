@@ -8,10 +8,6 @@
   <h2>Once you have paid for camp registration click here to get to camper profiles: </h2>
   <a ng-href="#/profile"><button type="button" class="btn btn-primary sign-up-button">Camper Profiles</button></a>
 </div>
-<!-- <h1>Signup one person here: </h1>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrationmodal">Group</button> -->
-
-<!-- Registration modal -->
 
 <div class="modal fade" id="registrationmodal" tabindex="-1" role="dialog" aria-labelledby="registrationmodal" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -39,11 +35,6 @@
         <h4>Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</h4>
         <h4>Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</h4>
         <h4>Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50}}</h4>
-        <!-- <form>
-          <p>Is the information above correct?</p>
-          <input type="radio" name="info" id="correctInfo" value="correctInfo">Yes</input>
-          <input type="radio" name="info" id="incorrectInfo" value="incorrectInfo">No</input>
-        </form> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

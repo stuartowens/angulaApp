@@ -9,9 +9,6 @@ angular.module('main-app')
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
       $scope.submitProfile = function(){
-        console.log($scope.vm, '$scope')
-        console.log(this.profile, 'this.profile')
-        console.log(this, 'this')
         $http({
           method: 'PUT',
           url: 'https://bandcamp.cc/api/updateProfile/',
@@ -25,9 +22,9 @@ angular.module('main-app')
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           }).then(function(res){
-            console.log(res, 'profileData')
+            // console.log(res, 'profileData')
             $scope.profile = res
-            console.log($scope.profile, "during callback")
+            // console.log($scope.profile, "during callback")
           });
       }.bind(this)
     },

@@ -244,16 +244,6 @@ app.get('/api/auth/google/callback',
   app.put('/api/updateProfile', function(req, res){
     Util.updateProfile(req, res)
   })
-  // app.put('/updateUser', function(req, res) {
-  //   User.findOne({ _id: req.session.passport.user }, (err, user) => {
-  //     if (err) {
-  //       console.log('error in getUser route', err);
-  //     } else {
-  //       console.log('get user success', user)
-  //       res.json(user)
-  //     }
-  //   })
-  // })
 
   // get profiles of user
 

@@ -1,196 +1,140 @@
 <div>
-
-<div class="card profile-card" >
-  <div class="front">
-    <div class="card-header  header-image-container">
-      <div class="circle-image">
-        <img class="circle-image" src="./public/Img/photos3.jpg" alt="Card image cap">
+  <div class="card profile-card" >
+    <div class="front">
+      <div class="card-header  header-image-container">
+        <div class="circle-image">
+          <img class="circle-image" src="./public/Img/photos3.jpg" alt="Card image cap">
+        </div>
       </div>
-    </div>
-    <div class="card-body text-center">
-      <h2 class="card-title">{{vm.profile.displayName}}</h2>
-      <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
-      <p class="card-text">{{vm.profile.bio}}</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Instruments:{{vm.profile.instruments}}</li>
-      <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
-      <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
-      <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
-      <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
-      <li class="list-group-item">Minor: {{vm.profile.minor}}</li>
-      <li class="list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>
-      <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
-      <li class="list-group-item">Allergies: {{vm.profile.allergies}}</li>
-      <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
-    </ul>
-    <div class="card-footer">
-      <a class="btn btn-primary" data-toggle="modal" data-target="#editProfile">Edit Profile</a>
+      <div class="card-body text-center">
+        <h2 class="card-title">{{vm.profile.displayName}}</h2>
+        <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
+        <p class="card-text">{{vm.profile.bio}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Instruments:{{vm.profile.instruments}}</li>
+        <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
+        <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
+        <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
+        <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
+        <li class="list-group-item">Minor: {{vm.profile.minor}}</li>
+        <li class="list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>
+        <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
+        <li class="list-group-item">Allergies: {{vm.profile.allergies}}</li>
+        <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
+      </ul>
+      <div class="card-footer">
+        <a class="btn btn-primary" data-toggle="modal" data-target="#editProfile">Edit Profile</a>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="modal fade" id="editProfile" style="margin: 3vw;">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <p class="modal-title">Edit {{vm.profile.displayName}}'s Profile</p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-row row">
-            <div class="form-group col-md-6">
-              <label for="inputName">Name</label>
-              <input ng-model="vm.profile.displayName" type="text" class="form-control" id="inputName" placeholder="Name" value={{vm.profile.displayName}}>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputMinor">Minor</label>
-              <select ng-model="vm.profile.minor" id="inputMinor" class="form-control">
-                <option selected>Choose...</option>
-                <option>true</option>
-                <option>false</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputAge">Age</label>
-              <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age">
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-md-6">
-              <label for="inputCamping">Camping</label>
-              <select ng-model="vm.profile.camping_type" id="inputCamping" class="form-control">
-                <option selected>Choose...</option>
-                <option>None</option>
-                <option>Tent Camper</option>
-                <option>RV Camper</option>
-                <option>Cabin Camper</option>
-              </select>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputChaperone">Chaperone Name</label>
-              <input ng-model="vm.profile.chaperone_name" type="text" class="form-control" id="inputChaperone" placeholder="If under 16, who is the chaperone?" value="vm.profile.chaperone_name">
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-xl-12">
-              <label for="inputBio">Bio</label>
-              <input ng-model="vm.profile.bio" type="text" class="form-control" id="inputBio" placeholder="Do you sing? Do you write your own songs? Do you play in a band now?" value="vm.profile.bio">
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="col-sm-6">
-              <div class="form-check">
-                <input ng-model="vm.profile.singer" class="form-check-input" type="checkbox" id="singerCheck">
-                <label class="form-check-label" for="singerCheck">Singer</label>
-                <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
-                <label ng-model="vm.profile.instrumentalist" class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+  <div class="modal fade" id="editProfile" style="margin: 3vw;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">Edit {{vm.profile.displayName}}'s Profile</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row row">
+              <div class="form-group col-md-6">
+                <label for="inputName">Name</label>
+                <input ng-model="vm.profile.displayName" type="text" class="form-control" id="inputName" placeholder="Name" value={{vm.profile.displayName}}>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputMinor">Minor</label>
+                <select ng-model="vm.profile.minor" id="inputMinor" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputAge">Age</label>
+                <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age">
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputInstruments">Instruments</label>
-              <input ng-model="vm.profile.instruments" type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?" value="vm.profile.instruments">
+            <div class="form-row row">
+              <div class="form-group col-md-6">
+                <label for="inputCamping">Camping</label>
+                <select ng-model="vm.profile.camping_type" id="inputCamping" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>None</option>
+                  <option>Tent Camper</option>
+                  <option>RV Camper</option>
+                  <option>Cabin Camper</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputChaperone">Chaperone Name</label>
+                <input ng-model="vm.profile.chaperone_name" type="text" class="form-control" id="inputChaperone" placeholder="If under 16, who is the chaperone?" value="vm.profile.chaperone_name">
+              </div>
             </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-md-8">
-              <label for="inputGenres">Genres</label>
-              <input ng-model="vm.profile.genres" type="text" class="form-control" id="inputGenres" placeholder="Genres" value="vm.profile.genres">
+            <div class="form-row row">
+              <div class="form-group col-xl-12">
+                <label for="inputBio">Bio</label>
+                <input ng-model="vm.profile.bio" type="text" class="form-control" id="inputBio" placeholder="Do you sing? Do you write your own songs? Do you play in a band now?" value="vm.profile.bio">
+              </div>
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputExperience">Experience Level</label>
-              <select ng-model="vm.profile.exp_level" id="inputExperience" class="form-control">
-                <option selected>Choose...</option>
-                <option>Level 1</option>
-                <option>Level 2</option>
-                <option>Level 3</option>
-              </select>
+            <div class="form-row row">
+              <div class="col-sm-6">
+                <div class="form-check">
+                  <input ng-model="vm.profile.singer" class="form-check-input" type="checkbox" id="singerCheck">
+                  <label class="form-check-label" for="singerCheck">Singer</label>
+                  <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
+                  <label ng-model="vm.profile.instrumentalist" class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputInstruments">Instruments</label>
+                <input ng-model="vm.profile.instruments" type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?" value="vm.profile.instruments">
+              </div>
             </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-md-6">
-              <label for="inputEmergencyName">Emergency Contact Name</label>
-              <input ng-model="vm.profile.emergency_contact.name" type="text" class="form-control" id="inputEmergencyName" placeholder="Emergency Contact Name" value="vm.profile.emergency_contact.name">
+            <div class="form-row row">
+              <div class="form-group col-md-8">
+                <label for="inputGenres">Genres</label>
+                <input ng-model="vm.profile.genres" type="text" class="form-control" id="inputGenres" placeholder="Genres" value="vm.profile.genres">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputExperience">Experience Level</label>
+                <select ng-model="vm.profile.exp_level" id="inputExperience" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Level 1</option>
+                  <option>Level 2</option>
+                  <option>Level 3</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputEmergencyNumber">Emergency Contact Number</label>
-              <input ng-model="vm.profile.emergency_contact.phone" type="text" class="form-control" id="inputEmergencyNumber" placeholder="Emergency Contact Number" ng-model="vm.profile.emergency_contact.phone">
+            <div class="form-row row">
+              <div class="form-group col-md-6">
+                <label for="inputEmergencyName">Emergency Contact Name</label>
+                <input ng-model="vm.profile.emergency_contact.name" type="text" class="form-control" id="inputEmergencyName" placeholder="Emergency Contact Name" value="vm.profile.emergency_contact.name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmergencyNumber">Emergency Contact Number</label>
+                <input ng-model="vm.profile.emergency_contact.phone" type="text" class="form-control" id="inputEmergencyNumber" placeholder="Emergency Contact Number" ng-model="vm.profile.emergency_contact.phone">
+              </div>
             </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-md-6">
-              <label for="inputDietary">Dietary Restrictions</label>
-              <input ng-model="vm.profile.dietary_restrictions" type="text" class="form-control" id="inputDietary" placeholder="Dietary Restrictions" value="vm.profile.dietary_restrictions">
+            <div class="form-row row">
+              <div class="form-group col-md-6">
+                <label for="inputDietary">Dietary Restrictions</label>
+                <input ng-model="vm.profile.dietary_restrictions" type="text" class="form-control" id="inputDietary" placeholder="Dietary Restrictions" value="vm.profile.dietary_restrictions">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAllergies">Allergies</label>
+                <input ng-model="vm.profile.allergies" type="text" class="form-control" id="inputAllergies" placeholder="Allergies" ng-model="vm.profile.allergies">
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputAllergies">Allergies</label>
-              <input ng-model="vm.profile.allergies" type="text" class="form-control" id="inputAllergies" placeholder="Allergies" ng-model="vm.profile.allergies">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button ng-click="submitProfile()" class="btn btn-primary" data-dismiss="modal">Submit</button>
             </div>
-          </div>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button ng-click="submitProfile()" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<!-- <div class="card profile-card" >
-  <div class="front">
-    <div class="card-header  header-image-container">
-      <div class="circle-image">
-        <img class="circle-image" src="./public/Img/photos3.jpg" alt="Card image cap">
-      </div>
-    </div>
-    <div class="card-body text-center">
-      <h2 class="card-title">{{profile.displayName}}</h2>
-      <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <form>
-        <li class="list-group-item">Instruments: <input ng-hide="edit" type="text"></input></li>
-        <li class="list-group-item">Singer: </li>
-        <li class="list-group-item">Genres: </li>
-        <li class="list-group-item">Experience Level: </li>
-        <li class="list-group-item">Emergency contact: </li>
-        <li class="list-group-item">Minor: </li>
-        <li class="list-group-item">Camping: </li>
-        <button ng-model="edit"></button>
-      </form>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Edit Info</a>
-      <a href="#" class="card-link">Flip</a>
-    </div>
-  </div> -->
-
-
-
-  <!-- <div class="back">
-    <div class="card-header  header-image-container">
-      <div class="circle-image">
-        <img class="circle-image" src="./public/Img/photos3.jpg" alt="Card image cap">
-      </div>
-    </div>
-    <div class="card-body text-center">
-      <h2 class="card-title">Info</h2>
-      <p class="card-text">(this information will not be shared with anyone)</p>
-    </div>
-    <ul class="list-group list-group-flush">
-
-      <li class="list-group-item">Address: </li>
-      <li class="list-group-item">City: </li>
-      <li class="list-group-item">State: </li>
-      <li class="list-group-item">Phone: </li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Edit Info</a>
-      <a href="#" class="card-link">Flip</a>
-    </div>
-  </div> -->
 </div>
