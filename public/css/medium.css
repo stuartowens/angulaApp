@@ -1,3 +1,6 @@
+.logo-image {
+  height: 12vw;
+}
 .contact-container {
   display: flex;
   flex-direction: column;
