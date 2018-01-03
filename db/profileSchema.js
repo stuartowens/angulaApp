@@ -1,10 +1,7 @@
 var mongoose = require('mongoose');
 
 var Profile = mongoose.Schema({
-  // unique id syntax: _id
-  google_id: { type: String},
   displayName: { type: String },
-  participant_profile: {type: Boolean },
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   minor: { type: Boolean },
   camping_type: { type: String },
@@ -17,7 +14,7 @@ var Profile = mongoose.Schema({
   chaperone_name: { type: String },
   bio: { type: String },
   instruments: { type: String },
-  singer: { type: String },
+  singer: { type: Boolean },
   genres: { type: String },
   exp_level: { type: Number },
   phone: { type: String },

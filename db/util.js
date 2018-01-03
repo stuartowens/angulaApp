@@ -54,6 +54,53 @@ function updateUser(req, res) {
   })
 }
 
+function updateProfile(req, res) {
+  console.log(req.session.passport.user, 'req.session~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  console.log(req.body, 'req.body~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
+  var id = req.id;
+  Profile.findOne({ _id: id, user_id: req.session.passport.user }, (err, profile) => {
+    if (err) {
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateProfile~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
+    } else {
+      console.log(profile, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateProfile")
+      profile.displayName = req.body.displayName
+      profile.minor = req.body.minor
+      profile.camping_type = req.body.camping_type
+      profile.email = req.body.email
+      profile.image = req.body.image
+      profile.alt_email = req.body.alt_email
+      profile.age = req.body.age
+      profile.release_form = req.body.release_form
+      profile.chaperone = req.body.chaperone
+      profile.chaperone_name = req.body.chaperone_name
+      profile.bio = req.body.bio
+      profile.instruments = req.body.instruments
+      profile.singer = req.body.singer
+      profile.genres = req.body.genres
+      profile.exp_level = req.body.exp_level
+      profile.phone = req.body.phone
+      profile.dietary_restrictions = req.body.dietary_restrictions
+      profile.allergies = req.body.allergies
+      profile.emergency_contact.name = req.body.emergency_contact.name
+      profile.emergency_contact.phone = req.body.emergency_contact.phone
+      profile.band_info.band = req.body.band_info.band
+      profile.band_info.name = req.body.band_info.name
+      profile.band_info.otherMembers = req.body.band_info.otherMembers
+      console.log('profile before save', profile)
+      profile.save(function (err) {
+        if(err) {
+          return handleError(err)
+        } else {
+          console.log('profile after save', profile)
+          res.json(profile);
+        }
+      })
+
+    }
+  })
+}
+
 // search for a profile
 function findOneProfile(req, res) {
   var id = req.query.id;
@@ -95,25 +142,25 @@ function createProfile(user_id, i) {
   Profile.create({
     user_id: user_id,
     displayName: displayName,
-    participant_profile: true,
     minor: false,
     camping_type: 'none',
     email: '',
     image: '',
     alt_email: '',
-    paid: true,
     age: 0,
     release_form: false,
     chaperone: false,
     chaperone_name: '',
+    bio: '',
+    instruments: '',
+    singer: false,
+    genres: '',
     exp_level: 0,
-    address: {},
     phone: '',
     dietary_restrictions: '',
     allergies: '',
-    emergency_contact: {},
-    band_info: {},
-    total_paid: 0
+    emergency_contact: { name: '', phone: '' },
+    band_info: { band: false, name: '', otherMembers: '' },
   }, (err, profile) => {
     if (err) {
       console.log("error with creating profile", err)
@@ -167,6 +214,7 @@ function createProfile(user_id, i) {
 
 exports.findOneUser = findOneUser;
 exports.updateUser = updateUser;
+exports.updateProfile = updateProfile;
 exports.findOneProfile = findOneProfile;
 exports.findManyProfiles = findManyProfiles;
 exports.createProfile = createProfile;

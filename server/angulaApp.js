@@ -240,6 +240,10 @@ app.get('/api/auth/google/callback',
   app.put('/api/updateUser', function(req, res){
     Util.updateUser(req, res)
   })
+
+  app.put('/api/updateProfile', function(req, res){
+    Util.updateProfile(req, res)
+  })
   // app.put('/updateUser', function(req, res) {
   //   User.findOne({ _id: req.session.passport.user }, (err, user) => {
   //     if (err) {
