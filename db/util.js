@@ -176,7 +176,7 @@ function createProfile(user_id, i) {
             if(err) {
               console.log("error in createProfile", err)
             } else {
-              if(profile.participant_profile) {
+              // if(profile.participant_profile) {
                 user.participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
                 // console.log(user, "this is the user!!!!!")
                 user.save()
@@ -189,9 +189,9 @@ function createProfile(user_id, i) {
                 //     })
                 //   }
                 // })
-              } else {
-                user.non_participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
-                user.save()
+              // } else {
+              //   user.non_participant_profiles.push({ displayName: profile.displayName, profile_id: profile._id })
+              //   user.save()
                 // user.save(function(error) {
                 //   if(!error) {
                 //     User.find({})
@@ -201,7 +201,7 @@ function createProfile(user_id, i) {
                 //     })
                 //   }
                 // })
-              }
+              // }
             }
           })
         }
