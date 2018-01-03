@@ -26,21 +26,22 @@
     <div class="card-body text-center">
       <h2 class="card-title">{{vm.profile.displayName}}</h2>
       <p class="card-text">Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?</p>
+      <p class="card-text">{{vm.profile.bio}}</p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Instruments:<h2 class="animate-show-hide" ng-hide="edit">{{vm.profile.instruments}}</h2></li>
-      <li class="list-group-item">Singer: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <li class="list-group-item">Genres: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <li class="list-group-item">Experience Level: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <li class="list-group-item">Emergency contact: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <li class="list-group-item">Minor: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <li class="list-group-item">Camping: <input type="text" class="animate-show-hide" ng-show="edit"></li>
-      <button type="submit" class="animate-show-hide" ng-show="edit" >Submit changes</button>
-      <input type="checkbox" ng-model="edit" aria-label="Toggle ngShow ngHide" style="width: 200px; height: 200px;" />
+      <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
+      <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
+      <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
+      <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
+      <li class="list-group-item">Minor: {{vm.profile.minor}}</li>
+      <li class="list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>
+      <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
+      <li class="list-group-item">Allergies: {{vm.profile.allergies}}</li>
+      <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
     </ul>
-    <div class="card-body">
-      <a class="card-link" data-toggle="modal" data-target="#editProfile">Edit Info</a>
-      <a href="#" class="card-link">Flip</a>
+    <div class="card-footer">
+      <a class="btn btn-primary" data-toggle="modal" data-target="#editProfile">Edit Profile</a>
     </div>
   </div>
 </div>
