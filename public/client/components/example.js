@@ -8,7 +8,7 @@ angular.module('main-app')
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
-      this.submitProfile = function(){
+      $scope.submitProfile = function(){
         console.log($scope.profile, '$scope.profile')
         // $http({
         //   method: 'PUT',
