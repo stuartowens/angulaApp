@@ -59,7 +59,7 @@ function updateProfile(req, res) {
   console.log(req.body, 'req.body~~~~~~upon update$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
   // var id = req.id;
-  Profile.findOne({ _id: req._id, user_id: req.session.passport.user }, (err, profile) => {
+  Profile.findOne({ _id: req._id }, (err, profile) => {
     if (err) {
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateProfile~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
