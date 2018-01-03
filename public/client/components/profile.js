@@ -2,14 +2,12 @@ angular.module('main-app')
 .directive('profile', function() {
   return {
     scope: {
-      dataId: '<',
-      displayName: '<',
       profile: '<'
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
       // $scope.vm.dataId = "#".concat($scope.vm.profile._id)
-      console.log($scope, 'scope')
+      console.log($scope.$id, 'scope.$id')
       $scope.submitProfile = function(){
         $http({
           method: 'PUT',
