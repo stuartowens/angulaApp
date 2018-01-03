@@ -29,7 +29,7 @@
       <p class="card-text">{{vm.profile.bio}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Instruments:<h2 class="animate-show-hide" ng-hide="edit">{{vm.profile.instruments}}</h2></li>
+      <li class="list-group-item">Instruments:{{vm.profile.instruments}}</li>
       <li class="list-group-item">Singer: {{vm.profile.singer}}</li>
       <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
       <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
@@ -64,10 +64,10 @@
             </div>
             <div class="form-group col-md-4">
               <label for="inputMinor">Minor</label>
-              <select id="inputMinor" class="form-control">
+              <select ng-model="vm.profile.minor" id="inputMinor" class="form-control">
                 <option selected>Choose...</option>
-                <option>yes</option>
-                <option>no</option>
+                <option>true</option>
+                <option>false</option>
               </select>
             </div>
             <div class="form-group col-md-2">
@@ -78,7 +78,7 @@
           <div class="form-row row">
             <div class="form-group col-md-6">
               <label for="inputCamping">Camping</label>
-              <select id="inputCamping" class="form-control">
+              <select ng-model="vm.profile.camping_type" id="inputCamping" class="form-control">
                 <option selected>Choose...</option>
                 <option>None</option>
                 <option>Tent Camper</option>
@@ -94,31 +94,31 @@
           <div class="form-row row">
             <div class="form-group col-xl-12">
               <label for="inputBio">Bio</label>
-              <input type="text" class="form-control" id="inputBio" placeholder="Do you sing? Do you write your own songs? Do you play in a band now?" >
+              <input ng-model="vm.profile.bio" type="text" class="form-control" id="inputBio" placeholder="Do you sing? Do you write your own songs? Do you play in a band now?" value="vm.profile.bio">
             </div>
           </div>
           <div class="form-row row">
             <div class="col-sm-6">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="singerCheck">
+                <input ng-model="vm.profile.singer" class="form-check-input" type="checkbox" id="singerCheck">
                 <label class="form-check-label" for="singerCheck">Singer</label>
                 <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
-                <label class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+                <label ng-model="vm.profile.instrumentalist" class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputInstruments">Instruments</label>
-              <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
+              <input ng-model="vm.profile.instruments" type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?" value="vm.profile.instruments">
             </div>
           </div>
           <div class="form-row row">
             <div class="form-group col-md-8">
               <label for="inputGenres">Genres</label>
-              <input type="text" class="form-control" id="inputGenres" placeholder="Genres" >
+              <input ng-model="vm.profile.genres" type="text" class="form-control" id="inputGenres" placeholder="Genres" value="vm.profile.genres">
             </div>
             <div class="form-group col-md-4">
               <label for="inputExperience">Experience Level</label>
-              <select id="inputExperience" class="form-control">
+              <select ng-model="vm.profile.exp_level" id="inputExperience" class="form-control">
                 <option selected>Choose...</option>
                 <option>Level 1</option>
                 <option>Level 2</option>
@@ -129,21 +129,21 @@
           <div class="form-row row">
             <div class="form-group col-md-6">
               <label for="inputEmergencyName">Emergency Contact Name</label>
-              <input type="text" class="form-control" id="inputEmergencyName" placeholder="Emergency Contact Name">
+              <input ng-model="vm.profile.emergency_contact.name" type="text" class="form-control" id="inputEmergencyName" placeholder="Emergency Contact Name" value="vm.profile.emergency_contact.name">
             </div>
             <div class="form-group col-md-6">
               <label for="inputEmergencyNumber">Emergency Contact Number</label>
-              <input type="text" class="form-control" id="inputEmergencyNumber" placeholder="Emergency Contact Number">
+              <input ng-model="vm.profile.emergency_contact.phone" type="text" class="form-control" id="inputEmergencyNumber" placeholder="Emergency Contact Number" ng-model="vm.profile.emergency_contact.phone">
             </div>
           </div>
           <div class="form-row row">
             <div class="form-group col-md-6">
               <label for="inputDietary">Dietary Restrictions</label>
-              <input type="text" class="form-control" id="inputDietary" placeholder="Dietary Restrictions">
+              <input ng-model="vm.profile.dietary_restrictions" type="text" class="form-control" id="inputDietary" placeholder="Dietary Restrictions" value="vm.profile.dietary_restrictions">
             </div>
             <div class="form-group col-md-6">
               <label for="inputAllergies">Allergies</label>
-              <input type="text" class="form-control" id="inputAllergies" placeholder="Allergies">
+              <input ng-model="vm.profile.allergies" type="text" class="form-control" id="inputAllergies" placeholder="Allergies" ng-model="vm.profile.allergies">
             </div>
           </div>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
