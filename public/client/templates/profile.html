@@ -19,7 +19,7 @@
         <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
         <li class="list-group-item">Minor: {{vm.profile.minor ? "Yes" : "No"}}</li>
         <li class="list-group-item">Chaperoned: {{vm.profile.chaperone ? "Yes" : "No"}}</li>
-        {{ vm.profile.chaperone ? <li class="list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li> }}
+        <div>{{ vm.profile.chaperone ? <li class="list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>}}</div>
         <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
         <li class="list-group-item">Allergies: {{vm.profile.allergies}}</li>
         <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
