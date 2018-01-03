@@ -16,7 +16,7 @@
           <li class="list-group-item">Cabin Campers: {{chkoutCtrl.user.cabinCampers}} x $199 = ${{chkoutCtrl.user.cabinCampers * 199 }}</li>
           <li class="list-group-item">Tent Campers: {{chkoutCtrl.user.tentCampers}} x $150 = ${{chkoutCtrl.user.tentCampers * 150 }}</li>
           <li class="list-group-item">Chaperone Lunch Plans: {{chkoutCtrl.user.chaperoneLunches}} x $50 = ${{chkoutCtrl.user.chaperoneLunches*50}}</li>
-          <li class="list-group-item">Total: ${{chkoutCtrl.user.studentTotal * 379 + chkoutCtrl.user.rvCampers * 279 + chkoutCtrl.user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50}}</li>
+          <li class="list-group-item">Total: ${{chkoutCtrl.user.studentTotal * 379 + chkoutCtrl.user.rvCampers * 279 + chkoutCtrl.user.cabinCampers * 199 + chkoutCtrl.user.tentCampers * 150 + chkoutCtrl.user.chaperoneLunches*50}}</li>
         </ul>
         <form stripe-form="chkoutCtrl.stripeCallback" name="checkoutForm">
           <div class="form-row row">
