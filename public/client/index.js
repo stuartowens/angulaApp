@@ -138,7 +138,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                       // this callback will be called asynchronously
                       // when the response is available
                        // console.log(response, 'response')
-                       // alert('Your contact form has been submitted')
+                       alert('Your payment has been processed')
                       //  $scope.user = response.data[0]
                     }, function errorCallback(response) {
                       // called asynchronously if an error occurs
