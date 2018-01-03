@@ -21,7 +21,7 @@ angular.module('main-app')
     }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
-         console.log(response, 'response')
+         // console.log(response, 'response')
          alert('Your contact form has been submitted')
         //  $scope.user = response.data[0]
       }, function errorCallback(response) {
