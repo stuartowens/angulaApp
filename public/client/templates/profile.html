@@ -13,7 +13,8 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Instruments: {{vm.profile.instruments}}</li>
-        <li class="list-group-item">Singer: Minor: {{vm.profile.minor ? "Yes" : "No"}}</li>
+        <li class="list-group-item">Singer: {{vm.profile.singer ? "Yes" : "No"}}</li>
+        <li class="list-group-item">Instrumentalist: {{vm.profile.instrumentalist ? "Yes" : "No"}}</li>
         <li class="list-group-item">Genres: {{vm.profile.genres}}</li>
         <li class="list-group-item">Experience Level: {{vm.profile.exp_level}}</li>
         <li class="list-group-item">Emergency contact: {{vm.profile.emergency_contact.name}} {{vm.profile.emergency_contact.phone}}</li>
@@ -21,7 +22,7 @@
         <li class="list-group-item">Chaperoned: {{vm.profile.chaperone ? "Yes" : "No"}}</li>
         <li ng-show="vm.profile.chaperone" class="animate-show-hide list-group-item">Chaperone: {{vm.profile.chaperone_name}}</li>
         <li class="list-group-item">Camping: {{vm.profile.camping_type}}</li>
-        <li class="list-group-item">Allergies: {{vm.profile.allergies}}</li>
+        <li ng-show="vm.profile.allergies.length > 0" class="animate-show-hide list-group-item">Allergies: {{vm.profile.allergies}}</li>
         <li class="list-group-item">Dietary Restrictions: {{vm.profile.dietary_restrictions}}</li>
       </ul>
       <div class="card-footer">
