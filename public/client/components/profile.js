@@ -8,7 +8,9 @@ angular.module('main-app')
     },
     restrict: 'E',
     controller: function($scope, $rootScope, $http, $location) {
-      $scope.dataId = "#".concat(this.profile._id)
+      console.log(this.profile, 'this.profile')
+      console.log($scope, '$scope')
+      // $scope.dataId = "#".concat(this.profile._id)
       console.log($scope.dataId)
       $scope.submitProfile = function(){
         $http({
