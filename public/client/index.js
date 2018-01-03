@@ -230,7 +230,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {
-              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
+              return authorizationService.permissionCheck([roles.paidUser, roles.admin])
             }
           },
           secure: 'true'
