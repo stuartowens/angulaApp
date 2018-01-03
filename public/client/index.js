@@ -47,7 +47,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/contact', {
-          controller: function(contactService, $scope) {
+          controller: function(contactService, $scope, $location) {
             Object.assign($scope, {
               firstName: '',
               lastName: '',

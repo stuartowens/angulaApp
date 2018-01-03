@@ -23,6 +23,7 @@ angular.module('main-app')
         // when the response is available
          // console.log(response, 'response')
          alert('Your contact form has been submitted')
+         $location.path('/')
         //  $scope.user = response.data[0]
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
