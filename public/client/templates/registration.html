@@ -13,33 +13,54 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modaltitle">Registration FORM</h5>
+        <p class="modal-title" id="modaltitle">{{user.displayName}}'s Camper Registration Cart</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <!-- <img src="http://waterearthwindfire.com/wp-content/uploads/2013/08/FarmersMarketAug1709.jpg"/> -->
-        <h4>Name: {{user.displayName}}</h4>
-        <h4>Email: {{user.email}}</h4>
-        <h4>Number of people in your group including non-participants: <input ng-model="regCtrl.user.groupTotal"  type="number" name="input" placeholder="0" id="groupTotal" value=0 style="width:80px"/></h4>
-        <h4>Number of students: <input ng-model="regCtrl.user.studentTotal"  name="input" type="number" placeholder="1" value=0 id="studentTotal" style="width:80px"/></h4>
-        <h4>Number of indiduals in your group including non-students that will be RV camping: <input ng-model="regCtrl.user.rvCampers"  name="input" type="number" value=0 id="rvCampers" style="width:80px"/></h4>
-        <h4>Number of indiduals in your group including non-students that will be Cabin camping: <input ng-model="regCtrl.user.cabinCampers"  name="input" type="number" value=0 id="cabinCampers" style="width:80px"/></h4>
-        <h4>Number non-students that are not camping that would like to buy a lunch plan: <input ng-model="regCtrl.user.chaperoneLunches"  name="input" type="number" value=0 id="chaperoneLunches" style="width:80px"/></h4>
-        <h4>Please make sure the information below is correct then proceed to payment</h4>
-        <h4>{{user.groupTotal}} Group members: </h4>
-        <h4>Student Total: {{user.studentTotal}} x $379 = ${{user.studentTotal * 379 }}</h4>
-        <h4>RV Campers: {{user.rvCampers}} x $279 = ${{user.rvCampers * 279 }}</h4>
-        <h4>Cabin Campers: {{user.cabinCampers}} x $199 = ${{user.cabinCampers * 199 }}</h4>
-        <h4>Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</h4>
-        <h4>Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</h4>
-        <h4>Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50}}</h4>
+        <form>
+          <div class="form-row row">
+            <div class="form-group col-md-10">
+              <label for="studentTotal">Andy Owens Band Camp pass:</label>
+              <input ng-model="regCtrl.user.studentTotal" type="number" class="form-control" id="studentTotal">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="rvCampers">RV camping passes:</label>
+              <input ng-model="regCtrl.user.rvCampers" type="number" class="form-control" id="rvCampers">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cabinCampers">Cabin camping passes:</label>
+              <input ng-model="regCtrl.user.cabinCampers" type="number" class="form-control" id="cabinCampers">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-6">
+              <label for="chaperoneLunches">Non-particpant lunch plans:</label>
+              <input ng-model="regCtrl.user.chaperoneLunches" type="number" class="form-control" id="chaperoneLunches">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="groupTotal">Group size:</label>
+              <input ng-model="regCtrl.user.groupTotal" type="number" class="form-control" id="groupTotal">
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{user.groupTotal}} Group members: </li>
+            <li class="list-group-item">Student Total: {{user.studentTotal}} x $379 = ${{user.studentTotal * 379 }}</li>
+            <li class="list-group-item">RV Campers: {{user.rvCampers}} x $279 = ${{user.rvCampers * 279 }}</li>
+            <li class="list-group-item">Cabin Campers: {{user.cabinCampers}} x $199 = ${{user.cabinCampers * 199 }}</li>
+            <li class="list-group-item">Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</li>
+            <li class="list-group-item">Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</li>
+            <li class="list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50}}</li>
+          </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkoutmodal" data-dismiss="modal" ng-click="handleSave()">Save changes</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
