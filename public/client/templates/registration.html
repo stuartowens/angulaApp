@@ -27,7 +27,7 @@
           <li class="list-group-item">Cabin Campers: {{user.cabinCampers}} x $199 = ${{user.cabinCampers * 199 }}</li>
           <li class="list-group-item">Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</li>
           <li class="list-group-item">Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</li>
-          <li class="list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50}}</li>
+          <li class="list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches*50 - user.amt_paid}}</li>
         </ul>
         <form>
           <div class="form-row row">
@@ -59,7 +59,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkoutmodal" data-dismiss="modal" ng-click="handleSave()">Save Cart</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkoutmodal"  ng-click="handleSave()">Save Cart</button>
       </div>
       </form>
     </div>
