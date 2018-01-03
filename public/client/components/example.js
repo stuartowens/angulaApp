@@ -14,7 +14,7 @@ angular.module('main-app')
         console.log(this, 'this')
         $http({
           method: 'PUT',
-          url: 'https://bandcamp.cc/api/updateUser/',
+          url: 'https://bandcamp.cc/api/updateProfile/',
           data: this.profile
         }).then(function successCallback(response) {
             $('#editProfile').modal('hide');
