@@ -26,7 +26,7 @@ angular.module('main-app')
       },
       {
         question: 'How proficient do I need to be with my instrument?',
-        answer: 'We don’t expect people to be at a high professional level, but you should be able to learn new songs quickly, play at a level where you would be comfortable playing at an opn mic.'
+        answer: 'We don’t expect people to be at a high professional level, but you should be able to learn new songs quickly, play at a level where you would be comfortable playing at an open mic.'
       },
       {
         question: 'Are there any prerequisites?',
@@ -54,7 +54,7 @@ angular.module('main-app')
       },
       {
         question: 'What is the deadline for signing up? ',
-        answer: 'There will be a $35 discount for signing up before Feb 15, 2018 for our fall BandCamp, and July 1, 2018 for our fall BandCamp.'
+        answer: 'There will be a $35 discount for signing up before Feb 15, 2018 for our spring BandCamp, and July 1, 2018 for our fall BandCamp.'
       },
       {
         question: 'What kind of instructors are at BandCamp?',
@@ -66,15 +66,15 @@ angular.module('main-app')
       },
       {
         question: 'What will a typical day look like?',
-        answer: 'BandCamp will be divided into classroom instruction and band practic. Each band works the organization and arrangements of two songs with their coach everyday. In the evenings, we encourage the groups to work on their songs and arrangements but there will likely be some jamming and such.'
+        answer: 'BandCamp will be divided into classroom instruction and band practic. Each band works on the organization and arrangements of two songs with their coach everyday. In the evenings, we encourage the groups to work on their songs and arrangements but there will likely be some jamming and such. Thursday morning there will be a concert and each band will perform their two songs'
       },
       {
         question: 'What time do camp sessions begin on the first day?',
-        answer: 'You can arrive Sunday at Camp Harrison anytime after 5pm and we will begin doing some playing and organizing of the groupings. Formal activities begin at 6 pm. We will be starting Sunday afternoon and evening doing playing and jamming so that our instructors can start deciding how to group the participants each into a band of four to six people, so Sunday afternoon arrival would be best, as we’ll start fairly early Monday.'
+        answer: 'You can arrive Sunday at Camp Harrison anytime after 5pm and we will begin doing some playing and organizing of the groupings. We will be starting Sunday evening doing playing and jamming so that our instructors can start deciding how to group the participants each into a band of four to six people, so Sunday arrival would be best, as we’ll start fairly early Monday.'
       },
       {
         question: 'What time do camp activities end on the last day?',
-        answer: 'Around 1pm on Thursday following our camp concert.'
+        answer: 'Checkout is 1pm Thursday and we will have a brunch concert that morning so that each band can perform their two songs in front of the entire camp!'
       },
       {
         question: 'What music genres are welcome at camp? Is camp for acoustic and electric musicians?',
