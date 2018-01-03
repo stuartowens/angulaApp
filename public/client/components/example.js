@@ -26,7 +26,7 @@ angular.module('main-app')
         //     $scope.profile = res
         //     console.log($scope.profile, "during callback")
         //   });
-      }
+      }.bind(this)
     },
     controllerAs: 'vm',
     bindToController: true,
