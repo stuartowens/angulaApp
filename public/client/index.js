@@ -113,6 +113,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           			"otherMembers": ""
           		},
           		"__v": 0
+            }
           },
           templateUrl: 'public/client/templates/instructors.html',
           controllerAs: 'ctrl',
