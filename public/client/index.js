@@ -141,7 +141,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl'
         })
         .when('/registration', {
-          controller: function($scope, $http, $rootScope) {
+          controller: function($scope, $http, $rootScope, $location) {
             this.user = $rootScope.user;
             $rootScope.handleSave = function() {
               // console.log("You saved it!", $rootScope.user)
