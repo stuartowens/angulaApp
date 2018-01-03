@@ -51,13 +51,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Edit {{vm.profile.displayName}}'s Profile</h3>
+        <p class="modal-title">Edit {{vm.profile.displayName}}'s Profile</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Please tell us a little about yourself</p>
         <form>
           <div class="form-row row">
             <div class="form-group col-md-6">
@@ -78,41 +77,6 @@
             </div>
           </div>
           <div class="form-row row">
-            <div class="form-group col-xl-12">
-              <label for="inputBio">Bio</label>
-              <input type="text" class="form-control" id="inputBio" placeholder="Tell us about yourself in few sentences. Do you sing? Do you write your own songs? Do you play in a band now?" >
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="col-sm-4">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="singerCheck">
-                <label class="form-check-label" for="singerCheck">Singer</label>
-                <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
-                <label class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
-              </div>
-              <div class="form-group col-md-8">
-                <label for="inputInstruments">Instruments</label>
-                <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
-              </div>
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-md-8">
-              <label for="inputGenres">Genres</label>
-              <input type="text" class="form-control" id="inputGenres" placeholder="Genres">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputExperience">Experience</label>
-              <select id="inputExperience" class="form-control">
-                <option selected>Choose...</option>
-                <option>Level 1</option>
-                <option>Level 2</option>
-                <option>Level 3</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row row">
             <div class="form-group col-md-6">
               <label for="inputCamping">Camping</label>
               <select id="inputCamping" class="form-control">
@@ -121,6 +85,41 @@
                 <option>Tent Camper</option>
                 <option>RV Camper</option>
                 <option>Cabin Camper</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-xl-12">
+              <label for="inputBio">Bio</label>
+              <input type="text" class="form-control" id="inputBio" placeholder="Do you sing? Do you write your own songs? Do you play in a band now?" >
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="singerCheck">
+                <label class="form-check-label" for="singerCheck">Singer</label>
+                <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
+                <label class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+              </div>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="inputInstruments">Instruments</label>
+              <input type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-md-8">
+              <label for="inputGenres">Genres</label>
+              <input type="text" class="form-control" id="inputGenres" placeholder="Genres">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputExperience">Experience Level</label>
+              <select id="inputExperience" class="form-control">
+                <option selected>Choose...</option>
+                <option>Level 1</option>
+                <option>Level 2</option>
+                <option>Level 3</option>
               </select>
             </div>
           </div>
