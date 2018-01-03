@@ -118,21 +118,21 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                   // called asynchronously if an error occurs
                   // or server returns response with an error status.
                 }).then(function(res){
-                  console.log(res, 'userData from charge')
-                  $rootScope.user = res
-                  console.log($rootScope.user, 'rootScope.user')
+                  // console.log(res, 'userData from charge')
+                  $rootScope.user = res.data
+                  // console.log($rootScope.user, 'rootScope.user')
                   $location.path('/profile')
                   $http({
                     method: 'GET',
                     url: 'https://bandcamp.cc/api/send/',
                     params: {
-                      firstName: res.firstName,
-                      lastName: params.lastName,
-                      city: params.city,
-                      state: params.state,
-                      email: params.email,
-                      phone: params.phone,
-                      comments: params.comments
+                      firstName: res.data.address.name,
+                      lastName: res.data.amt_paid,
+                      city: res.data.studentTotal,
+                      state: res.data.tentCampers,
+                      email: res.data.email,
+                      phone: res.data.cabinCampers,
+                      comments: res.data.rvCampers
                       }
                   }).then(function successCallback(response) {
                       // this callback will be called asynchronously
