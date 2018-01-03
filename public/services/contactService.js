@@ -2,7 +2,7 @@ angular.module('main-app')
 
 .service('contactService', function($http, $location) {
   this.formChange = function () {
-    console.log('Form is changing')
+    // console.log('Form is changing')
   }
   this.submitForm = function(params) {
     // console.log('Params', params)

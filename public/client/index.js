@@ -1,23 +1,4 @@
-contactInfo = {
-  firstName: 'Stuart',
-  lastName: 'Owens',
-  city: 'Austin',
-  state: 'Texas',
-  email: 'functionfiddler@gmail.com',
-  phone: '999-999-0000',
-  comments: 'get a better UI mofo'
-}
-userData =
-          { name: 'no name',
-            email: 'no email',
-            signedIn: false,
-            groupTotal: 0,
-            studentTotal: 0,
-            rvCampers: 0,
-            cabinCampers: 0,
-            chaperoneLunches: 0,
-            total: 0
-          }
+
 var roles = {
   unpaidUser: 0,
   paidUser: 1,
@@ -27,29 +8,8 @@ var roles = {
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
-// .run(['$log', '$rootScope', '$route', function ($log, $rootScope, $route, angular.noop) {
-//   // nothing
-// })
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
-  console.log($rootScope, 'rootScope~~~~~~~~~~');
-  // $http({
-  //   method: 'GET',
-  //   url: '/getUser'
-  // }).then(function successCallback(response) {
-  //     // this callback will be called asynchronously
-  //     // when the response is available
-  //      console.log(response, 'userData')
-  //      $rootScope.user = response
-  //      console.log($rootScope.user, "during callback")
-  //   }, function errorCallback(response) {
-  //     // called asynchronously if an error occurs
-  //     // or server returns response with an error status.
-  //   });
-
-    // this.faqs = faqServive.dataCompile()
-    // this.faqs = faqData;
-
-  // console.log($rootScope.user, "after callback")
+  // console.log($rootScope, 'rootScope~~~~~~~~~~');
 })
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
@@ -80,10 +40,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/instructors', {
-          controller: function() {
-            // this.name = "stu";
-            // this.profile = { "_id" : 'ObjectId("5a4c7d2244af933d304fedcb")', "user_id" : 'ObjectId("5a4c7d0144af933d304fedc9")', "displayName" : "Camper 2", "minor" : false, "camping_type" : "none", "email" : "", "image" : "", "alt_email" : "", "age" : 0, "release_form" : false, "chaperone_name" : "", "bio" : "", "instruments" : "", "singer" : false, "instrumentalist" : false, "genres" : "", "exp_level" : "", "phone" : "", "dietary_restrictions" : "", "allergies" : "", "emergency_contact" : { "phone" : "", "name" : "" }, "band_info" : { "otherMembers" : "", "name" : "", "band" : false }, "__v" : 0 }
-          },
+          controller: 'MainCtrl',
           templateUrl: 'public/client/templates/instructors.html',
           controllerAs: 'ctrl',
           bindToController: true
@@ -115,19 +72,16 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           },
           templateUrl: 'public/client/templates/contact.html',
           controllerAs: 'ctrl'
-          // hideMenus: true
         })
         .when('/signin', {
-          // controller: 'MainCtrl',
           controller: function($scope) {
             $scope.user = userData;
             $scope.handleClick = function() {
-              console.log("You made it!", $scope.user)
+              // console.log("You made it!", $scope.user)
             }
           },
           templateUrl: 'public/client/templates/signin.html',
           controllerAs: 'ctrl'
-          // hideMenus: true
         })
         .when('/api/auth/google', {
           controller: function($scope, $route, $window) {
@@ -181,7 +135,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                     method: 'POST',
                     url: 'https://bandcamp.cc/api/charge/',
                     data: {
-                      email: 'homerowens@yahoo.com',
+                      email: $rootScope.user.email,
                       stripeToken: result.id,
                       amount: $rootScope.user.total
                     }
@@ -231,7 +185,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl',
           resolve: {
             permission: function(authorizationService, $route) {
-              return authorizationService.permissionCheck([roles.paidUser, roles.admin])
+              return authorizationService.permissionCheck([roles.unpaidUser, roles.paidUser, roles.admin])
             }
           },
           secure: 'true'
