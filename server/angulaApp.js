@@ -57,7 +57,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/api/send', function (req, res, next) {
   app.mailer.send('email', {
-    to: 'andy@andyowens.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+    to: 'homerowens@yahoo.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
     subject: 'Band Camp Contact Form from ' + req.query.firstName + ' ' + req.query.lastName, // REQUIRED.
     firstName: req.query.firstName,
     lastName: req.query.lastName,
