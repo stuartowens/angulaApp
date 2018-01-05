@@ -8,7 +8,7 @@ var roles = {
 var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
-.controller('MainCtrl', function($scope, $rootScope, $http, faqService, signinService) {
+.controller('MainCtrl', function($scope, $rootScope, $http, faqService, signinService, stripeService) {
   $rootScope.logout = function (){
     signinService.logout();
     delete $rootScope.user
