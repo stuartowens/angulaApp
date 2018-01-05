@@ -37,7 +37,7 @@ function updateUser(req, res) {
       user.address = req.body.address;
       user.token = req.body.token;
       user.amt_paid = user.amt_paid + req.body.total;
-      for (var i = 0; i < req.body.studentTotal; i++) {
+      for (var i = 0; i < req.body.studentTotal - user.studentTotal; i++) {
         createProfile(req.session.passport.user, i)
       }
       // console.log('user before save', user)
