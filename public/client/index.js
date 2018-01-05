@@ -9,7 +9,7 @@ var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService, signinService) {
-  $scope.logout = signinService.logout
+  $rootScope.logout = signinService.logout
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
   // $rootScope.user = "Mamma"
   // alert('hey')
