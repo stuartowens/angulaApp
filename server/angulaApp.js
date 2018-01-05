@@ -273,8 +273,11 @@ app.get('/api/auth/google/callback',
   // logout route
   app.get('/api/logout', function(req, res){
 
-    req.logout();
-    res.redirect(req.redirUrl + '/#/');
+    // req.logout();
+    req.session.destroy(function (err) {
+    res.redirect('/'); //Inside a callback… bulletproof!
+      res.redirect(req.redirUrl + '/#/');
+    });
   });
 
 app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
