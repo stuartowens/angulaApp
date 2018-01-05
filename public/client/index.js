@@ -108,7 +108,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
               // console.log("You saved it!", $rootScope.user)
               // $('#registrationmodal').modal('hide');
               this.user = $rootScope.user;
-              $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50 - $rootScope.user.amt_paid;
+              $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50;
             }
             $rootScope.handleCheckout = function (address, token) {
               $rootScope.user.address = address;
