@@ -28,7 +28,7 @@
           <li class="list-group-item">Tent Campers: {{user.tentCampers}} x $150 = ${{user.tentCampers * 150 }}</li>
           <li class="list-group-item">Chaperone Lunch Plans: {{user.chaperoneLunches}} x $50 = ${{user.chaperoneLunches*50}}</li>
           <li ng-hide="regCtrl.user.amt_paid > 0" class="animate-show-hide list-group-item">Total: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches * 50 - user.amt_paid}}</li>
-          <li ng-hide="regCtrl.user.amt_paid = 0" class="animate-show-hide list-group-item">Amount Paid Already: {{regCtrl.user.amt_paid}} Amount Owed: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches * 50 - regCtrl.user.amt_paid}}</li>
+          <li ng-hide="regCtrl.user.amt_paid === 0" class="animate-show-hide list-group-item">Amount Paid Already: {{regCtrl.user.amt_paid}} Amount Owed: ${{user.studentTotal * 379 + user.rvCampers * 279 + user.cabinCampers * 199 + user.tentCampers * 150 + user.chaperoneLunches * 50 - regCtrl.user.amt_paid}}</li>
         </ul>
         <form>
           <div class="form-row row">
