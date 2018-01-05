@@ -10,7 +10,7 @@ var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
-  MainCtrl.user = "Mamma"
+  $rootScope.user = "Mamma"
 })
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
