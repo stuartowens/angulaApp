@@ -10,6 +10,7 @@
   position: absolute;
   right: 8vw;
   color: white;
+  border: green solid thick;
 }
 .dropdown-menu {
   background-image: url('../Img/footer_bg.jpg');
