@@ -84,7 +84,7 @@
           <li ng-show="regCtrl.user.cabinCampers > 0" class="animate-show-hide list-group-item">Cabin Campers: {{regCtrl.user.cabinCampers}} x $199 = ${{regCtrl.user.cabinCampers * 199 }}</li>
           <li ng-show="regCtrl.user.tentCampers > 0" class="animate-show-hide list-group-item">Tent Campers: {{regCtrl.user.tentCampers}} x $150 = ${{regCtrl.user.tentCampers * 150 }}</li>
           <li ng-show="regCtrl.user.chaperoneLunches > 0" class="animate-show-hide list-group-item">Chaperone Lunch Plans: {{regCtrl.user.chaperoneLunches}} x $50 = ${{regCtrl.user.chaperoneLunches*50}}</li>
-          <li class="list-group-item">Total: ${{regCtrl.user.studentTotal * 379 + regCtrl.user.rvCampers * 279 + regCtrl.user.cabinCampers * 199 + regCtrl.user.tentCampers * 150 + regCtrl.user.chaperoneLunches * 50}} {{regCtrl.user.amt_paid > 0 ? " - Amount Paid Already $" regCtrl.user.amt_paid " = $" regCtrl.user.studentTotal * 379 + regCtrl.user.rvCampers * 279 + regCtrl.user.cabinCampers * 199 + regCtrl.user.tentCampers * 150 + regCtrl.user.chaperoneLunches * 50 - regCtrl.user.amt_paid}}</li>
+          <li class="list-group-item">Total: ${{regCtrl.user.studentTotal * 379 + regCtrl.user.rvCampers * 279 + regCtrl.user.cabinCampers * 199 + regCtrl.user.tentCampers * 150 + regCtrl.user.chaperoneLunches * 50}} {{regCtrl.user.amt_paid > 0 ? " - Amount Paid Already $" + regCtrl.user.amt_paid + " = $" + regCtrl.user.studentTotal * 379 + regCtrl.user.rvCampers * 279 + regCtrl.user.cabinCampers * 199 + regCtrl.user.tentCampers * 150 + regCtrl.user.chaperoneLunches * 50 - regCtrl.user.amt_paid}}</li>
         </ul>
         <form stripe-form="regCtrl.stripeCallback" name="checkoutForm">
           <div class="form-row row">
