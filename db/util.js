@@ -23,7 +23,7 @@ function updateUser(req, res) {
   var id = req.id;
   User.findOne({ _id: req.session.passport.user }, (err, user) => {
     if (err) {
-      // console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
       console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
       console.log(req.body, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!body user~~~~in updateuser")
