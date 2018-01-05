@@ -26,6 +26,9 @@ function updateUser(req, res) {
       // console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
       // console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
+      for (var i = 0; i < req.body.studentTotal - user.studentTotal; i++) {
+        createProfile(req.session.passport.user, i)
+      }
       user.isPaidUser = true;
       user.groupTotal = req.body.groupTotal;
       user.studentTotal =  req.body.studentTotal;
@@ -36,10 +39,8 @@ function updateUser(req, res) {
       user.total = 0;
       user.address = req.body.address;
       user.token = req.body.token;
-      user.amt_paid = user.amt_paid + req.body.total;
-      for (var i = 0; i < req.body.studentTotal - user.studentTotal; i++) {
-        createProfile(req.session.passport.user, i)
-      }
+      user.amt_paid += req.body.total;
+
       // console.log('user before save', user)
       user.save(function (err) {
         if(err) {
