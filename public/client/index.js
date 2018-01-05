@@ -13,29 +13,6 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
     signinService.logout();
     delete $rootScope.user
   }
-  // console.log($rootScope, 'rootScope~~~~~~~~~~');
-  // $rootScope.user = "Mamma"
-  // alert('hey')
-  // $rootScope.logout = function() {
-  //   console.log('get it')
-  // }
-  // $rootScope.logout = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: 'https://bandcamp.cc/api/logout/'
-  //   }).then(function successCallback(response) {
-  //       // this callback will be called asynchronously
-  //       // when the response is available
-  //        console.log(response, 'response')
-  //        alert('You have been signed out')
-  //        // $location.path('/')
-  //        console.log($rootScope.user, "rootscope.user")
-  //     }, function errorCallback(response) {
-  //       // called asynchronously if an error occurs
-  //       // or server returns response with an error status.
-  //       alert(response)
-  //     });
-  // }
 })
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
@@ -45,14 +22,11 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         .when('/', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/app.html',
-          // controllerAs: 'MainCtrl'
-          // hideMenus: true
         })
         .when('/lodging', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/lodging.html',
           controllerAs: 'ctrl'
-          // hideMenus: true
         })
         .when('/faq', {
           controller: function(faqService, signinService, $rootScope) {
@@ -64,14 +38,12 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           },
           templateUrl: 'public/client/templates/faq-page.html',
           controllerAs: 'ctrl'
-          // hideMenus: true
         })
         .when('/instructors', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/instructors.html',
           controllerAs: 'ctrl',
           bindToController: true
-          // hideMenus: true
         })
         .when('/contact', {
           controller: function(contactService, $scope, $location, $rootScope, signinService) {
@@ -126,7 +98,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl'
         })
         .when('/registration', {
-          controller: function($scope, $http, $rootScope, $location, signinService) {
+          controller: function($scope, $http, $rootScope, $location, signinService, stripeService) {
             this.user = $rootScope.user;
             $rootScope.logout = function (){
               signinService.logout();
@@ -138,51 +110,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
               this.user = $rootScope.user;
               $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50 - $rootScope.user.amt_paid;
             }
-            $rootScope.handleCheckout = function (address, token) {
-              $rootScope.user.address = address;
-              $rootScope.user.id = token;
-              $http({
-                method: 'PUT',
-                url: 'https://bandcamp.cc/api/updateUser/',
-                data: $rootScope.user
-              }).then(function successCallback(response) {
-                  // this callback will be called asynchronously
-                  // when the response is available
-                  return response;
-                }, function errorCallback(response) {
-                  // called asynchronously if an error occurs
-                  // or server returns response with an error status.
-                }).then(function(res){
-                  // console.log(res, 'userData from charge')
-                  $rootScope.user = res.data
-                  // console.log($rootScope.user, 'rootScope.user')
-                  $location.path('/profile')
-                  $http({
-                    method: 'GET',
-                    url: 'https://bandcamp.cc/api/send/',
-                    params: {
-                      firstName: res.data.address.name,
-                      lastName: "Amount charged: $" + res.data.amt_paid,
-                      city: "Number of students: " + res.data.studentTotal,
-                      state: "Number of tent campers: " + res.data.tentCampers,
-                      email: res.data.email,
-                      phone: "Number of cabin Campers: " + res.data.cabinCampers,
-                      comments: "Number of rv Campers: " + res.data.rvCampers
-                      }
-                  }).then(function successCallback(response) {
-                      // this callback will be called asynchronously
-                      // when the response is available
-                       // console.log(response, 'response')
-                       alert('Your payment has been processed, please fill out the camper profiles for each participant')
-                      //  $scope.user = response.data[0]
-                    }, function errorCallback(response) {
-                      // called asynchronously if an error occurs
-                      // or server returns response with an error status.
-                      alert(response)
-                    });
-                  // console.log($rootScope.user, "during callback")
-                });
-            }
+            $rootScope.handleCheckout = stripeService.handleCheckout
             this.stripeCallback = function (code, result) {
               if (result.error) {
                 window.alert('Your card failed to process because: ' + result.error.message);
