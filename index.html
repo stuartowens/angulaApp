@@ -80,6 +80,12 @@
       <li class="nav-item">
         <a class="nav-link" ng-href="#/contact" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:lightblue;">Contact</a>
       </li>
+      <li>
+        <div class="user-image" style="position: absolute; right: 0; color: white;">
+          <img class="user-image" src="./public/Img/photos3.jpg" alt="Card image cap">
+          <h3 >HEY HEY {{MainCtrl.user}}</h3>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
@@ -91,6 +97,7 @@
 </div>
 <!-- <img href="/registration" src="./public/Img/header2_bg.jpg" srcset="./public/Img/map.png 2w, ./public/Img/photos1.jpg 300w" sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)" /> -->
 </div>
+
 </header>
 <body id="body" ng-app="main-app">
   <div class= "container" ng-view></div>
