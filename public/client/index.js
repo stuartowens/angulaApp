@@ -10,27 +10,28 @@ var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
-  $rootScope.user = "Mamma"
-  logout = function() {
-    console.log('get it')
-  }
-  // this.logout = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: 'https://bandcamp.cc/api/logout/'
-  //   }).then(function successCallback(response) {
-  //       // this callback will be called asynchronously
-  //       // when the response is available
-  //        console.log(response, 'response')
-  //        alert('You have been signed out')
-  //        $location.path('/')
-  //        console.log($rootScope.user, "rootscope.user")
-  //     }, function errorCallback(response) {
-  //       // called asynchronously if an error occurs
-  //       // or server returns response with an error status.
-  //       alert(response)
-  //     });
+  // $rootScope.user = "Mamma"
+  // alert('hey')
+  // $rootScope.logout = function() {
+  //   console.log('get it')
   // }
+  $rootScope.logout = function() {
+    $http({
+      method: 'GET',
+      url: 'https://bandcamp.cc/api/logout/'
+    }).then(function successCallback(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+         console.log(response, 'response')
+         alert('You have been signed out')
+         // $location.path('/')
+         console.log($rootScope.user, "rootscope.user")
+      }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        alert(response)
+      });
+  }
 })
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
@@ -38,11 +39,9 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
     $routeProvider.eagerInstantiationEnabled(true);
     $routeProvider
         .when('/', {
-          controller: function($scope) {
-
-          },
+          controller: 'MainCtrl',
           templateUrl: 'public/client/templates/app.html',
-          controllerAs: 'ctrl'
+          // controllerAs: 'MainCtrl'
           // hideMenus: true
         })
         .when('/lodging', {
