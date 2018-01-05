@@ -7,10 +7,12 @@
   /* margin: 6px; */
 }
 .user-container {
-  background-image: url('../Img/footer_bg.jpg');
   position: absolute;
   right: 3vw;
   color: white;
+}
+.dropdown-menu {
+  background-image: url('../Img/footer_bg.jpg');
 }
 .logo-image {
   height: 7vw;
