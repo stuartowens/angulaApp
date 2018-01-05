@@ -5,6 +5,11 @@
   height: 2vmax;
   width: 2vmax;
 }
+.user-container {
+  position: absolute;
+  right: 3vw;
+  color: white;
+}
 .logo-image {
   height: 7vw;
 }
