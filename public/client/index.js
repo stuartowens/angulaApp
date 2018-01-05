@@ -9,7 +9,10 @@ var unauthorizedAccessRoute = ' /UnauthorizedAccess';
 
 angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService, signinService) {
-  $rootScope.logout = signinService.logout
+  $rootScope.logout = function (){
+    signinService.logout();
+    delete $rootScope.user
+  }
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
   // $rootScope.user = "Mamma"
   // alert('hey')
@@ -71,7 +74,11 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/contact', {
-          controller: function(contactService, $scope, $location) {
+          controller: function(contactService, $scope, $location, $rootScope, signinService) {
+            $rootScope.logout = function (){
+              signinService.logout();
+              delete $rootScope.user
+            }
             Object.assign($scope, {
               firstName: '',
               lastName: '',
@@ -119,8 +126,12 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           controllerAs: 'ctrl'
         })
         .when('/registration', {
-          controller: function($scope, $http, $rootScope, $location) {
+          controller: function($scope, $http, $rootScope, $location, signinService) {
             this.user = $rootScope.user;
+            $rootScope.logout = function (){
+              signinService.logout();
+              delete $rootScope.user
+            }
             $rootScope.handleSave = function() {
               // console.log("You saved it!", $rootScope.user)
               // $('#registrationmodal').modal('hide');
@@ -214,7 +225,11 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/profile', {
-          controller: function($scope, $http, $rootScope){
+          controller: function($scope, $http, $rootScope, signinService, $rootScope){
+            $rootScope.logout = function (){
+              signinService.logout();
+              delete $rootScope.user
+            }
             $http({
               method: 'GET',
               url: 'https://bandcamp.cc/api/getProfiles/'
