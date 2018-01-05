@@ -1,3 +1,11 @@
+.user-image {
+  order: 1;
+  align-self: flex-end;
+  border-radius: 50%;
+  height: 8vmax;
+  width: 8vmax;
+  /* margin: 6px; */
+}
 .logo-image {
   height: 25vw;
 }
