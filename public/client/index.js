@@ -52,7 +52,8 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/faq', {
-          controller: function(faqService, signinService) {
+          controller: function(faqService, signinService, $rootScope) {
+            $rootScope.logout = signinService.logout
             this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/faq-page.html',
