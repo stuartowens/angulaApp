@@ -11,7 +11,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
 .controller('MainCtrl', function($scope, $rootScope, $http, faqService) {
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
   $rootScope.user = "Mamma"
-  $rootScope.logout = function() {
+  logout = function() {
     console.log('get it')
   }
   // this.logout = function() {
