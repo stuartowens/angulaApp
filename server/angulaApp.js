@@ -275,7 +275,7 @@ app.get('/api/auth/google/callback',
 
     // req.logout();
     req.session.destroy(function (err) {
-    res.redirect('/'); //Inside a callback… bulletproof!
+    // res.redirect('#/'); //Inside a callback… bulletproof!
       res.redirect(req.redirUrl + '/#/');
     });
   });
