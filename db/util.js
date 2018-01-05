@@ -26,7 +26,8 @@ function updateUser(req, res) {
       // console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
       // console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
-      for (var i = 0; i < req.body.studentTotal - user.studentTotal; i++) {
+      var newProfiles = req.body.studentTotal - user.studentTotal;
+      for (var i = 0; i < newProfiles; i++) {
         createProfile(req.session.passport.user, i)
       }
       user.isPaidUser = true;
