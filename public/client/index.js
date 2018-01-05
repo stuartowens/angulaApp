@@ -53,7 +53,10 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
         })
         .when('/faq', {
           controller: function(faqService, signinService, $rootScope) {
-            $rootScope.logout = signinService.logout
+            $rootScope.logout = function (){
+              signinService.logout();
+              delete $rootScope.user
+            }
             this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/faq-page.html',
