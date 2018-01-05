@@ -25,7 +25,9 @@ function updateUser(req, res) {
     if (err) {
       // console.log('~~~~~~~~~~~~~~~~~~~~~~~~error in updateUser~~~~~~~~~~~~~~~~~~~~~~~~~~~````', err)
     } else {
-      // console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
+      console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
+      console.log(req.body, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!body user~~~~in updateuser")
+
       var newProfiles = req.body.studentTotal - user.studentTotal;
       for (var i = 0; i < newProfiles; i++) {
         createProfile(req.session.passport.user, i)
