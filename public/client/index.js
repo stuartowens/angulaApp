@@ -226,6 +226,36 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           secure: 'true'
           // hideMenus: true
         })
+        .when('/admin', {
+          controller: function($scope, $http, $rootScope, signinService, $rootScope){
+            $rootScope.logout = function (){
+              signinService.logout();
+              delete $rootScope.user
+            }
+            $http({
+              method: 'GET',
+              url: 'https://bandcamp.cc/api/getAllProfiles/'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                 $rootScope.user.participant_profiles = response.data
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(response, 'error in the response of profiles')
+              });
+
+          },
+          templateUrl: 'public/client/templates/profile-container.html',
+          controllerAs: 'ctrl',
+          resolve: {
+            permission: function(authorizationService, $route) {
+              return authorizationService.permissionCheck([roles.admin])
+            }
+          },
+          secure: 'true'
+          // hideMenus: true
+        })
         .when('/unauthorizedAccess', {
           controller: 'MainCtrl',
           templateUrl: 'public/client/templates/unauthorized.html',
