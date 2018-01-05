@@ -12,22 +12,25 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
   // console.log($rootScope, 'rootScope~~~~~~~~~~');
   $rootScope.user = "Mamma"
   this.logout = function() {
-    $http({
-      method: 'GET',
-      url: 'https://bandcamp.cc/api/logout/'
-    }).then(function successCallback(response) {
-        // this callback will be called asynchronously
-        // when the response is available
-         console.log(response, 'response')
-         alert('You have been signed out')
-         $location.path('/')
-         console.log($rootScope.user, "rootscope.user")
-      }, function errorCallback(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-        alert(response)
-      });
+    console.log('get it')
   }
+  // this.logout = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: 'https://bandcamp.cc/api/logout/'
+  //   }).then(function successCallback(response) {
+  //       // this callback will be called asynchronously
+  //       // when the response is available
+  //        console.log(response, 'response')
+  //        alert('You have been signed out')
+  //        $location.path('/')
+  //        console.log($rootScope.user, "rootscope.user")
+  //     }, function errorCallback(response) {
+  //       // called asynchronously if an error occurs
+  //       // or server returns response with an error status.
+  //       alert(response)
+  //     });
+  // }
 })
 .config(function ($locationProvider, $routeProvider, $windowProvider) {
     var $window = $windowProvider.$get();
