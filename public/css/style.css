@@ -6,11 +6,14 @@
   width: 4vmax;
   /* margin: 6px; */
 }
-.user-container {
+/* .user-container {
   position: absolute;
   right: 8vw;
   color: white;
   border: green solid thick;
+} */
+.navbar-nav {
+  float: right;
 }
 .dropdown-menu {
   background-image: url('../Img/footer_bg.jpg');
