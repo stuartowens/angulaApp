@@ -2,8 +2,8 @@
   order: 1;
   align-self: flex-end;
   border-radius: 50%;
-  height: 2vmax;
-  width: 2vmax;
+  height: 4vmax;
+  width: 4vmax;
 }
 .user-container {
   position: absolute;
