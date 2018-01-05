@@ -274,7 +274,7 @@ app.get('/api/auth/google/callback',
   app.get('/api/logout', function(req, res){
 
     req.logout();
-    res.redirect('/');
+    res.redirect(req.redirUrl + '/#/');
   });
 
 app.use(express.static(__dirname.slice(0, __dirname.length - 6)));
