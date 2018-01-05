@@ -84,17 +84,14 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="nav-link disabled" ng-href="#/profile" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white">{{user.displayName ? user.displayName : "Profile"}}</a>
-            <a class="dropdown-item" ng-href="#/signin" data-toggle="collapse" data-target="#navbarSupportedContent">Sign up</a>
-            <a class="dropdown-item" ng-href="#/signin" data-toggle="collapse" data-target="#navbarSupportedContent">Sign in</a>
+            <a class="dropdown-item" ng-href="#/registration" data-toggle="collapse" data-target="#navbarSupportedContent">Pay Camp Dues</a>
+            <a class="dropdown-item" ng-href="#/profile" data-toggle="collapse" data-target="#navbarSupportedContent">View/Edit Camper Profiles</a>
             <div class="dropdown-divider" data-toggle="collapse" data-target="#navbarSupportedContent"></div>
             <a class="dropdown-item" ng-href="#/signout" data-toggle="collapse" data-target="#navbarSupportedContent">Sign out</a>
           </div>
         </li>
         <li ng-hide={{user.displayName}} class="animate-show-hide nav-item">
-          <a class="nav-link" ng-href="#/signin" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:lightblue;">Sign Up</a>
-        </li>
-        <li ng-hide={{user.displayName}} class="animate-show-hide nav-item">
-          <a class="nav-link" ng-href="#/signin" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:lightblue;">Log In</a>
+          <a class="nav-link" ng-href="#/signin" data-toggle="collapse" data-target="#navbarSupportedContent" style="color:white;">Sign Up Log In</a>
         </li>
       </div>
     </ul>
