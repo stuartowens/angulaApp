@@ -27,12 +27,12 @@ function updateUser(req, res) {
     } else {
       // console.log(user, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!user~~~~in updateuser")
       user.isPaidUser = true;
-      user.groupTotal = user.groupTotal + req.body.groupTotal;
-      user.studentTotal = user.studentTotal + req.body.studentTotal;
-      user.rvCampers = user.rvCampers + req.body.rvCampers;
-      user.cabinCampers = user.cabinCampers + req.body.cabinCampers;
-      user.tentCampers = user.tentCampers + req.body.tentCampers;
-      user.chaperoneLunches = user.chaperoneLunches + req.body.chaperoneLunches;
+      user.groupTotal = req.body.groupTotal;
+      user.studentTotal =  req.body.studentTotal;
+      user.rvCampers = req.body.rvCampers;
+      user.cabinCampers =  req.body.cabinCampers;
+      user.tentCampers = req.body.tentCampers;
+      user.chaperoneLunches = req.body.chaperoneLunches;
       user.total = 0;
       user.address = req.body.address;
       user.token = req.body.token;
