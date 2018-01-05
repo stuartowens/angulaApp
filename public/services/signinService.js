@@ -1,7 +1,7 @@
 angular.module('main-app')
 
-.service('signinService', function($http, $location) {
-  this.logout = function() {
+.service('signinService', function($http, $location, $rootScope) {
+  this.logout = function($rootScope) {
     $http({
       method: 'GET',
       url: 'https://bandcamp.cc/api/logout/'

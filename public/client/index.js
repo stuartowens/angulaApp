@@ -46,14 +46,13 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
           // hideMenus: true
         })
         .when('/lodging', {
-          controller: function() {
-          },
+          controller: 'MainCtrl'
           templateUrl: 'public/client/templates/lodging.html',
           controllerAs: 'ctrl'
           // hideMenus: true
         })
         .when('/faq', {
-          controller: function(faqService) {
+          controller: function(faqService, signinService) {
             this.faqs = faqService.dataCompile()
           },
           templateUrl: 'public/client/templates/faq-page.html',
