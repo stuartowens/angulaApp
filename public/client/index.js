@@ -176,7 +176,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                       // console.log(response, 'charge response~~~~~~~~~')
                       if (response.data.paid) {
                         $rootScope.handleCheckout(response.data.source, response.data.id)
-                        // $location.path('/profile')
+                        $location.path('/profile')
                       }
                     }, function errorCallback(response) {
                       // called asynchronously if an error occurs
