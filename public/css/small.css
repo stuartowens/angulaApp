@@ -148,7 +148,15 @@ p, li {
   z-index:1;
   /*width:99vmax;*/
 }
+.camptext {
+  /* font-family: Oswald;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: caps;
+  font-weight: 400; */
+  line-height: 20px;
 
+}
 .student {
   border: solid;
   height: 120px;
