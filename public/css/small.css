@@ -248,8 +248,12 @@ p, li {
   display: none; */
   width: 300px;
 }
-.footer > img {
+.footer-image > img {
   /* visibility: collapse;
   display: none; */
   width: 300px;
+}
+
+.footer-image-links {
+  margin: 2px;
 }
