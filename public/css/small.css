@@ -243,7 +243,8 @@ p, li {
   display: none;
 }
 
-/* .footer {
-  visibility: collapse;
-  display: none;
-} */
+.footer {
+  /* visibility: collapse;
+  display: none; */
+  width 300px;
+}
