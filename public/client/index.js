@@ -171,7 +171,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                     data: {
                       email: $rootScope.user.email,
                       stripeToken: result.id,
-                      amount: $rootScope.user.total
+                      amount: $rootScope.user.total *100
                     }
                   }).then(function successCallback(response) {
                       // this callback will be called asynchronously
