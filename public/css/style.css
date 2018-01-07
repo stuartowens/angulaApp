@@ -495,9 +495,9 @@ p, li {
   z-index: 4;
   overflow: hidden;
 }
-.footer-content {
+/* .footer-content {
   z-index: 5;
-}
+} */
 .footer-image-links {
   position: absolute;
   left: 0;
