@@ -165,13 +165,14 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                  // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
                 window.alert('Your card has been successfully charged  $' + $rootScope.user.total);
                 // $('#checkoutmodal').modal('hide');
+                var total = $rootScope.user.total *100;
                 $http({
                     method: 'POST',
                     url: 'https://bandcamp.cc/api/charge/',
                     data: {
                       email: $rootScope.user.email,
                       stripeToken: result.id,
-                      amount: $rootScope.user.total *100
+                      amount: total
                     }
                   }).then(function successCallback(response) {
                       // this callback will be called asynchronously
