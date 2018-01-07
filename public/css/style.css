@@ -352,7 +352,7 @@ p, li {
 .readycontent {
   order: 4;
   margin-left: 6vw;
-  margin-top: -28vw;
+  margin-top: -8vw;
   width: 99%;
 }
 .readytitle {
@@ -476,7 +476,7 @@ p, li {
 }
 
 .topics-container > div {
-  margin: 5vw;
+  margin: 30px;
 }
 
 .footer {
