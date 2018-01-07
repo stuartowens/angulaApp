@@ -111,6 +111,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
               $rootScope.user.total = $rootScope.user.studentTotal * 379 + $rootScope.user.rvCampers * 279 + $rootScope.user.cabinCampers * 199 + $rootScope.user.tentCampers * 150 + $rootScope.user.chaperoneLunches*50 - $rootScope.user.amt_paid;
             }
             $rootScope.handleCheckout = function (address, token) {
+              $('#checkoutmodal').modal('hide');
               $rootScope.user.address = address;
               $rootScope.user.id = token;
               $http({
@@ -161,7 +162,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
               } else {
                  // console.log($rootScope.user.total, '$rootScope.user.total~~~~~~~~~~')
                 window.alert('Your card has been successfully charged  $' + $rootScope.user.total);
-                $('#checkoutmodal').modal('hide');
+                // $('#checkoutmodal').modal('hide');
                 $http({
                     method: 'POST',
                     url: 'https://bandcamp.cc/api/charge/',
