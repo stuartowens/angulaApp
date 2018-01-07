@@ -76,6 +76,20 @@ h1 {
 .topic-list-container {
   flex-direction: column;
 }
+.topics-container > div {
+  margin-bottom: -37px;
+}
+.topics-container {
+  width: 96vw;
+  min-width:300px;
+}
+.topic-list1 {
+  margin-bottom: -6vw;
+}
+ .topic-list2  {
+   margin-bottom: 6vw;
+
+}
 /* .campdates > img{
   position: absolute;
   resize:both;
