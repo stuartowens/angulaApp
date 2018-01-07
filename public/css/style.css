@@ -12,14 +12,11 @@
   color: white;
   border: green solid thick;
 } */
-.navbar-collapse {
-  border: green solid thick;
-}
+
 .navbar-nav {
   float: right;
   justify-content: space-around;
   width: 80vmax;
-  border: blue solid thick;
 }
 
 .dropdown-menu {
