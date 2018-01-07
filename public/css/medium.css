@@ -1,3 +1,15 @@
+.menubackground {
+  border-radius: 0px 0px 25px 25px;
+}
+
+.navbar-nav {
+  float: right;
+  justify-content: flex-end;
+  width: 20vmax;
+  border: blue solid thick;
+}
+
+
 .logo-image {
   height: 12vw;
 }
@@ -57,11 +69,23 @@ h1 {
 .topic-list-container {
   flex-direction: column;
 }
-.campdates > img{
+/* .campdates > img{
   position: absolute;
   resize:both;
   height:auto;
   width:100%;
+} */
+.blueridge-header {
+  z-index:1;
+  width:99vmax;
+}
+.campdates-image {
+  position: absolute;
+  resize:both;
+  height:auto;
+  max-height: 13vmax;
+  z-index:1;
+  width:99vmax;
 }
 .camptext {
   font-family: Oswald;
@@ -74,8 +98,8 @@ h1 {
 }
 .navbarbackground {
   background-image: url('../Img/footer_bg.jpg');
-  height: 79px;
-  width: auto;
+  height: 120px;
+  width: 99vmax;
 }
 .footer {
   height: 20vmax;

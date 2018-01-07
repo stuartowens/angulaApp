@@ -6,6 +6,13 @@ Brown text:#726328
 White #ffffff
 Black #000000*/
 
+.navbar-nav {
+  float: right;
+  justify-content: space-between;
+  width: 40vmax;
+  border: blue solid thick;
+}
+
 .contact-submit {
   margin-right: 3vw;
   margin-bottom: 3vw;

@@ -1,3 +1,18 @@
+.menubackground {
+  border-radius: 0px 0px 25px 25px;
+}
+.navbar-nav {
+  float: right;
+  justify-content: flex-end;
+  width: 30vmax;
+  border: blue solid thick;
+}
+.navbarbackground {
+  background-image: url('../Img/footer_bg.jpg');
+  height: 150px;
+  width: auto;
+}
+
 .user-image {
   order: 1;
   align-self: flex-end;
