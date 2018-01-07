@@ -34,7 +34,7 @@
 
 h2 {
   color: rgb(171,138,88);
-  font-size: 6vw;
+  font-size: 4vw;
   font-family: 'Oswald';
 }
 h1 {
@@ -52,7 +52,7 @@ p, li {
   margin-top: 6vw;
 }
 .sign-up > h2 {
-  font-size: 2vw;
+  font-size: 3vw;
 }
 .sign-up-block > h2 {
   font-size: 2vw;
@@ -61,7 +61,6 @@ p, li {
   font-size: 1vw;
 }
 
-font-size: 1vw;
 .contact-submit {
   margin-right: 3vw;
   margin-bottom: 3vw;
