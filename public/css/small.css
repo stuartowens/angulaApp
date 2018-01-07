@@ -209,8 +209,12 @@ p, li {
   width: 96vw;
   min-width:300px;
 }
-.topic-list1, .topic-list2 {
+.topic-list1 {
   margin-bottom: -6vw;
+}
+ .topic-list2  {
+   margin-bottom: 6vw;
+
 }
 .topic-list-container {
   flex-direction: column;
