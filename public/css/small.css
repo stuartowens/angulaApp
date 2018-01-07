@@ -248,3 +248,8 @@ p, li {
   display: none; */
   width: 300px;
 }
+.footer > img {
+  /* visibility: collapse;
+  display: none; */
+  width: 300px;
+}
