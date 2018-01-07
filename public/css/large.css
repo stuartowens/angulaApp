@@ -11,7 +11,9 @@ Black #000000*/
   justify-content: space-between;
   width: 80vmax;
 }
-
+.readycontent {
+  margin-top: -15vw;
+}
 .header-box {
   background-color: white;
   color: rgb(171,138,88);

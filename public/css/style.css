@@ -352,6 +352,7 @@ p, li {
 .readycontent {
   order: 4;
   margin-left: 6vw;
+  margin-top: -28vw;
   width: 99%;
 }
 .readytitle {
