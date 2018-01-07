@@ -128,7 +128,7 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
                   // console.log(res, 'userData from charge')
                   $rootScope.user = res.data
                   // console.log($rootScope.user, 'rootScope.user')
-                  // $location.path('#/profile')
+                  $location.path('/profile')
                   $http({
                     method: 'GET',
                     url: 'https://bandcamp.cc/api/send/',
