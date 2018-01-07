@@ -112,6 +112,8 @@ angular.module('main-app', ['ngRoute', 'ngResource', 'angularPayments'])
             }
             $rootScope.handleCheckout = function (address, token) {
               $('#checkoutmodal').modal('hide');
+              $('body').removeClass('modal-open');
+              $('.modal-backdrop').remove();
               $rootScope.user.address = address;
               $rootScope.user.id = token;
               $http({
