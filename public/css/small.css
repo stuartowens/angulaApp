@@ -4,7 +4,7 @@
 .navbar-nav {
   float: right;
   justify-content: flex-end;
-  width: 30vmax;
+  width: 25vmax;
 }
 .navbarbackground {
   background-image: url('../Img/footer_bg.jpg');
