@@ -12,6 +12,21 @@ Black #000000*/
   width: 40vmax;
 }
 
+.header-box {
+  background-color: white;
+  color: rgb(171,138,88);
+  font-family: "Oswald";
+  margin-top:6.5vw;
+  margin-bottom: 0;
+  margin-left: 7vmax;
+  padding: 10px;
+  border-radius: 15px;
+  width: 50vmax;
+}
+.header-box > h1 {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
 .contact-submit {
   margin-right: 3vw;
   margin-bottom: 3vw;
