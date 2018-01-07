@@ -120,6 +120,7 @@
 }
 .instrContent2 > h2, .instrContent1 > h2 {
   margin-left: 10px;
+  font-size: 10vw;
 }
 instrContent2 > img {
   width: 280px;
