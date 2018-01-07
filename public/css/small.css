@@ -202,9 +202,15 @@ p, li {
 .topic-header > h1 {
   font-size: 7vw;
 }
+.topics-container > div {
+  margin-bottom: -37px;
+}
 .topics-container {
   width: 96vw;
   min-width:300px;
+}
+.topic-list1, .topic-list2 {
+  margin-bottom: -2vw;
 }
 .topic-list-container {
   flex-direction: column;
