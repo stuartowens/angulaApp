@@ -4,10 +4,10 @@
   <div class="card-block sign-up-block text-center">
     <h1>Welcome {{user.displayName}}</h1>
     <h2 class="">Sign up for The Band Camp: </h2>
+    <a><button type="button" class="btn btn-primary sign-up-button" data-toggle="modal" data-target="#registrationmodal" >Register campers</button></a>
+    <h2>Once you have paid for camp registration click here to get to camper profiles: </h2>
+    <a ng-href="#/profile"><button type="button" class="btn btn-primary sign-up-button">Camper Profiles</button></a>
   </div>
-  <a><button type="button" class="btn btn-primary sign-up-button" data-toggle="modal" data-target="#registrationmodal" >Register campers</button></a>
-  <h2>Once you have paid for camp registration click here to get to camper profiles: </h2>
-  <a ng-href="#/profile"><button type="button" class="btn btn-primary sign-up-button">Camper Profiles</button></a>
 </div>
 
 <div class="modal fade" id="registrationmodal" tabindex="-1" role="dialog" aria-labelledby="registrationmodal" aria-hidden="true">
