@@ -6,11 +6,11 @@ angular.module('main-app')
     faqData = [
       {
         question: 'What are the dates of camp? And where is camp located?',
-        answer: 'Our BandCamps in 2018 will be held twice. Our spring BandCamp is the week directly after Merlefest, starting Sunday afternoon April 29, 2018 and ending Thursday afternoon, May 3, 2018. Our fall BandCamp is going to be the week before the Kruger Brothers festival, Carolina In The Fall, which happens in nearby Wilkesboro, NC, starting Sunday afternoon, September 16, 2018 and finishing up Thursday afternoon, September 20, 2018. Keep in mind that the IBMA (the International Bluegrass Music Association) yearly festival and trade show starts the following week in Raleigh, NC. The camp is located at Camp Harrison, a wonderful YMCA camp in Boomer, NC, near Wilkesboro, NC. There is cabin lodging, a great dining hall and other great amenities, all set in the beautiful mountains of western North Carolina.'
+        answer: 'Our BandCamps in 2018 will be held twice. Our spring BandCamp is the week directly after Merlefest, starting Sunday afternoon April 29, 2018 and ending Thursday morning, May 3, 2018. Our fall BandCamp is going to be the week before the Kruger Brothers festival, Carolina In The Fall, which happens in nearby Wilkesboro, NC, starting Sunday afternoon, September 16, 2018 and finishing up Thursday morning, September 20, 2018. Keep in mind that the IBMA (the International Bluegrass Music Association) yearly festival and trade show starts the following week in Raleigh, NC. The camp is located at Camp Harrison, a wonderful YMCA camp in Boomer, NC, near Wilkesboro, NC. There is cabin lodging, a great dining hall and other great amenities, all set in the beautiful mountains of western North Carolina.'
       },
       {
         question: 'When should I plan to arrive and leave?',
-        answer: 'You can arrive any time after 5pm on Sunday, the first day of camp. Activities begin at 6pm, and camp will end at 1pm Thursday. We will start playing and jamming Sunday evening so that our instructors can decide how to group the participants into bands of four to six people. We’ll start again fairly early Monday morning.'
+        answer: 'You can arrive any time after 5pm on Sunday, the first day of camp. Activities begin at 6pm, and camp will end at 11am Thursday. We will start playing and jamming Sunday evening so that our instructors can decide how to group the participants into bands of four to six people. We’ll start again fairly early Monday morning.'
       },
       {
         question: 'What should I bring to the camp?',
@@ -74,7 +74,7 @@ angular.module('main-app')
       },
       {
         question: 'What time do camp activities end on the last day?',
-        answer: 'Checkout is 1pm Thursday and we will have a brunch concert that morning so that each band can perform their two songs in front of the entire camp!'
+        answer: 'Checkout is 11am Thursday and we will have a brunch concert that morning so that each band can perform their two songs in front of the entire camp!'
       },
       {
         question: 'What music genres are welcome at camp? Is camp for acoustic and electric musicians?',
