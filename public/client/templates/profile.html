@@ -62,17 +62,17 @@
             <div class="form-row row">
               <div class="form-check col-sm-2">
                 <input ng-model="vm.profile.minor" class="form-check-input" type="checkbox" id="minorCheck">
-                <label class="form-check-label" for="minorCheck">Minor</label>
+                <label class="form-check-label" style="padding-left:0px" for="minorCheck">Minor</label>
               </div>
               <div class="form-check col-sm-2">
                 <input ng-model="vm.profile.chaperone" class="form-check-input" type="checkbox" id="chaperonedCheck">
-                <label class="form-check-label" for="chaperonedCheck">Chaperoned</label>
+                <label class="form-check-label" style="padding-left:0px" for="chaperonedCheck">Chaperoned</label>
               </div>
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-1">
                 <label for="inputAge">Age</label>
                 <input ng-model="vm.profile.age" type="number" class="form-control" id="inputAge" placeholder="age">
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                 <label for="inputChaperone">Chaperone Name</label>
                 <input ng-model="vm.profile.chaperone_name" type="text" class="form-control" id="inputChaperone" placeholder="If under 16, who is the chaperone?" value="vm.profile.chaperone_name">
               </div>
@@ -87,16 +87,18 @@
               <div class="col-sm-2">
                 <div class="form-check">
                   <input ng-model="vm.profile.singer" class="form-check-input" type="checkbox" id="singerCheck">
-                  <label class="form-check-label" for="singerCheck">Singer</label>
+                  <label class="form-check-label" style="padding-left:0px" for="singerCheck">Singer</label>
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="instrumentalistCheck">
-                  <label ng-model="vm.profile.instrumentalist" class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
+                  <label ng-model="vm.profile.instrumentalist" style="padding-left:0px" class="form-check-label" for="instrumentalistCheck">Instrumentalist</label>
                 </div>
               </div>
-              <div class="form-group col-md-6">
+            </div>
+            <div class="form-row row">
+              <div class="form-group col-md-12">
                 <label for="inputInstruments">Instruments</label>
                 <input ng-model="vm.profile.instruments" type="text" class="form-control" id="inputInstruments" placeholder="What instruments do you play?" value="vm.profile.instruments">
               </div>
