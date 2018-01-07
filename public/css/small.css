@@ -210,7 +210,7 @@ p, li {
   min-width:300px;
 }
 .topic-list1, .topic-list2 {
-  margin-bottom: -2vw;
+  margin-bottom: -6vw;
 }
 .topic-list-container {
   flex-direction: column;
