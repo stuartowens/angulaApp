@@ -17,7 +17,7 @@
 }
 .navbar-nav {
   float: right;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80vmax;
   border: blue solid thick;
 }
