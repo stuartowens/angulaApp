@@ -274,7 +274,7 @@ p, li {
 .footer-image > img {
   /* visibility: collapse;
   display: none; */
-  width: 40vmax;
+  width: 75vmax;
 }
 .footer-image {
   width: 50vmax;
