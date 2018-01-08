@@ -281,6 +281,7 @@ p, li {
 }
 
 .footer-image-links {
+  width: 50vmax;
   margin: 2px;
 }
 .footer-link-container {
