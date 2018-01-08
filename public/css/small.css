@@ -230,7 +230,7 @@ p, li {
 
 .map > img {
   position: absolute;
-  width: 200px;
+  width: 300px;
 }
 .andy > img {
   width: 300px;
@@ -238,11 +238,30 @@ p, li {
 .camp-map > img {
   width: 300px;
 }
+.address {
+  width: 300px;
+}
+.address1, .address2 {
+  margin-top: 20px;
+  width: 50vmax;
+}
+.address1 > p {
+  font-size: 3vw;
+}
+.address2 > p {
+  font-size: 3vw;
+}
 .andy-map-container {
   visibility: collapse;
   display: none;
 }
-
+.camp-map {
+  height: 70vmax;
+}
+.map-container {
+  width: 300px;
+  order: 2;
+}
 .footer {
   /* visibility: collapse;
   display: none; */
