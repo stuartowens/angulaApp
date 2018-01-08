@@ -262,6 +262,10 @@ p, li {
   width: 300px;
   order: 2;
 }
+.footer-content {
+  visibility: collapse;
+  display: none;
+}
 .footer {
   /* visibility: collapse;
   display: none; */
